@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1,
+    "name": "인트라던",
+    "address": "대전광역시 서구 월평동 375",
+    "image": "/path/to/my_dummy_image.png",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Carly",
+        "rating": "별표 5개",
+        "text": "감각적인 공간이 너무 좋았고\n피스타치오크림이 올라간 커피 맛 너무 좋았어요!\n특히 음악이 아주 취향저격이었어요 힐링하고 갑니다!"
+      },
+      {
+        "nickname": "Nina",
+        "rating": "별표 4개",
+        "text": "커피 맛은 적당히 산미가 있는데..\n굳이 가서 또 마실 필요가 있을지 ㅎ\n카페 자체는 예쁜데…"
+      },
+      {
+        "nickname": "오열인",
+        "rating": "별표 4개",
+        "text": "위치가 애매한데 찾기 어렵지는 않아요\n커피 맛은 평타에요~~!!!!!!!!\n강아지도 갈 수 있어요 호호"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "야익스커피",
+    "address": "대전광역시 서구 한밭대로596번길 3",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no2CH2tCl2g3kRnk8nK4h3KACVi2dRiTbdEkOXWnRvQyPrO_nvF4LCbou1vPbm2foewfTZJ21-yw_-xdJ3xTJhBI_-67jNVVqTjfeGfuuilkvkwC3tLI6OIL5uuopWksG2-TkFP=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "QC",
+        "rating": "별표 4개",
+        "text": "라떼. 정말 고소해요. 우유와 에스프레스랑  딱 맞는 비율로 너무 맛있어요.\n아이스 라떼는 우유맛이  많이 느껴지고 에스프레소 양이 좀 적은듯 해요.  따뜻한 라떼에 비해 고소함이 덜해요.\n따뜻한 라떼 정말 추천요.\n주차 완전 불편함."
+      },
+      {
+        "nickname": "Nina",
+        "rating": "별표 3개",
+        "text": "아메리카노는 산미가 좀 있고 연한 편이예요 그리고 커피 가격도 저렴합니다  베이킹도 직접 하시나봐요 다만 의자가 편하지는  않아요 그래도 방석이 있어서 좋았어요"
+      },
+      {
+        "nickname": "장광수",
+        "rating": "별표 5개",
+        "text": "맛있고 커피\n친절한사장님\n깔끔한 매장…"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "앤크",
+    "address": "대전광역시 서구 월평동 294 대성빌딩 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr-UIJe6Rh4fBiSeQ1D8QnXuDuyGQgH6-H0wNy0LnsdziHGDp2sB8pjeYmsfB9eDp2b14-zJxVY7gRKImt12H102NBYxuY67G41ZB837sf0D1aNJ7IJRvTA54qf_6FevbOUlN7lXQ=w122-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "010-8585-3486",
+    "review": [
+      {
+        "nickname": "인간너구리 (RHOin)",
+        "rating": "별표 5개",
+        "text": "대전에서 파티세리급의 디저트를 먹을줄이야\n생토노레랑 누네따네 마롱파이 진짜 맛있다\n바스크치즈케이크도 맛있었지만 상대적으로 묻힌;;…"
+      },
+      {
+        "nickname": "최유림",
+        "rating": "별표 5개",
+        "text": "처음 보는 디저트들이 많아요 매장은 넓은 편은 아니지만 좁지도 않아요 직원분들이 친절합니다"
+      },
+      {
+        "nickname": "SAMUNY",
+        "rating": "별표 4개",
+        "text": "토미야에서 식사하고 나와서 옆에 있길래\n우연히 들어옴.\n녹차크림라떼 아이스(5000₩)…"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "JUST COFFEE",
+    "address": "대전광역시 서구 청사서로 54 저스트커피",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noYWa4OpWZGCeY1st8Y3VXp8QaeVKbIjXfVbAXfL5TIAHdz5XeeU506taOiW3W2hDa5XehEEIf3ySVZBnJGIPh54MHqR-NdLB9_VpCwWnTrd7ro3o_jvK9-udUzM1LRUAfEeT6p=w163-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-483-5885",
+    "review": [
+      {
+        "nickname": "Seungeun Kim",
+        "rating": "별표 5개",
+        "text": "원두를 직접 로스팅하는 커피맛집. 블랜딩커피가 맛있습니다. 핸드드립커피는 더 맛있고요.\n여름에 눈꽃빙수가 최고입니다. 토핑으로 올라가는 떡과 팥시럽이 공장제품이 아니고 직접 만들어 제공됩니다. 테이블이 4개라서 아쉽습니다."
+      },
+      {
+        "nickname": "Kichi Hango",
+        "rating": "별표 4개",
+        "text": "사장님의 커피에 대한 애착이 느껴지는 공간입니다. 드립커피가 괜찮습니다."
+      },
+      {
+        "nickname": "커피볶는선화공주",
+        "rating": "별표 4개",
+        "text": "인도네시아 스페셜티중 스페셜티를 로스팅하여 특별한 브랜딩 ㆍ 싱글ㆍ원두로 커피의 모든것을 경험하실수 있습니다"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Coffee Lab",
+    "address": "대전광역시 서구 한밭대로707번길 23",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrP_NDsBlZr1Gp6LnN_V0Xz9yTgJL4TRkcmdUGIVHGgKNo0XpJDyqRzWRoiNg8MJOdsl7ymwYB2qF-_2ZakAekqXA_eWv7uBOE238FAbRk_UpJa_33_R16VTEHrj6pwqe4ITHGuLA=w163-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-483-2880",
+    "review": [
+      {
+        "nickname": "Tim Park",
+        "rating": "별표 5개",
+        "text": "부부가 야무지게 운영하는가게에요. 커피도 맛나고..."
+      },
+      {
+        "nickname": "Kyusoong Chung",
+        "rating": "별표 5개",
+        "text": "맛 있고 품질좋음"
+      },
+      {
+        "nickname": "벽골제고릴라",
+        "rating": "별표 4개",
+        "text": "조용하게 대화가능함"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "월평스터디카페",
+    "address": "대전광역시 서구 월평중로 36 7층",
+    "image": "https://maps.gstatic.com/tactile/pane/result-no-thumbnail-2x.png",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": []
+  },
+  {
+    "id": 7,
+    "name": "브런치카페",
+    "address": "대전광역시 서구 월평로13번길 52 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npZmCAzE2szu9G-XOwK04i2jVBrLaOzgmJi-Ch3qOKOqnJbO44C0XcEjhwlTJ0u9J936a41uV3OO1Z-2G-mMVA0mEd57u8w97vFEumKD3yA0Eb2cSiFUEjauoSlf4eAFkuq4wwq=w80-h106-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "042-487-0099",
+    "review": [
+      {
+        "nickname": "심성희",
+        "rating": "별표 5개",
+        "text": "집근처에 펄스맥이 있는건 알았지만 오히려 근처라 잘 안갔었는데, 친구가 놀러와서 같이 갔었어요! 원래 펄스맥이 브런치 맛집이긴해서.. 오랜만에 먹어도 너무 맛있어요! 근데 주차가 조금 힘들뿐.."
+      },
+      {
+        "nickname": "김진성 (고향사랑)",
+        "rating": "별표 5개",
+        "text": "이름이 바뀌었네요 브런치카페에서 펄 스막으로 바뀌었어요 대전에 결혼식있어서 왔다가 브런치가 필요해서 검색해서 왔는데…엄청 맛나네요"
+      },
+      {
+        "nickname": "囊中之錐",
+        "rating": "별표 5개",
+        "text": "여기 정말 맛집입니다. 6명이 다양한 메뉴를 오더했는데 모두 맛나고, 음식 재료의 신선도와 품질도 너무 좋았습니다. 주차공간도 어느 정도 있고 직원분들 서비스도 훌륭하고, 양질의 커피  원두도 직접 로스팅한 것을 사용. 원두도 구매할 수있네요."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "노보커피로스터스",
+    "address": "대전광역시 서구 한밭대로707번길 23",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrhJWoo8Vo9hbWF3C44AnihCceGOr91_hPtcq673MAU_I4DGDkyB10oSlEPqNFNJVLyWpWtGgHQIx4eMml0c2-c7P0d5cCOlzN_C14Y77i1bKNj1yifSkewBHqaKzQ6mVjjXVUp=w189-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-483-2880",
+    "review": [
+      {
+        "nickname": "Tim Park",
+        "rating": "별표 5개",
+        "text": "부부가 야무지게 운영하는가게에요. 커피도 맛나고..."
+      },
+      {
+        "nickname": "Kyusoong Chung",
+        "rating": "별표 5개",
+        "text": "맛 있고 품질좋음"
+      },
+      {
+        "nickname": "벽골제고릴라",
+        "rating": "별표 4개",
+        "text": "조용하게 대화가능함"
+      }
+    ]
+  }
+]

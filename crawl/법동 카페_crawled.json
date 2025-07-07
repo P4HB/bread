@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "name": "은유네카페",
+    "address": "대전광역시 대덕구 법동 287-7번지 1층 103호",
+    "image": "/path/to/my_dummy_image.png",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "youngran Jang (세 영들 맘)",
+        "rating": "별표 5개",
+        "text": "커피 향도 좋고 맛있고 음료도 맛있어서 먹어보고픈게 정말 많은 곳. 커피 한잔, 음료 한잔 한잔에 정말 진심인 사장님 마음이 느껴지는 곳입니다^^"
+      },
+      {
+        "nickname": "아하후아하후",
+        "rating": "별표 5개",
+        "text": "쏘쏘~~~~~~~"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "까망콩COFFEE",
+    "address": "대전광역시 대덕구 법동 201-14번지 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npkiCJCYyydBBT8uiNcsQXsvK2VxNL_EsGWnzvlWaGMUK1qAeuMXSYIgNEqyjDh6ieGGoyEBMGb6wtw6hMP35N1dr-MqdOyMdhmQbJVa-YEB_0V15hMptipIiM7tGrF6fv6FuQP=w235-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "042-622-2986",
+    "review": [
+      {
+        "nickname": "Jeongil “Andewkim” Kim",
+        "rating": "별표 5개",
+        "text": "맛있는 커피가 있는곳"
+      },
+      {
+        "nickname": "한상국",
+        "rating": "별표 5개",
+        "text": "대추차 향이 진하고 맛있어요\nGood"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "법동키즈카페",
+    "address": "대전광역시 대덕구 법동 번지 지하 287-1 1층",
+    "image": "https://maps.gstatic.com/tactile/pane/result-no-thumbnail-2x.png",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "042-631-8724",
+    "review": [
+      {
+        "nickname": "이이차만",
+        "rating": "별표 5개",
+        "text": "열무김치가  굿"
+      },
+      {
+        "nickname": "서영",
+        "rating": "별표 5개",
+        "text": "재미있어요"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "제이오비커피로스터즈",
+    "address": "대전광역시 대덕구 법동 352-2번지 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npzKX5DEMaUfaN6gB7aB5n-0wEc8LwEvqRuId1kAqOijo4ikakgDAKG5bEsZsiN-lIqgAYYEp0DyhWpEoBTAYLjwoGimp31Gm3bCDFm8TT3_iQZGW1e4wCo92PcKylO7iNcWvM=w80-h106-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-6769-6121",
+    "review": [
+      {
+        "nickname": "가람",
+        "rating": "별표 5개",
+        "text": "오픈때부터 가는 커피숍.\n맛도 좋고 조용한곳이여서 자주 감"
+      },
+      {
+        "nickname": "Woong-Seob JEONG",
+        "rating": "별표 3개",
+        "text": "아담한 공간에 주중이면 근처 교회 주차도 가능해 접근성은 좋습니다. 커피 맛은 평이합니다."
+      },
+      {
+        "nickname": "jin-cheol jang",
+        "rating": "별표 4개",
+        "text": "서비스 친절해요."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "커피마리미",
+    "address": "대전광역시 대덕구 법동 번지 1층 203-9",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqA_p1ApolJIPo4KwjRyohSRcPocB0Fkec2m1zQ6cc6xuRjoDBR-MhpAKCiOrKUCU4ibD_ldEOzp5DZF3qNrML56UCrK8k1CKCPfX63sMQXM0TYyFgFkErN9vdyT5q4uYEtZ4q5=w122-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "나마늘 (마늘)",
+        "rating": "별표 4개",
+        "text": "최근에 생긴 법동에 생긴 마리미. 사장님의 별칭을 따서 만든 이 카페는 작은 카페지만 소금빵과 간단하게 맛볼 수 있는 디저트, 그리고 다양한 음료들이 많은 것이 특징이다. 밝은 분위기에서 햇살을 받으며 여유있게 시간을 즐길 수 있는 곳으로 최근 법동 핫플로 급부상하고 있다."
+      },
+      {
+        "nickname": "Kichi Hango",
+        "rating": "별표 5개",
+        "text": "소금빵 맛집. 휘낭시에는 주문하지 말아주세요 나혼자만 먹을거니까. 커피와 차도 맛있어요. 동네에 오아시스같은 카페."
+      },
+      {
+        "nickname": "NunFiction넌픽션",
+        "rating": "별표 5개",
+        "text": "기본 커피맛 좋고 친절하시고 서비스도 좋습니다. 재료를 좋은걸 쓰시는거 같습니다."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "라송",
+    "address": "대전광역시 대덕구 법2동",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npQj5d7QoTfCC5D_ODNBOSj3VJXMLDutNy6FnKX_Y3vRe1JIGYusmd5wXJJPS8w-8dBzb00kSghB0rIxQAbbU6OuWRFqClt3CqPz-7xOkPqZAPSJ7lj8dE5VPkEYOvHFj3do9VnWQ=w122-h92-k-no",
+    "rating_value": "별표 4.2개 ",
+    "call_value": "042-622-5424",
+    "review": [
+      {
+        "nickname": "안팔아요",
+        "rating": "별표 4개",
+        "text": "평범함\n커피숍? 이 아니고 그냥 동네 마실장소임 ㅋㅋㅋ\n커피보다는 생과일주스, 차 등을 더 주력으로 판매한다\n앉아서 쉬기는 좋다."
+      },
+      {
+        "nickname": "송창헌",
+        "rating": "별표 5개",
+        "text": "동네 카페인데 커피맛이 정말로 맛나고요 요즘은 팥빙수가 즥어져요\n오다가 들러보세요\n카페 분위기 정감이 풍기는 카페 입ㄴ다"
+      },
+      {
+        "nickname": "김윤성",
+        "rating": "별표 5개",
+        "text": "커피가 맛있어요"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "달콤공작소",
+    "address": "대전광역시 대덕구 법동 200 12번지 1층 102호",
+    "image": "https://maps.gstatic.com/tactile/pane/result-no-thumbnail-2x.png",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": []
+  },
+  {
+    "id": 8,
+    "name": "투썸플레이스 대전법동점",
+    "address": "대전광역시 대덕구 동춘당로 187",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrAWVHe1sjmg-Ab_OYuIBZdl0rO44Bkgi7Ab0Xb5HBRaRDPlKi5wmxfRCsARr5B3YrDM03URLxdQsVPbt50sQqja2ictiM8sWJLh8zRAR3_P0lZ0sSe8eePZedy-M9vIvK1L76J=w204-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "통통통통한날",
+        "rating": "별표 3개",
+        "text": "매장이 넓고 테이블이 많습니다. 와이파이가 제공됩니다. 화장실은 공공화장실 이용해야 하는데 매우 더럽습니다."
+      },
+      {
+        "nickname": "김성수",
+        "rating": "별표 3개",
+        "text": "병에 든 콤부차를 마셨어요. 디카페인 커피는 없어요."
+      },
+      {
+        "nickname": "도안까불이",
+        "rating": "별표 5개",
+        "text": "친절함에 기분좋았던 카페였습니다"
+      }
+    ]
+  }
+]

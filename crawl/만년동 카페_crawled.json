@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Coffee A&B",
+    "address": "대전광역시 서구 만년동 만년로12번길 40",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noAeTQdE3lDwGpwJdQYB9mDEVLsiDqn-OVpzN2bmPgvY_jjJz3p1ALkAV0GTjsFPpwoLGOykvIMhRl1iWmyMZTTmx78EVqiyisg0u3crWR_3vWG6I0AuAF0GJ6BqJmGN-21bDk=w122-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "042-341-5001",
+    "review": [
+      {
+        "nickname": "The times of purity",
+        "rating": "별표 4개",
+        "text": "지나가다 들린곳 사장님이 친절하심.\n거래처 사장님과 미팅이 있어 약간 머물렀는데..\n레몬밤차를 서비스로 주시거나 허브티를 주심…"
+      },
+      {
+        "nickname": "오동통통",
+        "rating": "별표 4개",
+        "text": "가게도 넓고 가격도 저렴해서 좋아요!\n\n동네 주차가 헬 이지만 저녁엔 여유롭고\n운영도 저녁 11시까지 해서 좋습니다."
+      },
+      {
+        "nickname": "조대근",
+        "rating": "별표 5개",
+        "text": "핸드드립 아리차 푸어오버 끝까지 잘 마셨다. 믿고 마실 수 있는 커피 오랜만이다. 핸드드립 커피 추천!^^"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Caffe T",
+    "address": "대전광역시 서구 만년동 만년로67번길 22",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqSEdkmbEktVIMRYVmyDSCZ3JCCQdESLs9n9s1jd02FfXYPCfTgjZgN3zqyJyHKBZ0u2Slvnfshj9sl4y1n3Lx8iBpORqxaCusau0TWi6DV_CiHKh4bETZc-2j04070SrYmYvGH=w122-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "042-488-1277",
+    "review": [
+      {
+        "nickname": "프리랜서 H",
+        "rating": "별표 5개",
+        "text": "각종 모임을 많이 하는 룸이 있는가 카페 입니다. 하지만 천장이 뚫려있는 룸이어서 소리가 울려서 한쪽 시끄럽게 떠들면 엄청 시끄러운 단점도 있습니다. 하지만 조용히 얘기한다면 좋은 카페입니다.…"
+      },
+      {
+        "nickname": "Pyeong Seok Jo",
+        "rating": "별표 1개",
+        "text": "메뉴도 많고 커피도 맛있습니다. 매장 내 분위기도 좋았구요.. 하지만! 화장실이 급하셔서 들르신다면 큰 낭패를 보실껍니다. 좌변기칸의 벽면이 반투명 유리로 되어있고 문의 틈도 커서 거진 다 보여진다고 생각하시면 됩니다. 사람들 나갈때까지 기다렸다가 닦으셔야해요. 그 점 외엔 다 좋았습니다만 화장실 때문에 얼굴이 화끈거리긴 또 처음이네요"
+      },
+      {
+        "nickname": "Mingyoung Bae",
+        "rating": "별표 5개",
+        "text": "맛있는 illy커피를 맛볼수있는,애정하는 라떼맛집입니다.\n말차캬라멜케잌이랑 에그타르트 맛있어요.\n매장도 넓고 깔끔하며\n분리된 작은룸도있어 소모임하기에 적합합니다."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "새로남카페",
+    "address": "대전광역시 서구 만년동 145",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npt-TjTIRiGrXfSZ-21Jbyj9GoOiD0Y-k0cQ8F98kRbiCP9Nq5213nZ8ha29j2UaGn8Y3OIK3pzWJrK5iXvl9-JEhoJRVSJasg9Kb1QQ2kO_cIBsf4nl3GE3hZcvL3pT1eri3umWg=w138-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "초로쿵",
+        "rating": "별표 3개",
+        "text": "테이크아웃 하기는좋지만 앉아있기는 불편함"
+      },
+      {
+        "nickname": "sunae Im",
+        "rating": "별표 5개",
+        "text": "실내가 깨끗하고 음악도 좋구 메뉴 가격도 저렴하면서 맛있었어요.\n특히 헤즐럿커피가 헤즐럿향 시럽이 아니라 헤즐럿원두커피여서 좋아요."
+      },
+      {
+        "nickname": "김건우",
+        "rating": "별표 5개",
+        "text": "바나나라떼의 인공적인 맛이 있긴 하지만 달달하고 맛있습니다. 다들 좋아했어요 b"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "몇몇커피",
+    "address": "대전광역시 서구 만년동 245 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrYT-yCz79UtSbYFAhH09XYOWEc1AxQDxzw2FaY9QBpAInfagkzwDb0s0W2pakaWTvkcZ269o2ugFNwj3FgaCR5eNZ_VyeM3jPif0K4DArekWzu6y_wbv2JqF5arLz1JFTJV7Nc=w122-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "010-5355-7696",
+    "review": [
+      {
+        "nickname": "K1 S",
+        "rating": "별표 4개",
+        "text": "두툼한 컵에 담겨나오는 카페라떼와 사과우유 맛있었다.  역시 따뜻한 음료는 컵이 두꺼워야 따뜻함이 오래간다.\n\n인테리어를 사장이 직접했다는 얘기를 들었는데, 매우매우 아마추어적임이 느껴져서 오히려 정감있다고 할까. 테이블이나 의자 등도 벽돌이나 나무판을…"
+      },
+      {
+        "nickname": "임경희",
+        "rating": "별표 5개",
+        "text": "정말 멋진 곳이에요ㅎ\n한밭수목원, 대전 시립미술관 들렀다 주거지역으로 15분정도 걸으면 갈 수 있는 곳이에요ㅎ\n사장님이 직접 시럽, 과일청 등을 만들어서 판매하시는 곳이라 믿을 수 있고 맛도 좋네요ㅎ…"
+      },
+      {
+        "nickname": "박상현",
+        "rating": "별표 3개",
+        "text": "정말 찾기 슆지 않은 카페. 장말 커피 맛에만 집중한 1인 창업인가? 12시 지나서 가세여. 프랜차이즈커피보다는 맛이 좋기는 하네요. 그런데 카페홀 분위기는 별루.."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "인유단 베이커리",
+    "address": "대전광역시 서구 만년동 293번지 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrh1DrnaOmZgZhqUT7byVNN6IzhFJ8aBT8ICMvmz36JnT2-PtGlmEerhaGi4n64tTymIJsSnxnI8MGyeOdqUl6W8IyPZ5oNylA_H5mbBt0CLrP-4GN5ZGWK-p4fE8XGUMgc2iM5=w408-h724-k-no",
+    "rating_value": "별표 4.2개 ",
+    "call_value": "042-483-4040",
+    "review": [
+      {
+        "nickname": "DJ K",
+        "rating": "별표 4개",
+        "text": "요즘 프렌차이즈  빵집보다는 직접 굽는 동네빵집을 이용하는 편인데 오랫만에 인유단 방문했어요. 물가가 많이 올라서 그런지 조금 비싸지만 빵 맛있어요."
+      },
+      {
+        "nickname": "Sungmin Ju",
+        "rating": "별표 5개",
+        "text": "맛있는 빵집"
+      },
+      {
+        "nickname": "Hyunsook Na",
+        "rating": "별표 5개",
+        "text": "교회에서 하는 카페라서인지 친절하고 커피도 맛있고 커피를 마시는 창가뷰도 아주 훌륭합니다. ^^\n강추하는 메뉴는 요거트에스프레소...\n그리고 여름에는 팥빙수가 그 어디보다 맛있습니다. 또 여름이 기다려지네요. ^^\n겨울에는 생강라떼... 진하고 쌉싸름한 맛이 감기가 걸렸다가도 똑 떨어지는 맛입니다. ^^"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "커피땅거미",
+    "address": "대전광역시 서구 만년동 249",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no7uoJ0fQO5W7JNfGnF-_BsP1UQ3f4Ijt_fnS0iZinyetkvzNuR2TMx6GUXknoOKKwgPGDjHsXEri3bcSrhYrN1yqXJSFpF7KRt9aQ8wOJUbMDrtzewFVC1kTMlVMFvcrJNkpWQ=w92-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "042-471-2490",
+    "review": [
+      {
+        "nickname": "Cheon LEE",
+        "rating": "별표 1개",
+        "text": "베스트 메뉴라는 바닐라 라떼를 시켰습니다. Ice를 추천한다고 키오스크에 써있어서 아이스로 시켰지요. 머신으로 샷을 내리지 않고 캔에 든 음료를 따라주네요. 맛도 걍 편의점에서 사먹는 것 정도였습니다. 진짜 진짜 실망스러웠어요."
+      },
+      {
+        "nickname": "사미",
+        "rating": "별표 5개",
+        "text": "대전에서 제일 맛있는 커피 집 중 하나.\n\n'커피가 다 거기서 거기지'…"
+      },
+      {
+        "nickname": "ek",
+        "rating": "별표 4개",
+        "text": "따뜻한 플랫화이트 맛있어요 작지만 나름 아늑한 카페이고요 붐비지않아서 좋아요. 벽에 걸린 옛날 유화 액자보면서 커피마시기 좋은곳입니다.  아파트와 초등학교가 근처에있는 빌라1층에 있어서\n나름 조용한 동네에 있어요"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "OFFBEAT",
+    "address": "대전광역시 서구 만년동 245 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq1niUPHYHjhzPuhL6ft7YK6GVCUtllohZQr6KMIyfgqGQZ8VSNFzdFyq_0jUMxpn_-yTafM5Ri2ulsprYE2PzIO21SeDlt40dvbTAm0zeyvEn_IRcKSQ_J1ZVU6mRu1UkzF05I=w92-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "010-5355-7696",
+    "review": [
+      {
+        "nickname": "K1 S",
+        "rating": "별표 4개",
+        "text": "두툼한 컵에 담겨나오는 카페라떼와 사과우유 맛있었다.  역시 따뜻한 음료는 컵이 두꺼워야 따뜻함이 오래간다.\n\n인테리어를 사장이 직접했다는 얘기를 들었는데, 매우매우 아마추어적임이 느껴져서 오히려 정감있다고 할까. 테이블이나 의자 등도 벽돌이나 나무판을…"
+      },
+      {
+        "nickname": "임경희",
+        "rating": "별표 5개",
+        "text": "정말 멋진 곳이에요ㅎ\n한밭수목원, 대전 시립미술관 들렀다 주거지역으로 15분정도 걸으면 갈 수 있는 곳이에요ㅎ\n사장님이 직접 시럽, 과일청 등을 만들어서 판매하시는 곳이라 믿을 수 있고 맛도 좋네요ㅎ…"
+      },
+      {
+        "nickname": "박상현",
+        "rating": "별표 3개",
+        "text": "정말 찾기 슆지 않은 카페. 장말 커피 맛에만 집중한 1인 창업인가? 12시 지나서 가세여. 프랜차이즈커피보다는 맛이 좋기는 하네요. 그런데 카페홀 분위기는 별루.."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "카페 1896",
+    "address": "대전광역시 서구 만년동 313",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npm3FEAdX5H0XGranWSE3pHrR-_QUhwKK2pO0y2tEmhBzDy-v8oquFKYw53zEihzsKGgh-FpfWyW1tndcROpSliHNMFECf68pLVEXpJJRArH-1cC6ZS_Su4dtKLgykQ8SMKCSQA=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-488-0313",
+    "review": [
+      {
+        "nickname": "정세윤",
+        "rating": "별표 4개",
+        "text": "여기는 젤라또를 파는 까페입니다.\n하지만 그렇게 맛있는지는 ㅎㅎㅎ\n커피도 로스팅합니다. 커피는 맛있어용 2층에 따로 넓은 홀이있습니다. 1층 주차장 이용가능하지만...복잡시럽습니다.\n아! 커피 카운트해서 11잔째는 무료입니다~^^"
+      },
+      {
+        "nickname": "나진지",
+        "rating": "별표 5개",
+        "text": "맛있다. 가격은 히겐다즈나 나뚜르보단 싸다. 헤이즐넛은 특유의 느끼함이 있으니 상큼한 맛을 원하면 자두나 망고같은 과일로 고르는게 좋겠다. 1층에서 오더만 할 수 있게끔 하고 2층에 자리가 있는게 깔끔해서 좋았다."
+      },
+      {
+        "nickname": "guy electric",
+        "rating": "별표 4개",
+        "text": "분위기가 좋네요. 아이스크림 맛이 베스킨라빈스 보다 좋고, 맛으로 주는 한 스푼도 좋아요"
+      }
+    ]
+  }
+]

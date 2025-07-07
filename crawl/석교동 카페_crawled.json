@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "name": "브릭스",
+    "address": "대전광역시 중구 석교동 4-11",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nphA9Vqo6XN-A_gxJMsBqHDRU2dtBWh8sLWXlcDLVxyO-GSLtQNkY1ZuJunGwewrIuiunYHiqrK7tj8g4tGN-kYQ9C-I5jgBZ8IZDYO2vDyjHk1gmnvusrGR7x_HReHa6agrCvaQA=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "체리",
+        "rating": "별표 5개",
+        "text": "사장님이 친절해요!\n음료 나오는 속도는 다소 느릴 수 있으나 그만큼 진심을 다해 만들어주십니다 맛도 굿굿\n커피도 맛있고 다른 음료들도 맛있어요"
+      },
+      {
+        "nickname": "김우규",
+        "rating": "별표 5개",
+        "text": "커피맛이 좋은 카페\n디저트에 있는 블루베리도 신선하니\n좋았습니다"
+      },
+      {
+        "nickname": "계란하나",
+        "rating": "별표 5개",
+        "text": "버터라떼?\n맛있어요! 완전!\n좀 오래걸려서 그렇지 기다리는거 후회안해여💕\n오늘도 마시러 갈거에요!…"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "앙트르뽀",
+    "address": "대전광역시 중구 석교동 58-13",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrX3bX6mR2ny7CEe0eEfI3swc3nrptSE5_LuEjhEK3-2UYPi_pvLtwkDc7nIdBIuOA9qZqpTUaS54FmZBcSJPGTOm4EISalYzC3FzSd7PzSyiG1gr183ugCroGVN4RwgxWxVRc=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-272-5254",
+    "review": [
+      {
+        "nickname": "박미라",
+        "rating": "별표 3개",
+        "text": "음....사진에서와 같이... 너무..물건이 많다보니..관리힘드실듯..\n카페 들가자마자..먼지냄새가..났어요~ 방문해보심..어떤냄새인지 아실듯..\n화장실 가는길쪽도.. 잡동사니 너무 많고..그냥.. 마구잡이로 쌓여있어요;;…"
+      },
+      {
+        "nickname": "YURM G",
+        "rating": "별표 5개",
+        "text": "겨울에 방문하면 정말 춥습니다. 사진을 찍기 좋은 공간이고, 굉장히 유니크한 분위기라서 독특한 공간을 선호하는 분에게 좋습니다."
+      },
+      {
+        "nickname": "하이하이",
+        "rating": "별표 5개",
+        "text": "차 마시면서 구경도 하고 책도 보고 좋았어요. 볼거리가 너무 많아요. 까페에서 나오면 개천길이 있어요. 개천길 걷다보면 대전역, 중앙시장, 으능정이거리로 통하는 길이 나와요."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "늘커피",
+    "address": "대전광역시 중구 석교동 41-4번지 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npqKFOknS0KHrgQY0Y0d2FyaohCUYI1CVJjStJreQzbeS2HmbOCtWoj_eBxcpMUq8A663EyzVcjMO_yJSJf8i4i-nE9V5-x6QozjamgspxdtZAMEwY2FNaCthoBhMGOS3Rrzvl-=w122-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "박은숙",
+        "rating": "별표 4개",
+        "text": "편안한 곳이에요\n주인장이 참 좋은분입니다\n자주 가끔 가고싶은 그런 곳 이에요…"
+      },
+      {
+        "nickname": "청춘을달리는 작거",
+        "rating": "별표 5개",
+        "text": "사장님도 친절하시고, 맛도 훌륭합니다!"
+      },
+      {
+        "nickname": "금이tv",
+        "rating": "별표 5개",
+        "text": "빵이 싸요 그리고 모닝빵이 여러개 입니다............."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "템푸스",
+    "address": "대전광역시 중구 석교동 60-2",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np8vamSy42NolCRzqljMQge2NbKaa3SVghkR9mUvh0Mzkusp5dmCyaIlXJtX-tWIxS0Cv81W1KCKABRdgs8Zvv_YpnMmWeuEuCqYZXwuR9KLr2JmeZ31C_NKl7XMYZwhPH0aABFpw=w122-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "042-283-4688",
+    "review": [
+      {
+        "nickname": "청춘을달리는 작거",
+        "rating": "별표 5개",
+        "text": "석교동의 괜찮은 커피집.\n실력도 맛도 좋습니다~"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "카페쉼표",
+    "address": "대사동 197-10번지 1층 중구 대전광역시 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrCJs5kDBqC1K4qAOLZa3G0I7nLHX9YKv-UIwGjTNPExihRjOEwMypvkHDMGJ93RsY5pmlRRL3pN1Q9XS-G6Ezcdqe0tGNQgY1oRDtxHogDfrKVzW9mq19tfCsWwmktWyXZM-6a=w80-h106-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-221-1009",
+    "review": [
+      {
+        "nickname": "sanghyun park",
+        "rating": "별표 4개",
+        "text": "아담하지만 아기자기한 인테리어로 분위가 좋네요. 상호명대로 잠시 쉬었다가기 좋습니다. 커피향도 구수하고 좋고 개인적으로는 블루베리 스무디가 괜찮네요."
+      },
+      {
+        "nickname": "이미리",
+        "rating": "별표 5개",
+        "text": "커피를 맛있게 드시고 싶다면?\n오카리나 연주가 주인님과 공연장이 있는 보문산 카페~^^"
+      },
+      {
+        "nickname": "박미라",
+        "rating": "별표 5개",
+        "text": "상호명처럼..쉼표가 되는공간인듯~\n커피잔도 이쁘고.. 힐링되는 시간이었어요~!!"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "멜뷰카페",
+    "address": "대전광역시 중구 대사동 197-36",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npfXlcDkF9Oyq9z13dcK7s9Ro-9g1SO_CBXEBpJyIVZy04m1OH2KcUuxVdC7dRIeUV0zCBssJOVDDLbEo78TEpaBx_hhRfI9MdLj4Q7IeiS7i0qjroykr2c-CxfpO1ZpltPoxc=w138-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Leonar Seol",
+        "rating": "별표 4개",
+        "text": "위치가 보문산에 위치해서 경치가 좋은 편입니다. 커피랑 빵 가격은 비싼 편인 것 같아요. 빵은 5~6천원, 아이스크림 5천원, 커피 6천이상 입니다. 실내 공간이 테이블도 많고, 주변 경관이 좋아서 커피보다는 바람 씌러 가기 좋은 곳 같아요. 옥상은 반려견 동반 가능합니다."
+      },
+      {
+        "nickname": "길현섭",
+        "rating": "별표 4개",
+        "text": "장점 뷰좋고 실내공간넓고 음료 빵맛있음\n직원분들친절 ,테라스 있어서 좋음\n테이블 레이아웃 적절히 잘돼있어서…"
+      },
+      {
+        "nickname": "Iron_brick",
+        "rating": "별표 4개",
+        "text": "보분산 중턱에 위치하고 있어서 숲뷰를 선사함. 1층부터 4층(루프탑)까지 있는 대형카페이고 4층엔 애견동반이 가능함. 빵 퀄리티가 대체적으로 좋은데 특히 몽블랑이\n제일 맛있음."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "보문산 한옥카페",
+    "address": "대전광역시 중구 보문산공원로497번길 109",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noIhvZl5zHn3SHv73ume43UjP2SHKUVMxoMLSNVVy3TDhxFayUS7ULD-lFAHLwhXId6H14y5L3FWCgBF_61ucEnvAi8352YxXB8jWciRTAmUlGdKEb00Z2UOGgDi3X5riwo-x1y=w163-h92-k-no",
+    "rating_value": "별표 4.0개 ",
+    "call_value": "042-256-6615",
+    "review": [
+      {
+        "nickname": "일주는못말령",
+        "rating": "별표 5개",
+        "text": "[230226 Family Tea Time]\n- 유씨네부엌에서 점심 먹고 왔어요 ㅎ\n유씨네부엌 영수증 가져가서 보여드리면 음료 할인해주니 참고하세요!!…"
+      },
+      {
+        "nickname": "sanghyun park",
+        "rating": "별표 4개",
+        "text": "카페안이 아담하고 좋습니다. 2층은 신발을벗고 올라가면 한옥 방으로 꾸며져 있습니다. 실내외에 야외 테라스도 있어 맘에드는 공간에서 차한잔 하기 그만입니다. 바로 밑에서 샤브샤브로 식사하고 영수증을 보여주면 천원할인을 해줍니다."
+      },
+      {
+        "nickname": "김홍선",
+        "rating": "별표 3개",
+        "text": "나무로 인테리어를 해주셔서 따스한 분위기고 테이블 순환됐을때 바리스타분들이 바루바루 안치워주셔서 직접 상을 닦는 불편함이 있긴 했지만 나이 지긋한 여사장님 밝은 웃음으로 주문받아주셔서 기분은 좋았어요!"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Y cafe",
+    "address": "대전광역시 중구 대흥로 128",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqnvtZ9Vn9U5DbQeBYpVlGAIROV-IlPxJOtkrWM1eqVlC8FB76D863FO52Gnv5wVxlq_2wXjKHGGkvCn5rjXzefrDsFf2LgVi2dwTNBxQ15Blx8BgtCDnJpSoLPByVKzyluh0G=w122-h92-k-no",
+    "rating_value": "별표 4.7개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Minsob Song",
+        "rating": "별표 4개",
+        "text": "카페 위치가 이전되었습니다.\n유성 문지동에서 중구 대흥동128번지 로 변경 되어 운영되고 있답니다."
+      },
+      {
+        "nickname": "양은주",
+        "rating": "별표 5개",
+        "text": "싸고 짱 맛있고 분위기도 좋고"
+      }
+    ]
+  }
+]

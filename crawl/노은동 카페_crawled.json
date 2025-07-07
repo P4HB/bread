@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "데미재",
+    "address": "대전광역시 유성구 노은동 423-1",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrxHnAxfGgLhTU1WfCWv0C7v8DxkrLHMi8aHFidVEWsauEJMOZvYWZsg-R11sjPFwklmAfvdfvZkmyzXYjNsbm2zja3N5J0pEKqgAyu46tdilBlTqKmTdkZMNr9lfV_WJVoIrHiZQ=w163-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Skykim",
+        "rating": "별표 5개",
+        "text": "야외 테이블이 많고 경치가 좋아서 날씨 좋은 날 나들이하기 좋음. 실내 공간은 2층 포함해도 넉넉하지는 않음."
+      },
+      {
+        "nickname": "HanJae Lee",
+        "rating": "별표 4개",
+        "text": "\"아이스 아메리카노 & 밀크티 & 플레인 스콘\"\n\n야외 정원에도 앉을 수 있고, 건물 1,2층에도 자리가 있어요.\n커피 맛은 평균은 하네요."
+      },
+      {
+        "nickname": "Jeila K.",
+        "rating": "별표 5개",
+        "text": "정원이 넓은 카페~ 요즘 송화가루 날려서 테이블에 물티슈가 마련되있어요^^ 분수도 있고 그네의자도 있고 야외가 좋아서 날씨 화창한 날 방문하시면 좋을 것 같아요~~~"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "더노은로",
+    "address": "대전광역시 유성구 노은동 550-2 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrRlMwqzS2inzgF5VTfL3oYQ2GHyr62UpzUf07Kx2_acLHOdZYPap3KVSOIVeR_UfvbWlJNRBCsVVK-1lEX5GN3x7rB3pOQI9O41xKh2ZBJ6vgA56arOUWLuSjEca380WfMN5QE=w122-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "K. S. Lee",
+        "rating": "별표 5개",
+        "text": "이 근처 가면 꼭 들르는 카페. 주변에 다른 카페들도 있는데.. 이 곳과는 비교불가..\n\n꽤 큼지막한 카페인데.. 인테리어 잘 되어있어 분위기 아늑하고, 별도의 미팅룸도 있음.…"
+      },
+      {
+        "nickname": "BOBBEY AXELORD",
+        "rating": "별표 4개",
+        "text": "아쉽게 사진은 찍지 못했지만 개인적으로는 만족했습니다. 우선 직원분이 친철했고, 커피 맛도 나쁘지 않았습니다.. 공간도 넓어서 편안했습니다. 화장실은 깨끗했습니다. 더이상 카페에서 이 이상 무엇을 바라겠습니까?"
+      },
+      {
+        "nickname": "노성빈",
+        "rating": "별표 3개",
+        "text": "나름 넓고 한적한 분위기의 카페\n메뉴는 평범"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "더노은로",
+    "address": "대전광역시 유성구 노은서로 19-2 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrRlMwqzS2inzgF5VTfL3oYQ2GHyr62UpzUf07Kx2_acLHOdZYPap3KVSOIVeR_UfvbWlJNRBCsVVK-1lEX5GN3x7rB3pOQI9O41xKh2ZBJ6vgA56arOUWLuSjEca380WfMN5QE=w122-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Petra Choi",
+        "rating": "별표 5개",
+        "text": "오랜만에 대전에 왔다가 좋은 카페에 깜짝 놀랐어요. 분위기도 좋고, 시설도 좋고, 진짜 제주도를 옮겨 놓은 줄 알았어요😍\n\n빵과 커피 가격은 무시무시했지만, 맛이 가격을 인정해주는 집이랄까? 카페 분위기는 도심 속에서 힐링하는 시간이었어요.…"
+      },
+      {
+        "nickname": "Kyu",
+        "rating": "별표 5개",
+        "text": "노은에 이런 대형 카페가 있다는 것이 놀랍습니다. 제주도 컨셉으로 하루방 장식품도 많고, 넓은 정원 곳곳이 현무암 스타일로 꾸며져 있습니다. 뒷 산쪽으로 산책길도 잘 되어있어 따뜻한 날은 걷기도 좋습니다. 커피와 빵 종류도 많고 맛있습니다. 겨울엔 제주귤도 판매하는데 맛있고 각종 굿즈도 판매합니다. 매장 내부도 넓고 깨끗하고 야외 좌석도 깔끔해서 좋습니다."
+      },
+      {
+        "nickname": "김효정",
+        "rating": "별표 4개",
+        "text": "분위기좋고 빵맛도 괜찮은 편 사람들이 수다떨러많이옴 노트북 가능인데 콘센트는 없으니 충전해오기"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "커피향기 사람향기",
+    "address": "대전광역시 유성구 노은2동 908-9",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqjlgRO1gf2A8ms0aDK3ZvRfrccnhtU4HYuji9-vCI4F96G570Y1JsSxrljWY6F3aYSv174VSwiefWw3rjZ2C5ADdHZPn1R58WMf8Tpqir5lU81AI0c_M4L_DkBbEExTsYfT5G9=w122-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "042-826-7892",
+    "review": [
+      {
+        "nickname": "dale",
+        "rating": "별표 5개",
+        "text": "사장님이 친절하고 커피맛도 좋습니다 사장님이 커피를 잘 아시는분같아요 음악도 잔잔하게 분위기 좋아요"
+      },
+      {
+        "nickname": "송대근",
+        "rating": "별표 5개",
+        "text": "인생카페 생겼습니다. 이곳이에요\n\n5만원짜리 커피가 있다고 해서 궁금해서 가긴 했는데(물론 다른거 먹었지만)…"
+      },
+      {
+        "nickname": "석종명",
+        "rating": "별표 5개",
+        "text": "다양한 커피를 여유있게 즐길 수 있습니다."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "은구비로 커피 로스터스",
+    "address": "대전광역시 유성구 지족동 917-11",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npRysyAFmzjktwGibrRv28hosDna4-KuBurhhU3aYGLm7IV6W7cvrsLJYguvrdKh30H-dLyOh78D6j1BbSB7LmhOdXew6_Zzd5lIxNKlEqfMtwEoQT2mrNCu_Oc0bLkBgL69y6M=w163-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "강재훈",
+        "rating": "별표 5개",
+        "text": "대전여행\n라떼\n맛집으로…"
+      },
+      {
+        "nickname": "SungMin Park (Ddurm Ddurm)",
+        "rating": "별표 4개",
+        "text": "약 30석 정도의 자리가 있고 밖에서 보이는 것보다 내부 공간이 넓습니다.\n커피는 사진에 보듯이 정말 종류가 많고 다양합니다. 개인적으로 원하는 것을 말씀드리면 추천을 해주십니다.\n다만, 추천받은 커피의 맛은 생각과는 약간 다릅니다."
+      },
+      {
+        "nickname": "Jeila K.",
+        "rating": "별표 5개",
+        "text": "노은3동 은구비커피만 가보고 본점은 처음 와봤는데 똑같은 맛이예요^^ 직원들도 친절하고 따뜻한 분위기의 본점 인테리어가 더 좋았어요~"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "크라운샤이니스",
+    "address": "대전광역시 유성구 지족동 918-13",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqvQptRUa4girjQNF-ZLBbxHh8bQHDehk7NsdaESLxFJuNJ7xKcjxWuUGbpPRA0cTK5i-XSahEALkKofZFgkmLnbrsFmbvvy93lrfAOv9GOOP89i-ljDy87vdW30pmqwG_1kVVbFw=w80-h106-k-no",
+    "rating_value": "별표 4.7개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "띵위샹",
+        "rating": "별표 4개",
+        "text": "네이버펌\n\n크라운샤이니스 커피 로스터리가 확장이전하였습니다. 유니크한 건강먹거리와 직접 로스팅한 신선한 커피향이 가득한 공간입니다. 나무들의 사회적…"
+      },
+      {
+        "nickname": "Sukhoon Oh",
+        "rating": "별표 5개",
+        "text": "사장님의 장인정신이 엄청난 카페. 항상 친절한 직원들. 변함 없는 커피맛. 우리동네 이런 카페가 있다니!"
+      },
+      {
+        "nickname": "규니규니규",
+        "rating": "별표 5개",
+        "text": "제가 구글에 장소 추가요청했습니다!\n아이스 시그니쳐라떼 먹고 홀딱 반했습니다.\n다른데 가서 못먹겠어요!!! 스타벅스는 개나줘..\n집 근처에 이런 곳이 있다는게 행운이네요❤️"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "코삼이커피",
+    "address": "노은동 510-11번지 지상 1층 103호 유성구 대전광역시 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npjMK3P-B6f77A1P6l1pmR8d2Keslq2QoBaEcn2BHE6IpK5N-G2xEGfg48LwWjz5zeCXniRbT5L62go3WDHgt-xpfKD-WzohZWR1WBr04Me5KGaeXO6vOvHB4Kwa_kZjnd3hPLTiA=w92-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "070-7758-7757",
+    "review": [
+      {
+        "nickname": "띵위샹",
+        "rating": "별표 5개",
+        "text": "COFF33 코삼이커피\n\n대전 유성구 노은서로76번길 75-15…"
+      },
+      {
+        "nickname": "박미라",
+        "rating": "별표 5개",
+        "text": "여기 커피가 유명하다죠~~\n설탕이 씹히는 데메라떼~~  맛있어요~~\n커피는..아이스만 가능~…"
+      },
+      {
+        "nickname": "오동통통",
+        "rating": "별표 3개",
+        "text": "한줄평 : 싸다, 빠르다\n\n키오스크가 밖에 있고 대기용 전광판도 밖에 있는…"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "인스트로우 카페",
+    "address": "대전광역시 유성구 노은동 549-3",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrjguNpF1DaNYNNrD7y6aWWcWiyfBPm-bsU0gyd9WP4aocieb_jgePLb1QLl9sxVonYoZXM0yAImIM4myv7ZsNJ1CeJKyfQCQQRpTBuxj51wjN1H6tt3b8fxSfym5XM1wSZH_2r=w163-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Jueon",
+        "rating": "별표 5개",
+        "text": "대전월드컵경기장역 근처에 위치한 카페.\n\n양이 진짜 어마무시하게 많고 가격은 스타벅스 아메리카노 가격.…"
+      },
+      {
+        "nickname": "S S",
+        "rating": "별표 5개",
+        "text": "아메리카노 정말 가격이 싸고 맛있습니다!"
+      },
+      {
+        "nickname": "안팔아요",
+        "rating": "별표 5개",
+        "text": "사람 없어서 쾌적함 (옆 커피숍은 미어터지는데)\n커피 맛이 괜찮음\n인테리어가 엄청 좋지는 않고 특색도 없지만 의자도 많고 앉아 있기도 편함"
+      }
+    ]
+  }
+]

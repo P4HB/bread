@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "커피프레스까",
+    "address": "오류동 191-18번지 중구 대전광역시 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqkAo9FOGk6WsLKZnnytNx7pU3qBrgqKD-gr68bZpd9sqC-IkBWzJJzURPscQoCi1L8chlO5v-OYjPY6ZiyprCDIPKWm7N51xdhWCSVNvwzTL0bonG7mfp8KkaBAJ7eALkPFtvJ=w92-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "042-527-4264",
+    "review": [
+      {
+        "nickname": "jung러블리쎄",
+        "rating": "별표 5개",
+        "text": "에스프레소마끼아토와 라떼가 맛있어요\n오랜시간 로스터리카페 중 한결같이 그자리에서\n맛을 똑같이 유지하는 곳이예요☕️〰️♥️"
+      },
+      {
+        "nickname": "도윤숙",
+        "rating": "별표 4개",
+        "text": "커피 맛있어요 매장커피향기가 가득한곳?\n전에 커피마시고 사진을 못찍었는데\n오늘 커피마시러 왔더니 문닫,,,\n일요일은 쉽니다"
+      },
+      {
+        "nickname": "노랑머리소년",
+        "rating": "별표 5개",
+        "text": "커피향이 가득한곳\n편안한 분위기를 느끼고 싶다면."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "목수정",
+    "address": "대전광역시 중구 오류동 계룡로874번길 47",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npx54rFlpBAjxjEPqwkvRyHD3I8LMzDnzI4x40CC_DCVD8aBmlVdrGJH__jL_da2fJLDcRMPZQCf9rqLgoacXCo1KJqD9YPcKM1wN1BSq6Pj4XN-l6-GytrmGcmA6eMmoVyBJk-TA=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-522-5512",
+    "review": [
+      {
+        "nickname": "S S",
+        "rating": "별표 5개",
+        "text": "간판이 조금 작고 혹시 여긴가 하는 입구룰 가진 카페입니다. 가게 내부는 목공 컨셉으로 분위기 있게 잘되어 있으며 커피 맛있습니다. 또한 디저트 메뉴인 요거트는 과일도 같이 있어 맛있게 먹었습니다. 가장 추천드리는 디저트는 치즈 한모인데, 여기오시면 꼭 드셔보시길 추천드립니다. 치즈가 전혀 느끼하지 않고, 정말 고소한데 치즈 아래에 견과류가 있어서 치즈와 같이 먹으면 더욱더 맛있게 먹을수있습니다."
+      },
+      {
+        "nickname": "YeJu Lim",
+        "rating": "별표 5개",
+        "text": "목공예 작품과 작업도구들이 있어요~출입구에 간판이 잘 안보여서 입구찾기 쉽지 않아요~ 말차라떼 음료 다 맛있어요~ 나무티스푼 너무 깜직 ㅎ치즈한모는 아래 씨얼이 들어있어요 ~ 꼭 먹어야할 시그니처메뉴입니다 분위가 따뜻한 느킴으로 너무 좋았어요"
+      },
+      {
+        "nickname": "길명숙",
+        "rating": "별표 5개",
+        "text": "목수정 리코타치즈가 두부처럼 나온다고 해서 찾아갔는데 독특하고 편안한 분위기의 카페였어요~목수 하시는 분이 인테리어를 했나봐요~한쪽에는 연장들과 작은 나무로 깍은 주걱같은 것들이 전시되어있구요~~그런데 밖에서는 카페같지 않은 외형의 문을 가지고 있어요~~  요거트도 맛있었구요~~커피도 괜찮았어요~~ 특히 치즈도 정말 맛있게 먹고왔어요~그런데 치즈는 생각보다 작아요!  그래도 맛은 좋았답니다.ㅋ"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "러스티",
+    "address": "대전광역시 중구 오류로 19",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npGrYgrvawYtJ0w5Ry-DGJOQyQ2Q4FroD6oz9CsXA80yeCsgiS3boHJz5gaMW0yMYvaesYUzfrDnDOxHgjhGB3ciwbkuhZN5bctdN5ZcSVDxw5iIb19ndDHZXSIz82ySpmCUnN67Q=w122-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "정윱",
+        "rating": "별표 5개",
+        "text": "크로플 진짜 존맛탱 여기 딸기라떼 녹차라떼도 존맛탱 초코나무숲도 있는데 베라 그거 좋아하시는분은 좋아할듯 가게가 깔끔하고 사장님 핵친절하시고 빔으로 영화도 틀어놓을때도 있어서 너무 감성적이면서 분위기 좋고 맛도 있는 카페! 뒷쪽에 주차장도 있어 아주 좋아요~~"
+      },
+      {
+        "nickname": "YANG HEE CCHUNG",
+        "rating": "별표 4개",
+        "text": "서대전역 광장에서 친구 만날 때 가까워서 좋았어요\n규모는 아담한 편이지만 일욜 저녁 6시~8시까지 머물렀는데 다들 매너있는 손님들인지 너무 시끄럽지 않고 좋았습니다  카페 들어가서 젤 안쪽인 후문? 쪽 좌석들 중에 화분 옆 좌석 앉았는데 괜찮았고요…"
+      },
+      {
+        "nickname": "박지은",
+        "rating": "별표 5개",
+        "text": "가족들과 방문했는데 안쪽에 큰 테이블이 있는 룸이 별도로 있어서 편안했어요"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "커피프레스까",
+    "address": "오류동 191-18번지 중구 대전광역시 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqkAo9FOGk6WsLKZnnytNx7pU3qBrgqKD-gr68bZpd9sqC-IkBWzJJzURPscQoCi1L8chlO5v-OYjPY6ZiyprCDIPKWm7N51xdhWCSVNvwzTL0bonG7mfp8KkaBAJ7eALkPFtvJ=w92-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "042-527-4264",
+    "review": [
+      {
+        "nickname": "jung러블리쎄",
+        "rating": "별표 5개",
+        "text": "에스프레소마끼아토와 라떼가 맛있어요\n오랜시간 로스터리카페 중 한결같이 그자리에서\n맛을 똑같이 유지하는 곳이예요☕️〰️♥️"
+      },
+      {
+        "nickname": "도윤숙",
+        "rating": "별표 4개",
+        "text": "커피 맛있어요 매장커피향기가 가득한곳?\n전에 커피마시고 사진을 못찍었는데\n오늘 커피마시러 왔더니 문닫,,,\n일요일은 쉽니다"
+      },
+      {
+        "nickname": "노랑머리소년",
+        "rating": "별표 5개",
+        "text": "커피향이 가득한곳\n편안한 분위기를 느끼고 싶다면."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "카페쉼",
+    "address": "대전광역시 중구 오류로 24",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrTiF9_WIyxb19eVkyzVsYXXlidf7SWRFG1yGoB4HIniXH7IbWH6mTkd8gMo_I9O_3ua2HepcS0OnF25dwh-tY5ZIHZkhd2YX1iD0QzxuyLL2AatOqj0SUeUdybAD8ZUwdYfrYB=w92-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "070-8814-0110",
+    "review": [
+      {
+        "nickname": "엥tmi",
+        "rating": "별표 5개",
+        "text": "시설이 깨끗하고 널찍합니다. 깔끔한 인테리어.빵빵한 에어컨. 적당한 볼륨의 배경음악. 조용히 쉬거나 얘기하기에 좋은, 정말 쾌적한 곳이예요.\n특히 카페 내부 화장실이 좋아요. 남녀분리돼 있는데다 두칸씩입니다."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "카페나의이야기",
+    "address": "대전광역시 중구 오류동 번지 1층 160-1",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nplth8A9yFJV5HAZgmXcTim-aH6O5oImvO2E-CS-ogEGnCwbcbDxeSx4pA_VQ1YBK_dycfeBneSttNAXEVVOvkNuUerWf6AgOzyVW14guGeYOZok7nMT_oT88wrBbDMnVJLvH2q=w163-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "BOHAN YUN",
+        "rating": "별표 5개",
+        "text": "착한가격에 양도 많고 편안하게 대화를 나눌수도 있어 적극 추천합니다."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "카페 담담",
+    "address": "대전광역시 중구 오류동 계백로1685번길 53",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqoklOk0bQQsrXUyZvfAd160h9FWgt7ozYiasc-oddoKRjhxtGFH2XI8UhVoKVcPyUyt9noZvwYWKH5HYdN4n14SF-7zvp3rzCbU4iSa0wgnhLcfPosrACRdt1D3vHDfShiOkUC=w122-h92-k-no",
+    "rating_value": "별표 4.9개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "임동영",
+        "rating": "별표 4개",
+        "text": "생진지 얼마 안 된 것 같은 카페\n내부 인테리어가 깔끔하고 자리가 나누어져 있어서 프라이빗 한 느낌이 있어서 좋았습니다\n커피도 맛있네요"
+      },
+      {
+        "nickname": "이경민",
+        "rating": "별표 5개",
+        "text": "주택을 개조한 카페같았고 프라이빗하게 공간 분리가 되어 있어서 좋았어요. 음료맛도 괜찮고 심플한 인테리어가 좋았습니다."
+      },
+      {
+        "nickname": "ga n",
+        "rating": "별표 5개",
+        "text": "카페도 이쁘고 커피 디저트 다 맛있어요."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "커피메종",
+    "address": "대전광역시 중구 오류로 19-5",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqGBCvgg9osn23np41i9IhQEar-DmOtD3c_HLepfCfmQblyIcHzE2Qn9PoLXUB4V9MWrhnG42ih4wnyXQdbIA5lytLsvlFXf8xTyNQ9KxUfmQg-XhV8H96xebrKaeFB7LTx4lT3Cg=w163-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-522-1359",
+    "review": [
+      {
+        "nickname": "Steven Hwang (아쭈s)",
+        "rating": "별표 5개",
+        "text": "대전광역시 중구 오류동 서대전역 앞에 있는 커피전문점. 넓고 깔끔한 실내와 작은 정원도 있고, 안쪽에 넓은 좌석들이 있음. 의외의 장소에서 맛있는 커피를 먹을수 있어 좋았던 곳."
+      },
+      {
+        "nickname": "Junghae Lee",
+        "rating": "별표 5개",
+        "text": "까페 분위기도 좋고 커피도 맛있습니다\n들어가는 입구가 정원처럼 참 예쁜데 가게 안에서도 보여서 좋더라구요ㅎ\n근처 결혼식 마치고 대인원으로 방문했는데…"
+      },
+      {
+        "nickname": "TRAVEL",
+        "rating": "별표 5개",
+        "text": "분위기 매우좋고 편하기까지 커피자체도 너무맛있어요"
+      }
+    ]
+  }
+]

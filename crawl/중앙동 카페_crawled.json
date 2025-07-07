@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "해밀시아(Haemilsia)",
+    "address": "경기도 안산시 단원구 고잔동 중앙대로 943",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nod1zNnCAjzH6kOv5151Youcj6Slaq7PSbKpPS2nVrRaTd6lh-2VSHw2dsqqwQDixGNmfxREWFkdpgWTCwIYK9AvwE9W_LXJhNQ_QHEsOHSfGjqSYi9Efdue9jIICHviovNtMvG=w80-h106-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "031-481-9410",
+    "review": [
+      {
+        "nickname": "In Park (Schi)",
+        "rating": "별표 5개",
+        "text": "기존의 호텔 로비를 카페로 개조한건지 카페가 매우 넓고 특색있게 꾸며져 있습니다."
+      },
+      {
+        "nickname": "e pasteIblu",
+        "rating": "별표 4개",
+        "text": "우선 카페가 넓습니다. 좌식 입식 등 좌석 종류도 다양합니다. 과제하는 학생들도 많고, 카공족도 많아요. 규모가 크다보니 오랜 시간 앉아 있어도 전혀 눈치가 보이지 않습니다. 다만 노트북 좌석은 인기가 많기 때문에 앉고 싶은 분들은 빨리 선점하셔야 할 것 같네요. 연인과 데이트를 하거나, 여러 명의 친구들과 대화를 할 장소로는 매우 적합하다고 생각합니다.…"
+      },
+      {
+        "nickname": "김탄산수",
+        "rating": "별표 5개",
+        "text": "아주 만족스러운 장소. 한호전에서 운영하는것 같다. 책읽거나 공부하기 적합하고, 다양한 형태의 테이블배치로 담소를 나누는 목적으로도 손색없다. 공간과 천장이 넓어 시야가 트이고 인테리어도 고급스럽다. 음료값도 싸다."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "2morrow",
+    "address": "경기도 안산시 단원구 예술대학로3길 18",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqFuCv0XjWCDQMhXg_Er-4pJEiEpc5rgu7pHeac0bB9m4x51dz3b620Ix2SQUHeEIxp5T1zNHYzvsacPaO3a_5I_AmDwQoq68I9QcI-hG75v9X4TpnK9blxnfSsyt5o1HMLk8bQ=w204-h92-k-no",
+    "rating_value": "별표 4.7개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "stellia",
+        "rating": "별표 5개",
+        "text": "2층집 개조해서 카페를 만드신 듯\n빵도 맛있고 커피도 맛있어요\n분위기도 아기자기 예쁘고\n늦게 가면 빵이 없어요~"
+      },
+      {
+        "nickname": "Life Void",
+        "rating": "별표 4개",
+        "text": "1. 접근성\n서울예대 근처(도보로 좀 걸림...)에 있으며 여러 빌라들 사이에 있으며 워낙 예쁘게 꾸며 놔주셔서 눈에 띕니다.\n주차 공간은 별도로 없어 근처 노상에 주차를 하시고 와야합니다.…"
+      },
+      {
+        "nickname": "김주희",
+        "rating": "별표 5개",
+        "text": "입구 트리부터 너무 예뻐요❤️\n자주가는 곳인데, 빵도 커피도 자몽에이드도 다 너무너무 맛있어요~~\n친절하고 인테리어도 좋고, 늘 가면 기분좋은 곳입니다~"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "덴커피",
+    "address": "경기도 안산시 단원구 고잔2길 87 113, 114, 116, 118호",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npuTkssuTdUDkcGAP91eVbFAd7ya7hLbw2f1QzHPfc89WzVR1aLeoyW5W5eog1O2Mv5MktHnuR1Ofbj2ClbCspk2Kd59ZpU1mx4trl-qW83e5VL88vuu1W6s_GCGoHWsrLX6lw=w80-h106-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "정다혜",
+        "rating": "별표 5개",
+        "text": "초행길이라면 보지 못하고 지나갈 수 있으니 꼭 잘 보기를 ! 바닐라라떼, 아이스에이지(아인슈페너) 맛집으로 시럽 펌핑한 바닐라라떼와는 비교불가!\n베이커리 또한 훌륭하며 특히 퀸아망 맛집 ❤️\n원두는 두 가지 선택 가능."
+      },
+      {
+        "nickname": "노혜진",
+        "rating": "별표 5개",
+        "text": "주말에 근처에서 밥먹고, 카페들이 다 문닫혀있고 덴커피만 오픈되어 있길래 우연히 들어간 가게 입니다. 맙소사 커피 맛과향이 너무좋고, 무심코 집어온 식빵이 심하게 고소하고 쫜~닥 거리더라구요? 이가게 뭐지..했네요~담에 근처가게되면 재방문 각입니다."
+      },
+      {
+        "nickname": "e pasteIblu",
+        "rating": "별표 3개",
+        "text": "매장이 상당히 외져요. 중앙동 내에서도 특히나 외진 곳이고, 카페가 잘 보이지 않는 곳에 있습니다. 안내판이 밖으로 나와 있지 않았다면 몰랐을 정도로...…"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "카페 피앤피",
+    "address": "경기도 안산시 단원구 고잔2동 고잔2길 73",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrq4oILFLZcIDRijRUugBhR6IQj-Ykhb3v7U1J-67Wfrboa3QltJqDL65Q3L5nuW7njCuDzcDhPob7tke7Ge5T7kxiFQF3-N3i6pqgMFFLvvL2zv5Ju09B9wowEgUYRtBajLvNl=w138-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "031-401-4143",
+    "review": [
+      {
+        "nickname": "e pasteIblu",
+        "rating": "별표 4개",
+        "text": "매장이 중앙동 외곽 부근에 위치하나 찾는 건 그리 어렵지 않아요. 매장 내부는 생각보다 작지만 그래서 그런지 상당히 아늑합니다. 겉으로 볼 때는 펍 같은 느낌이 있어서 이곳이 맞나? 했는데 맞더라구요. 실내 인테리어도 예뻐요.…"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "더아지트",
+    "address": "경기도 안산시 고잔동 중앙대로 907 4동 3층 301호",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWiH935JmTJlg4KOx_gelkyLHA2AFo92H6GMusR6bWn3adEOSBuOTe4xwcHGsCnGWvR5gm7rOj7wrGudnXhFrWIMM5cPSatg3sAP8u_mAiCHX_rFRVyDp8fogrTQe9FWZkyuA7=w138-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "010-9036-3844",
+    "review": [
+      {
+        "nickname": "Aki mora",
+        "rating": "별표 1개",
+        "text": "내용이 바뀐 홍보지를 그대로 쓰네요\n3천원도 아니고 ott만 쓰는데도 3시간에 7천원 사람없어도 무제한이 아니라 1시간 보너스\n1인도 가능하다고 써있어서 약속전에 시간때우러 갔는데 1인 불가능 하다고함\n당당하게 1층이랑 가게앞까지 어그로성 표지를 사용하네요"
+      },
+      {
+        "nickname": "jelly eny",
+        "rating": "별표 4개",
+        "text": "재미는 있었는데 방에 있던 조이스틱 버튼이 하나 안눌려서...ㅠ 쪼끔 억울했다...ㅠ\n그리고 그냥 룸카페지 보드게임카페.... 라고 하기엔 종류가 적지 않나 싶다\n그리고 먹을 것도 다 가져다 먹는 형식이라 뭔가...\n방금 뽑은 아아가 먹고 싶었는데 말이지?"
+      },
+      {
+        "nickname": "김무중",
+        "rating": "별표 5개",
+        "text": "쉬기 정말 좋은 장소에요~  요즘은 사람이 많아서 주중 3시간 주말 2시간 밖에 못있지만 만석아닐땐 푹 쉴수 있어요"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "룸앤톡",
+    "address": "단원구 고잔동 535-2번지 505호 코스모프라자 안산시 경기도 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqdPaUFDCGBFp5MAeqyol54Q_SfMb7WuDgEjNsVIOqFa49BwDi-6EbdTyjXgyFuLBJfcQOxEDTZG6_JT9gbptKUpY7qubktU22-rw9OuYnsZjrT9YgWNNu3wl-49Vfzs6ffBgYH=w122-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "031-414-0889",
+    "review": [
+      {
+        "nickname": "Aki mora",
+        "rating": "별표 3개",
+        "text": "과자종류 3개, 영화안됨 다른방도 돌아봤는데 5방중 4방이 영화가 안됐음, 무제한 아님 목요일 11시 방문 했음 15시에 퇴실해달라고 전화옴 사람이 많나 나와봤는데 나 포함 3방뿐이었음"
+      },
+      {
+        "nickname": "김영비",
+        "rating": "별표 4개",
+        "text": "5명이서 갔는데 5명에 맞는 방을 주셔서 좋았습니다 가로로 누웠을때 꽉 차는 수준이고 다같이 탁자를 피고 앉으면 널널해집니다! 가격은 현금 7000원 카드 8000원이였습니다. 3명이서 가면 셋이 누웠을 때 공간 조금 남는 방을 줍니다. 그래도 괜찮았습니다!! 셀프바에는 과자 4가지랑 팝콘, 식빵에 잼 3종류(딸기,  누텔라, 땅콩)이랑 아이스크림, 탄산음료 5가지도 무료로 먹을 수 있습니다. 아쉬웠던 것은 과자 종류가…"
+      },
+      {
+        "nickname": "하연",
+        "rating": "별표 5개",
+        "text": "라면 하나 시켰는데 서비스로 2개 주셨어요ㅠ 너무 좋아요!"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "2morrow",
+    "address": "경기도 안산시 단원구 고잔동 540-1",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqFuCv0XjWCDQMhXg_Er-4pJEiEpc5rgu7pHeac0bB9m4x51dz3b620Ix2SQUHeEIxp5T1zNHYzvsacPaO3a_5I_AmDwQoq68I9QcI-hG75v9X4TpnK9blxnfSsyt5o1HMLk8bQ=w204-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "조설탕",
+        "rating": "별표 5개",
+        "text": "사장님 엄청 친절하시고, 음료도 갈 때마다 다른거 시키는데 참 맛있음. 얼음 많이타서 양 적어지는 카페가 아니라 양심적임\n높은곳에 위치해서 중앙동뷰가 잘 보임\n카페도 깨끗하고 테이블 넓고, 편하게 있다가 갈 수 있는 분위기가 인상적"
+      },
+      {
+        "nickname": "행복한뚜벅초",
+        "rating": "별표 5개",
+        "text": "테이블도 넓고 메뉴도 많아요.\n아메리카노나 아이스티 리필도 가능해서 좋아요"
+      },
+      {
+        "nickname": "김레니",
+        "rating": "별표 1개",
+        "text": "불친절.카페에 담배냄새남"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "벌툰 인더스트리얼 안산중앙역지점",
+    "address": "경기도 안산시 단원구 고잔동 541번지 KR 2동 동2201 2202호",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no1UpWbp4fRC9Dwv7T3DY_3spfBzJrXMxEjCpO0UQWIt-z7iAWXzaUL4FSRvkznyR9ufZaShkoUVEEwZPHbwSciBqYaWeModOacPgPUjbpo5IM8V7LT5WJxymuhI3evxlORQw4=w80-h106-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "031-410-8880",
+    "review": [
+      {
+        "nickname": "손건호",
+        "rating": "별표 5개",
+        "text": "아이스티는 아주 맛있지는 않았고,  직원들에게는 미소가 없었다. 하지만, 시설은 편안했다. 안마기가 있는 곳도 있고, 실내 온도가 잘 유지되었다."
+      },
+      {
+        "nickname": "오중이(ozoong2)",
+        "rating": "별표 5개",
+        "text": "잼나게 놀다가 갑니당 크림 짬뽕라면 개강추"
+      },
+      {
+        "nickname": "몸모",
+        "rating": "별표 5개",
+        "text": "할거없을때 뒹굴거리러 들어가기 아주좋아요. 음료는 너무맛없지만 카페가는거아니라 괜찮음"
+      }
+    ]
+  }
+]

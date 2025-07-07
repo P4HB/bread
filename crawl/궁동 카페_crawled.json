@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "name": "소신",
+    "address": "대전광역시 유성구 농대로15번길 7",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npVxMGgW4jyY9CLJxCGg03jcqhA9J6Uvo30o5y_nX7NB9Nmb_DAPY7IdvEeGMmXEt53yj-fS_EGI_PqeW8qhd4vg54Q_KRJt4JEqxI9Zbnd1efDMcowGRNAfkR7fJbgk6Htoteh=w80-h142-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "010-8558-9746",
+    "review": [
+      {
+        "nickname": "한근남",
+        "rating": "별표 4개",
+        "text": "공연보기전 발견해서 우연히 들어갔는데 상당히 좋은 카페였네요. 디저트도 맛있고 커피도 좋았습니다. 디저트에 내공이 돋보이는 그런 카페였습니다."
+      },
+      {
+        "nickname": "Iron_brick",
+        "rating": "별표 5개",
+        "text": "먹기 아까울 정도로 예쁘게 생긴 디저트들이 즐비한 곳.  하지만 가격은 좀 비싼편."
+      },
+      {
+        "nickname": "하희정",
+        "rating": "별표 4개",
+        "text": "가격이 좀 있지만 디저트가 예쁘고 맛도 괜찮아요 너무 달지만은 않아서 좋았어요 저는 유자보다 딸기가 좋았습니다"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "카이로스",
+    "address": "대전광역시 유성구 궁동로14번길 22",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npiwxHzKdzrVRfSfuNYw-y5nO_hHTj8j38Se1BKkYfBLiPq29QLSFr4xIPQqen9OJhHZRwXtdQ-1ppeArlLXRgOuIBXEehpojCBckYk-veI7uAxeeTHC7VbJrOGI2-zI0VoTEPMdQ=w163-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-826-2047",
+    "review": [
+      {
+        "nickname": "B. Jamie",
+        "rating": "별표 5개",
+        "text": "개인이 하는 커피숍 치고 원두의 퀄리티가 높아요 커피가 맛있어서 자주 가는 곳이에요 사장님도 친절하고 직원들도 항상 웃는 얼굴이에요"
+      },
+      {
+        "nickname": "Sanghyeok Park",
+        "rating": "별표 4개",
+        "text": "궁동에 있는 카페. 꽤 널찍해서 좋았다. 멀티탭을 꺼내놓으셔서 노트북 쓰기에 편했다. 딸기음료를 먹었는데 딸기가 신선하고 달았다. 쌉싸름한 커피를 좋아해서 가을 블렌드를 골랐는데 시지 않은 쌉싸름한 커피여서 마음에 들었다. 다채로운 색깔에 아기자기한 느낌의 인테리어이다."
+      },
+      {
+        "nickname": "Jieun Bae",
+        "rating": "별표 4개",
+        "text": "궁동에 있는 괜찮은 카페. 친구와 이야기하거나 공부하기에도 괜찮다. 분위기도 약간 아기자기한 느낌. 대학생들이 많이 방문하는 듯 하다. 벽에 붙어있는 1인석?도 있어서 혼자가기에도 괜찮고 음료 맛도 좋다. 과일을 활용한 다양한 메뉴가 항상 눈길을 끈다. 딸기, 등등..."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "에이트",
+    "address": "대전광역시 유성구 한밭대로 458",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nofyn3GzrkpIUqbrevOYOBXxGxo2r1gfDnueJw5QOy_lD7YeiAM37zhrayYXMM11lQmKmtjTZjdiTxXpidsrZK5abv1uZJ2l5rnsUZD9IXQTzspW94ZHHW0-9-_zJmf5okf3NU6=w122-h92-k-no",
+    "rating_value": "별표 4.2개 ",
+    "call_value": "042-716-1195",
+    "review": [
+      {
+        "nickname": "Kyu",
+        "rating": "별표 5개",
+        "text": "대전 외곽의 아닌곳에 위치한 대형 카페 입니다. 유성대로에 있어 접근성도 편리합니다. 늦게까지 운영하는 베이커리 카페로 커피도 생각보다 맛있고 빵도 괜찮습니다. 다만 빵 가격은 좀 비싼편입니다. 3-5층까지 좌석이 있으며 각 층마다 분위기가 달라서 흥미롭습니다."
+      },
+      {
+        "nickname": "더러운캔디",
+        "rating": "별표 5개",
+        "text": "2023-11-17 에이트\n\n식사를 마치고 커피 한잔하러 이동.…"
+      },
+      {
+        "nickname": "UP뮤지컬웨딩",
+        "rating": "별표 5개",
+        "text": "대형카페입니다.\n주차장 넓직하고, 베이커리가 좋아요~…"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "커피 인터뷰",
+    "address": "대전광역시 유성구 한밭대로371번길 25-3",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqOjrcH1xVtKSY2L-kyTvyg_c8kwtTb64ukRCVhOfIibIHM3VJlAu9eZgWMWnBJdS5h5L7gRgkbGTwDUpI3fRERX0FYTRQyMTL_ky_WQ4fTf_lxpiM99HSJUdS-zzHNe1GCs4P3=w163-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "042-823-3712",
+    "review": [
+      {
+        "nickname": "코다",
+        "rating": "별표 5개",
+        "text": "대전 뷰카페~  가족들과 갔고,\n맛에 대해 호불호가 있어서 골고루 시켜 보았다.\n아이스아메리카노, 카페라떼, 배스무디.…"
+      },
+      {
+        "nickname": "YJ Oh",
+        "rating": "별표 5개",
+        "text": "대전에서 찾은 마음의 힐링이 느껴지는 카페. 충남대학교 대덕캠퍼스 옆 반석천 사이에 자리 잡은 자연속의 공간이다. 많은 카페를 다녀봤지만 이렇게 자연속에 있다는 느낌을 주는 카페는 처음이 아닐까 하는 생각이 들 정도로 기분이 좋아지는 장소이다. 작고 아담한 메인건물과 간이식으로 설치된 실내공간이 여러개로 나뉘어져 조성되어 있다. 숲과 천이 흐르는 주변환경과 어울리도록 여기저기 야외 자리도 많이 배치되어 있어 자연속에 앉아 있는…"
+      },
+      {
+        "nickname": "Mincho Park",
+        "rating": "별표 4개",
+        "text": "날씨가 참 좋은날에 방문해서 그런지 여기가 대전인지 치앙마이인지. 참 좋았습니다. 건물이 분산되어 있어서 다소 음료를 주문하고 이동할때 불편할수도 있겠지만 덕분에 다양한 외부 공간이 있어서 다채롭습니다. 주차는 카페 앞 터에 10대 정도 가능하구요, 카페 외부 공간엔 아이가 놀 수 있는 자갈 마당이 있어서 아이도 참 좋아했습니다. 대전에서 힐링했던 공간입니다."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "위드커피",
+    "address": "대전광역시 유성구 궁동 대학로151번길 66",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrcNVNlD5RLrzZ79g3baxeWqJsuc3QeWWAJ30xXjbaJ2EFPJfiIERnJgHrg-Cg9zodIeyHZsDmyARXRoU6_UJtmpl8cgKXcaxpaoiB2qcbFuZ5bmPKGmK4xxUOicQatsUpUVuJ9=w92-h92-k-no",
+    "rating_value": "별표 4.9개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "미스케냐",
+        "rating": "별표 5개",
+        "text": "예쁜 마카롱과 맛있는 음료를 저렴한 가격에 팔아요. 평점 높은 이유가 있어요."
+      },
+      {
+        "nickname": "WM Jung",
+        "rating": "별표 5개",
+        "text": "수제쿠키와 커피등 맛집입니다. 매우친절하고 내부 인테리어도 이쁩니다."
+      },
+      {
+        "nickname": "서은주",
+        "rating": "별표 5개",
+        "text": "커피와 마카롱 맛집!\n새로 이전해서 넘 예뻐졌네요"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "바리스타빈",
+    "address": "대전광역시 유성구 궁동 405-19",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noIyKXuOUeYVQHgjgiNcIz4jZDo4Z6B2Rdek5syaPLT4e5PMRDuc4T2zJbB-wv5z_fTmkIDz72EWVaqE9MLQQNR40ZqkqVdFUihW-a8938GEtru6LeSIVsYzaViIjdQacCPWHXB=w122-h92-k-no",
+    "rating_value": "별표 4.0개 ",
+    "call_value": "042-320-4050",
+    "review": [
+      {
+        "nickname": "Jun Choi",
+        "rating": "별표 1개",
+        "text": "서비스 최악입니다.\n아이스크림은 고기집 후식에 주는 아이스크림 맛이며, 알바생은 곁눈질로 듣는둥마는둥하며 주문하는데도 기분이 나빴습니다."
+      },
+      {
+        "nickname": "정지민",
+        "rating": "별표 4개",
+        "text": "충대 근처에서 굉장히 유명한 곳이더라구요. 학교다닐땐 한 번도 못가봤는데 최근에 지인들이 놀러와서 제대로된 케익 먹여주고싶은 마음에 평을 보고 찾아갔어요!…"
+      },
+      {
+        "nickname": "The Answer #3",
+        "rating": "별표 4개",
+        "text": "밖에서 볼땐 작은거처럼 보이는데 내부는 생각보다 크고 인테리어도 잘 되어 있습니다.\n핸드드립커피 맛도 좋았어요"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "글로리 데이즈",
+    "address": "대전광역시 유성구 대학로 129 1층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nopMKX3Vk_Fz0UCRFfm2LiwyjR6Zh8uPEiVx42ix4VbTD3OdVXQ1I__k0JaEXFkuNHp48h6wy0oARqBC_44CH2OtGqDkPw-yduFTim8TUiBd0JafeKgYoDkTmwmiAnNghn1Wss=w122-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-825-9516",
+    "review": [
+      {
+        "nickname": "A N",
+        "rating": "별표 5개",
+        "text": "가격은 사악하나 맛은 있는 편. 다들 커피가 별로라지만 저는 적당한 쓴맛과 산미가 좋았습니다. 커피 가격이 디카페인이 5,000원 정도였나 하면 괜찮은 편 아닌가요?…"
+      },
+      {
+        "nickname": "프리랜서 H",
+        "rating": "별표 5개",
+        "text": "지나가면서 많이 보았던 도로변에 있는 카페입니다. 충남대학교 학생이면 다들 한 번씩 가보지 않았을까 하는 생각이 있습니다. 이곳은 원래 닭이 있는 마을인가가 있던 것으로 알고 있는데 바뀐 지 오래 되어서 지금 찾아보네요.\n주차장이 없는 줄 알았는데 주차장이 있어서 주차를 편하게 했습니다. 아시다시피 궁동은 주차하기가 여간 어려운 곳이기 때문에 차를 가지고 들어가는…"
+      },
+      {
+        "nickname": "Lea Jo",
+        "rating": "별표 5개",
+        "text": "#대전타르트맛집 #궁동카페 #글로리데이즈\n충남대 근처에 타르트맛집이 있다는 소문듣고 다녀 온 #대전디저트카페 글로리데이즈💕\n비주얼만큼 맛도 최고 #생과일타르트 💕\n시그니처 커피인 #피스타치오아인슈페너 랑 #히말라야솔트커피 도 넘나맛있😋…"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "33블럭",
+    "address": "대전광역시 유성구 농대로 31-1",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrm8zMjKPzKDc4IU5em8ZaLRW5ls35Nb776Lm5CcgLGAEmK9DikQ_vN-mNwXKYNVUnXknGC_WM03VAc6B_7brxYS-9wRNUnYzKy3jKZTjCtuW-dfa0kLwUMckKMdmsvCRZU3Pc=w122-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "직박구리 (직박구리)",
+        "rating": "별표 5개",
+        "text": "편하게 들르기 좋은곳입니다"
+      },
+      {
+        "nickname": "김진영",
+        "rating": "별표 3개",
+        "text": "너무너무...."
+      }
+    ]
+  }
+]

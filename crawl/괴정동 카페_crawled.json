@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "동방커피",
+    "address": "대전광역시 서구 괴정동 427 9번지",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrf9_mJemTnpExz6oCrnX6lOjCoR6btOc54sqYmaOzP59MhYb53qLExeYSV7JCqOiMSiirIhRSM2Wf1NJXXiizwXvcCrNi8WbMaNGLwc-IA4VfSQ7cdiJxPNLc5TVH_52Icw4Imgg=w122-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "042-526-0633",
+    "review": [
+      {
+        "nickname": "그냥햄스터",
+        "rating": "별표 5개",
+        "text": "사실을 알려드립니다.\n\n1. 연예인이 이곳을 방문하고 너무 매력을 느껴서 뮤직비디오 촬영장으로 사용합니다.…"
+      },
+      {
+        "nickname": "홀몰리",
+        "rating": "별표 5개",
+        "text": "커피도 맛있고 티그레도 쫀독하니 맛있었다. 살짝 외진곳에 있어서 당황했지만, 사장님이 배치해둔 소품 구경하는 맛이있었던 카페였음. 돈주고 앤틱한 분위기 느끼기에는 알맞다. 대신 주차가 좀 힘든데, 그냥 주변 롯데백화점에 주차하는 것을 ㅊㅊ"
+      },
+      {
+        "nickname": "Miso Kim",
+        "rating": "별표 5개",
+        "text": "원룸촌에 위치. 양옥집을 그대로 카페로사용해서 삐걱거리는 바닥, 2층계단 인테리어좋았음.\n버터크림라떼, 초코나무푸딩 핵맛있음ㅠㅠ\n푸딩 비쥬얼이 좀 슈렉스러운데 맛있음. 꼭드셈.\n퀄괜춘함. 왜유명한지 쌉인정함"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "카페양촌리",
+    "address": "대전광역시",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr0MIDWTLB1oEPEE_qL1x7r41AB7qOrCuZ8YAAO1OOzZd9CVAQyrRqMZ30R-s0mcKJmHOqcBY432KO4G9FjdheyQ2jU-fLaeHMsP9Kq3Z3ZvtXBMuH9WrOnYbDUKn_1Lr44KT9xtQ=w80-h106-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-526-5715",
+    "review": [
+      {
+        "nickname": "레어티즈",
+        "rating": "별표 4개",
+        "text": "주택가내에 있는 조용한 카페입니다. 카페라떼 마셨는데 맛있었어요. 들어가는 입구가 개성있어 좋습니다."
+      },
+      {
+        "nickname": "이정연",
+        "rating": "별표 5개",
+        "text": "직접만든 제과와 음료가 맛있는 곳! 곳곳에 이쁨가득한 곳!!\n또 가고싶은 곳!!!"
+      },
+      {
+        "nickname": "글쓰미",
+        "rating": "별표 5개",
+        "text": "날두 좋았지만 요근래 가 본 카페 중 제일 좋았어요 빵도. 맛있구요 근데 화장실은 일인용이라 살짝 아쉬워요; 근데 그거 빼고도 매력이 많은 카페입니다 너무 잘 꾸며둔 곳입니다"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "THE LITEL COFFEE",
+    "address": "대전광역시 서구 괴정동 424-5",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nozQ7GOYH0Jl5HWxzGmbzbVlIEDh7YA9OAJUNJwcWL7RZPHeJZ0XLXlSxCKozHOFj5gU0RZgtt0ii81CyDOOFAi8X_XTdTqHEWCX_4kbdzwCITIADC2dRku7TohoHgR7ShFrf5U=w194-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "지호아빠",
+        "rating": "별표 5개",
+        "text": "롯데백화점 여성주차장 앞에 새로생긴 커피전문점...아이랑 외출하다가 우연히 지나가다 보고 방문했어요!! 코로나로 매장에서 마시기 뭐해서 테이크아웃으로...했죠!! 메뉴판을 봤는데 종류도 많고 맛있는 음료가 많이 보여서 좋았어요...특히나 젊으신 사장님이 어찌나 친절하시던지 아이랑 같이 갔는데 아이들이 좋아하는 메뉴도 추천해주시고 아이들을 많이 챙겨주셔서 좋았어요...실내도 많이 작아보이지 않아서 나중에 매장에서 먹어봐야…"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "소울담다(SOUL담다)",
+    "address": "대전광역시 서구 괴정동 49-7",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3NBag8I4sHYhTGihmRvH0pySRHEctOHAcmqycipzYuvZZ8a8ZCqMLZYe3FqlD_KcCsosJVdHF-1v3988IXN0MuAIgvo13QDhK9WMXBuo-D10wTYE-5U990fpbIWLbiPxanDBi=w125-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "042-523-5052",
+    "review": [
+      {
+        "nickname": "이성준",
+        "rating": "별표 5개",
+        "text": "커피 맛있고, 사장님이 친절해요.\n개인적으로 아인슈페너랑 연유라떼가 맛있었어요.\n아이스아메리카노도 약간 탄맛안나고 산미살짝있어서 딱 제취향.…"
+      },
+      {
+        "nickname": "자네아직도사람을믿나",
+        "rating": "별표 5개",
+        "text": "용문동 롯데백화점 뒷편에있는 카페입니다\n고양이 카페는 아니지만 사장님이 키우시는 사랑 이라는 고양이가 상주하고 있지요 자주 방문하고 싶은장소중 손에 꼽히는 장소입니다"
+      },
+      {
+        "nickname": "Hanna",
+        "rating": "별표 5개",
+        "text": "주인분도 친절하고 무엇보다 고양이가 귀여움"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "카페틔우다",
+    "address": "대전광역시 서구 괴정동 번지 1호 268-15 2층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npChouBwrxp6UDLkLWuaSBXHa-hhe-kWnkxOYoaFMAMtxezTU-vA3nX2rPchNVqkbH1jBFpOaedXRvZSkvj-1Mcc9QD2WDvT0Hv9q1kgPna-84EdLfwpmCHAN3bX0HkE9T0_UsM=w122-h92-k-no",
+    "rating_value": "별표 3.9개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "EunJung Bae",
+        "rating": "별표 5개",
+        "text": "요즘 이런 분위기에 주택개조카페들이 많은데 아늑하니 좋습니다. 지하에도 자리가 있는데 지하는 조금 춥네요~"
+      },
+      {
+        "nickname": "Su",
+        "rating": "별표 4개",
+        "text": "크림라떼 맛있어요~\n밤에 가면 조명이 따뜻한 분위기를 만들어요😉…"
+      },
+      {
+        "nickname": "스팩트럼",
+        "rating": "별표 1개",
+        "text": "단독주택 내부를 개조했다. 비가 와서 들어가게 됐다. 좁은 골목길이라 오토바이가 갑자기 지나  다니고 차가 쌍방에서 만나면 난감할 수 있는 지나기 불편하고 사고나기 쉽상인 위치.주차장도 없다\n멀리 세워두고 걷다  들르게  됐다…"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "이현커피",
+    "address": "대전광역시 서구 괴정동 69-28",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqElj4076Kuh0Zfr8PUr3PbNtL4XNip_w58H3zNEWiAjONh65Lxgdcl6Q0s20eIpSomQ_NPd7HDST1mRguT_24gnc0XlCq0CV99KWXSM9ZqRHaHsOnN_HJs_lGyIVqfX683zVw=w163-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "042-536-1210",
+    "review": [
+      {
+        "nickname": "서영식",
+        "rating": "별표 5개",
+        "text": "제대로 된 드립커피를 드시고 싶으실 때 추천드리고 싶은 곳입니다. 원이현님은 바리스타 심사위원으로 활동하실 만큼 실력있는 분이시라고 같이간 일행이 그러네요. 게다가 범죄도시에서 열연한 영화배우 '진선규' 사촌누나라는 특이한 이력도 가지고 계시답니다."
+      },
+      {
+        "nickname": "박용준",
+        "rating": "별표 5개",
+        "text": "로스터리카페로 커피가 맛있는 집입니다👍👍…"
+      },
+      {
+        "nickname": "TAERIM WORLD",
+        "rating": "별표 5개",
+        "text": "대전에 왔다면 꼭 들러 먹어보면 좋은 이현커피 사장님께서 커피에 대한 열정이 대단!!!"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "코너88",
+    "address": "대전광역시 서구 괴정동 가장로 78",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq2roQHhpkiT6shCcmfs8sXPT9cZhumw5HdXE2LwlcaB1M3Q4izv_lh3o6H-yBi_lye9hjArBPvngmLcDmDgNUuBImNbn9XOv_UnN--Ovln6oYDKqZLr8hh3KMlLlRQUvqUxOTKzg=w194-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "042-528-0982",
+    "review": [
+      {
+        "nickname": "박승우",
+        "rating": "별표 4개",
+        "text": "사장님 친절하세요~ 편하게\n이야기 나누다 서울로 올라갑니다 :)\n날씨좋아지면 루프탑은 명당일 것 같아요!"
+      },
+      {
+        "nickname": "SAMUNY",
+        "rating": "별표 4개",
+        "text": "분위기 깔끔.\n공간이 넓찍 넓찍하게 있고 단독룸도 있어서 좋음\n한민시장 주차장 코너에 있어서 코너88인가봄…"
+      },
+      {
+        "nickname": "Pyeong Seok Jo",
+        "rating": "별표 5개",
+        "text": "음료값도 저렴하고 건너편에 한민본가 누룽지탕이 보여서 대기표 받고 기다리기 좋네요"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "봉봉에카페",
+    "address": "괴정동 53-28번지 101호 서구 대전광역시 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrVXEwYVW_GDn1JIwnYZcL6iCzuvM5FZKzkUzpc5f1Po1PmP9spgH3Oo3MBHYGmfxYktwh35Pa4d3quie9XOYu_nx87yGL3t0HLIug0V_eEc2jPfAcboGCoQA58p6hmJRCyKfEk=w80-h142-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "042-522-2398",
+    "review": [
+      {
+        "nickname": "pp bad",
+        "rating": "별표 5개",
+        "text": "쿨러예약하고 받아왔어요. 무엇보다 dt점이라서 요즘같은 때 알맞아요"
+      },
+      {
+        "nickname": "김상준",
+        "rating": "별표 5개",
+        "text": "아늑한 분위기에 친절하신 사장님과 토스트가 일품."
+      },
+      {
+        "nickname": "최우빈",
+        "rating": "별표 5개",
+        "text": "아늑한공간. 간단한 식사 가능"
+      }
+    ]
+  }
+]

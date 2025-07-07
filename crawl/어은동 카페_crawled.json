@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "name": "커피볶는집 I AM COFFEE",
+    "address": "대전광역시 유성구 어은로42번길 3",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npFzVxY6QheCw2VbcL9uiTkSCfQnqWQ1RZKcnnz_-mBt2cIl37k7iG0nGRvaSKCiIopZEeZTfrz6-PvNCyMcF5kHYhtsfzhNl_3GoVmnHuGtJ_UQfl0-V0hC6ynngbRljm8QiEg1A=w122-h92-k-no",
+    "rating_value": "별표 4.7개 ",
+    "call_value": "042-862-7646",
+    "review": [
+      {
+        "nickname": "Pot Dooshami",
+        "rating": "별표 4개",
+        "text": "아이리쉬 커피(아메리카노에 위스키 섞음) 처음 먹어봤는데 좋았습니다. 카페 인테리어도 옛날 느낌 물씬 납니다!"
+      },
+      {
+        "nickname": "김하연",
+        "rating": "별표 5개",
+        "text": "최근에 이사하고 리모델링해서 안그래도 어은동 최고의 카페였던곳이 정말 원탑이 되었다. 그리고 너무 귀여운 강아지 콩이까지. 더이상 완벽할 수가 없다."
+      },
+      {
+        "nickname": "WJ Lee",
+        "rating": "별표 5개",
+        "text": "커피 한 잔 하면서 논문 읽고 싶어서, 논문 한편 손에 들고 콘트라 커피점에 갔습니다. 문 열고 들어가니 주인이 저를 훑어보면서 “가게 내에서 공부는 안 됩니다(나가 주세요)” 하길래 경황없이 나왔습니다.…"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "정직한 커피",
+    "address": "대전광역시 유성구 어은로48번길 20 1 층 101 호",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npPxX7Kj91ftaQ1bARjQ9HizZ6qdDYtyy0zXwC5VfeBtcaa8-Ad3tKe1BH1nN0Spr4SXtVObrhE2-X8D8VtX7n-Tj49Gdwd-bWuCjQd6X7Emv1jqYZmbl8biwLtOJV2AFu-zvJaPA=w163-h92-k-no",
+    "rating_value": "별표 4.5개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Inkyu An",
+        "rating": "별표 1개",
+        "text": "처음 갔을때 남자분(사장님?)이 내려주신 커피맛이 괜찮았는데, 오늘 갔을 때는 다른 여자분이 내려주셨어요. 근데 저번이랑 너무 커피맛이 다르네요. 커피맛이 묽은 보리차 맛이에요. 다 버렸습니다. 테이크아웃해와서 맛이 이상하다고 전화도 드렸는데, 레시피가 같다고 하시네요. 커피를 너무 잘못내린건가 싶네요. 아니면 원두가 바뀌었는지... 오픈하지 얼마 안되었는데, 퀄리티 컨트롤이 안되어서 아쉬워요. 그리고 제 앞에 4~5 잔 정도 있었던 것 같은데, 20분 기다렸네요. 다 버리고, 지금 다른집에 다시 커피사러 나갑니다."
+      },
+      {
+        "nickname": "김채윤",
+        "rating": "별표 5개",
+        "text": "깔끔하고 자리도 많은 카페. 커피 종류가 다양합니다. 아직 새로 개업해서 많은 커피를 마셔본 건 아니지만 지금까지 먹은 커피는 전부 맛있었습니다. 새로 개업해서 카페 내부가 깨끗합니다. 디자인 역시 세련되고, 사장님 역시 친절하셔서 앞으로도 자주 올 것 같습니다. 참고로 커피를 주문하면 작은 허쉬 초콜릿을 서비스로 줍니다."
+      },
+      {
+        "nickname": "cung K (Valpl)",
+        "rating": "별표 5개",
+        "text": "드립커피가 맛있는 곳입니다.\n게이샤도 너무 신맛이 두드러지지 않게, 고소한 원두도 쓰지 않게 드립합니다.\n원두가 조금씩 바뀌는 것도 좋습니다."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "가배커피바",
+    "address": "대전광역시 유성구 어은동",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4no16uYVinOk0dHy45se3mWzs22z1MWWzIQ_ipeDI37QJXhJz0Z_Wc5fRJ0TMDoHZQytBAVdCxHL05oxwZWc8Sm2iCwBOmS6Kbx1ouE1DFYDnHoy9d_o-jXCE4mUnMRfN_U4hXAS=w122-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Jaewoo Do",
+        "rating": "별표 5개",
+        "text": "대학가 근처의 커피점이라서 맛에 대한 기대가 없이 들어간 곳입니다. 하지만 그 선입견은 바로 사라졌습니다. 핸드드립, 머신 커피 모두 참 맛있었습니다. 바리스타님께서 한잔한잔 정성스레 내려주십니다. 맛있는 핸드드립 커피를 4000원이라는 감사한 가격에 즐길 수 있어 행복했습니다. 사진 찍기도 좋은 곳입니다."
+      },
+      {
+        "nickname": "Pan The",
+        "rating": "별표 4개",
+        "text": "KISTI & KAIST 쪽문 쪽에 있는 커피 전문점으로 별도로 주문하면 핸드드립 커피를 마실수 있음. 주로 학생들이 많이 오는 공간. 개인적으로 커피향이 아주 좋음."
+      },
+      {
+        "nickname": "EunSol Kim",
+        "rating": "별표 4개",
+        "text": "내부에 앉을 곳이 단체석1,이인석1(?),카운터석 밖에 없는 게 아쉽지만 내부 인테리어가 좋았음. 음료는 커피로 먹었었는데 부드럽게 쑥쑥 마셔져서 금방 없어졌다."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "한빛스터디카페어은점",
+    "address": "대전광역시 유성구 어은동 번지 2층 110-4 3층",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWBrI_5dhP-kbQqQvdLDAlClnKqLuRQV1OobyrmdZ9q8X3tca9r01fG5Yrw2B1VqBwa_RbdFEAYVhEscu_fQNPE8eGP6znwpl_lK54p8LfybHsFnm0eCeltjhn8dD4cp96xrTd=w122-h92-k-no",
+    "rating_value": "별표 5.0개 ",
+    "call_value": "041-716-7000",
+    "review": [
+      {
+        "nickname": "코코팕",
+        "rating": "별표 5개",
+        "text": "쾌적하고 면학 분위기가 아주 잘 조성되어있음"
+      },
+      {
+        "nickname": "Jinsuk Kim",
+        "rating": "별표 5개",
+        "text": "넓고 쾌적한 공부카페."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "그린브라우니 어은점",
+    "address": "대전광역시 유성구 온천2동 어은로48번길 10-6",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nry7HtRUL3BS-0OCWcIG0X5czO3-YHptp6uBy86AFFxj4Iv_3SmaKzr97dGBgSJsVf_aE1vZhoceucXVfLmSHjlYjTA2iG_6BvRnHwVTAhWF2rWDW116mpVWjHKHhIIgqoa8k51=w163-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "Finn",
+        "rating": "별표 3개",
+        "text": "공간 자체는 좋기 때문에 음료가 비싸고 맛이 그럭저럭이라도 오게 됨\n\n창쪽에선 와이파이 대박 끊김(안된다고 보면 됨)\n그리고 날벌레 파리 있음"
+      },
+      {
+        "nickname": "한주영",
+        "rating": "별표 4개",
+        "text": "CYC 분위기 좋은 카페. 전반적으로 다 좋음."
+      },
+      {
+        "nickname": "김민규",
+        "rating": "별표 4개",
+        "text": "케이크와 같은 음식들은 사는 게 아니라 직접 담당 제빵사가 만들어서 전시해 놓다보니 처음보는 다양한 종류의 빵과 케이크들을 볼 수 있다.\n직원도 친절하고 특히나 플레인요거트 스무디 맛이 일품이며, 2층으로까지 이루어져 있어서 공간이 참으로 넓은 게 최고 장점.\n그러나 외관은 잘 만들었어도 내부 인테리어가 전체적으로 무난해서 그게 좀 아쉽다..."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "커피바 유성별",
+    "address": "대전광역시 유성구 어은동 103-8",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npJSb5QkDEEcc4aqER-7UPPjBSDgH1mwjgxJivLLtBx7QChugNIg5yD-_f-Dig5x0RINvBbR2LyxxWXKcgtjJHAaCCEyWNitmQ-4_ArxSPhamlJdH2dH7LA_djgAzb7TKpBZG60aw=w122-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "다이아모어",
+        "rating": "별표 3개",
+        "text": "뭔가 엄청 컨셉은 잘 맞추시고 좋은데 커피랑 디저트가 약간 아쉽다. 카이스트 학생들 공부하러 오는 장소같은 느낌..."
+      },
+      {
+        "nickname": "김딩딩",
+        "rating": "별표 5개",
+        "text": "음료도 맛있고 커피원두를 다양하게 살수있어서 좋았어요..\n로스팅해서 작게 파우치로,\n가격도 적당하게 판매해서 정말좋았어요"
+      },
+      {
+        "nickname": "이승언",
+        "rating": "별표 5개",
+        "text": "쑥라떼(5000원)와 오레오쿠키크림(6000원). 그리고 아주 아름다운 인테리어와 잔잔한 카페 노래. 괜찮다."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Fall in the Pool (폴인더풀)",
+    "address": "대전광역시 유성구 어은로42번길 3",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq3bO6apieU-hCSkgYDS8JT2KNK-qOsCa-d1OGTznweiKNUygOh-EjoA1AdORUorFtomZ_rajOCTKuN8uyfsO2A3ybpdT382PC39MdbEht1UyywETSBM2-cQJr0zbGT-_WFj-OY=w122-h92-k-no",
+    "rating_value": "별표 4.7개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "안팔아요",
+        "rating": "별표 5개",
+        "text": "비건 디저트 카페라고 하지만 커피도 맛있다\n그냥 맛있는 게 아니라 이 동네에서 손에 꼽을 만큼 맛있다."
+      },
+      {
+        "nickname": "남윤창호",
+        "rating": "별표 5개",
+        "text": "사장님 친절하시구요\n모든 음료 다 맛있어요."
+      },
+      {
+        "nickname": "MiNyeong Hwang",
+        "rating": "별표 5개",
+        "text": "여긴 커피도 맛있지만 디저트도 맛집"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "비스트로 퍼블릭",
+    "address": "대전광역시 유성구 어은동 대학로 229",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrhHH2gTFRv062Ttlk4v9hpKpoT-gTKc74vwrqXTuQsAEe3HCwAvJ3vCeOYxQg7kSrCvx5wfYNd-UApHLwvam6KYGasQxFTGhZPdt0rNMFdSvhlP1Iw6U2Iyp8mZe_j9_4yrNo=w163-h92-k-no",
+    "rating_value": "별표 4.2개 ",
+    "call_value": "010-8249-0393",
+    "review": [
+      {
+        "nickname": "밍콩",
+        "rating": "별표 4개",
+        "text": "워낙 평도 좋고 유명해서 꼭 가보고 싶었던 비스트로퍼블릭!\n인테리어도 어둡고 나무가 많은 세련된 느낌이라 좋았어요.…"
+      },
+      {
+        "nickname": "Soobum Chang",
+        "rating": "별표 5개",
+        "text": "친구들과 점심을 먹었습니다. 아란치니, 라따뚜이 닭구이, 까르보나라, 모두 맛있습니다. 와인 리스트가 상당히 좋군요. 재방문 의사 100퍼센트 입니다."
+      },
+      {
+        "nickname": "Jungmi Kim",
+        "rating": "별표 5개",
+        "text": "고등어파스타 메뉴가 흔치 않아 방문.\n모든 음식들이 제각각에 어울리는 소스와 적당한 식감으로 넘 맛있음.앤초비,고등어 파스타는 입맛에 따라 약간 짜게 느낄수 있을거 같지만 비린내를 잡아주어 내입맛에는 잘 맞음.…"
+      }
+    ]
+  }
+]

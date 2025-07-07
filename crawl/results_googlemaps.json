@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "name": "어스17",
+    "address": "강원특별자치도 춘천시 신북읍 천전리 36-2",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4npvVwTHVKaqiD7iZuGuid43TzFMU3QEqBQwrBD8RsXzXZqsKLI2UzorXt9jZ_ODOKdQTy92_K4eaxRyxtXcjPCfp7vu-yo1wyKn2bY=w163-h92-k-no",
+    "rating_value": "별표 4.2개 ",
+    "call_value": "033-244-7876",
+    "review": [
+      {
+        "nickname": "kaku hayashi",
+        "rating": "별표 5개",
+        "text": "카페가 넓고 모던하다. 2층구조에 음악감상실이 마련되어 있고 통창을 통해 강을 바라볼수 있다. 모든좌석이 창을 향해있다. 야외에는 푸르름이 너무 좋다. 추출까봐 담요도 제공한다. 뷰맛집뿐만이 아니라 음료도 맛이 좋다. 여유로움과 푸르름을 함께 제공받고 편안히 쉴 수 있는곳이다. 독서와 담소 그리고 글쓰기 작업하기 좋은곳."
+      },
+      {
+        "nickname": "테라",
+        "rating": "별표 1개",
+        "text": "연휴사람많을때 방문해서 너무 복잡하고 정신없었음.\n매장내 청결유지나 위생관리부분 아쉬움.\n야외테라스 좌석은 나름 괜춘.\n뷰카페"
+      },
+      {
+        "nickname": "Joanne Lee",
+        "rating": "별표 5개",
+        "text": "우연히 닭갈비 먹고 들른 카페, 2층에는 음악을 즐길 수 있는 Music hall도 있고, 날씨 좋으면 소양강을 감상할 수 있는 야외빈백도 충분히 있어요."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "카페드220V볼트 본점",
+    "address": "강원특별자치도 춘천시 서부대성로 69 KR",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqunQXMdaOKZgQ2yPGN-HDElBBnexsRryJKZsxV6_MiJ7q_YLhD_ieipvw5DQf_fiU2AErNmRGKDWW0V6N5QDsJgBnpuUf5Vy9RIEI=w138-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "033-255-5024",
+    "review": [
+      {
+        "nickname": "named not",
+        "rating": "별표 5개",
+        "text": "노촐라라는 커피를 마셔봤습니다. 특성상 아이스로만 마실 수 있네요. 에스프레소 위에 헤이즐넛 크림이 올려져있는데 달콤하고 향도 매우 좋습니다. 에스프레소가 쓰거나 시지 않아서, 크림과 섞어마셔도 맛을 해치지 않네요.…"
+      },
+      {
+        "nickname": "Bar_ Tyon",
+        "rating": "별표 5개",
+        "text": "춘천에 있는 에스프레소 바 겸 베이커리 집 입니다.\n다양한 에스프레소와 빵이 있는데 빵도 다 직접 만드십니다. 빵 가격은 좀 있는 편인데 무척 맛있어서 좋습니다. 에스프레소 역시 맛이 상당하며, 여러잔 땡깁니다.…"
+      },
+      {
+        "nickname": "뚱이",
+        "rating": "별표 5개",
+        "text": "우연히 발견한 에스프레소 바.\n라스트 오더는 16:00시입니다.\n영업은 16:30까지 이구요.…"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "카페드220V볼트 본점",
+    "address": "강원특별자치도 춘천시 특별자치도 동내면 금촌로 107-27",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqunQXMdaOKZgQ2yPGN-HDElBBnexsRryJKZsxV6_MiJ7q_YLhD_ieipvw5DQf_fiU2AErNmRGKDWW0V6N5QDsJgBnpuUf5Vy9RIEI=w138-h92-k-no",
+    "rating_value": "별표 4.3개 ",
+    "call_value": "033-263-0220",
+    "review": [
+      {
+        "nickname": "김종용",
+        "rating": "별표 5개",
+        "text": "카페가 낮은 들판 위에 있어서 뷰가 아주 좋다. 특히 주변에 소나무 숲이 우거져있어서 아주 멋지다. 특히 본 카페는 공간이 여유롭고 어 인공잔디가 조성되어 있어서 애완견 애완 고양이를 데리고 즐길 수 있고 카메라와 영사기 등 마치 박물관을 방문케 하는 옛 제품들이 있어서 이것을 보는 재미도 좋고 그림이 있어서 그림보는 재미도 아주 좋다. 꼭 가볼 만한 곳이다. 커피맛은 뽀너스다~^^"
+      },
+      {
+        "nickname": "오드리",
+        "rating": "별표 5개",
+        "text": "간만에 방문한 220 V 케이샤 커피와 예멘 모카 주문해서 마셨는데 커피맛 좋으네요. 분위기도 비가 와서 그런지 운치고 좋았어요. 공간이 넓고 천장이 높아서 그런지 대화하기 참 좋았어요. 브런치 메뉴는 잘라먹기 조금 불편한 점이 있었는데 맛은 괜찮았어요. 220 V 무엇보다 빵이 가격이 괜찮고 맛있는 거 같아요. 올리브 빵은 최고 내용 올리브가 정말 넉넉하게 들어 있어요. 맛에 놀랐고 감동입니다."
+      },
+      {
+        "nickname": "예원바라기",
+        "rating": "별표 5개",
+        "text": "커피맛 좋음. 싼격에 컬리티 높은 커피를 먹을수 있음. 소금빵종류가 많음."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "그린보드",
+    "address": "강원특별자치도 춘천시 동내면 금촌로 35-2",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noPh2Y2adBy_4MF0Uk1UsvQgaGK_ycPnsqmzsiFjdBJiUVTCvasP8djLT2ca5wLgX8Zhun8Z2H5nWUV3MKUVf7HIIGLzsbQvSaG=w163-h92-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "010-7323-0890",
+    "review": [
+      {
+        "nickname": "J Persona (myaongjji)",
+        "rating": "별표 5개",
+        "text": "카페도 넓고 주차장도 넓습니다. 내부가 초록초록 식물원처럼 잘 가꾼 식물들이 가득해요. 실내임에도 자연을 즐기는 그런 기분입니다."
+      },
+      {
+        "nickname": "Kevin Ko",
+        "rating": "별표 4개",
+        "text": "춘천의 동내면 신촌리에 위치한 대형카페입니다.\n들어서니 주차장이 엄청 넓어서 좋았습니다.\n카페는 식물원 같은 2층 본관 건물과,…"
+      },
+      {
+        "nickname": "BAEK HYUNCHEOL",
+        "rating": "별표 5개",
+        "text": "여유로운 주차공간에 잘 다듬어진 조경수와 깔끔하게 정리된 자연환경, 과거 음식점에서 일부 증축과 주변토지 매입을 통해 공간을 확보했네요.\n기존 단층건물은 리모텔링으로 이국적 분위기의 차분하고 편안한 공간으로 개조, 내부 복층구조의 본관은 말그대로 숲속입니다. 각종 식물과 화초, 외부에서 유입되는 작은 계곡같은 물줄기를 살려냈습니다.  좌석보다는 메인인 식물의 빈자리에 사람의 자리를 마련한 느낌, 당연히 커피와 음료는 정상급일수밖에 없는 ~  주말은 많이 붐비네요"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "카페 감자밭",
+    "address": "강원특별자치도 춘천시 신북읍 신샘밭로 674",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrh7fChJsZqlc2txKKpcLNS2CnTKuq7ReJqUEmvBiCMDnGoctumiYc5Embcf6lXEUC7gXBqYUTixxcf-Xgf1KQQudMfOSRQ5ML1AA=w122-h92-k-no",
+    "rating_value": "별표 4.1개 ",
+    "call_value": "033-253-1889",
+    "review": [
+      {
+        "nickname": "Hyenyoung Yang",
+        "rating": "별표 4개",
+        "text": "감자밭 두번째 방문\n지난 방문과 정원 인테리어가 달라져 있어\n색다른 느낌으로 방문을 즐길 수 있었다…"
+      },
+      {
+        "nickname": "Zons Amado",
+        "rating": "별표 5개",
+        "text": "2년만에 다시 방문한 감자밭. 커피숍 건물이 새로 증축되어 주변이 커졌다. 처음 감자빵을 먹고 신기한 식감에 놀랐던게 아직도 기억이 생생하다. 서리태라떼도 가격은 있지만 맛도 있다.\n점점 명성도 높아지는 만큼 맛과 서비스도 변함 없었음한다."
+      },
+      {
+        "nickname": "환환",
+        "rating": "별표 5개",
+        "text": "감자빵을 캐는 카페. 감자밭.\n\n기본 감자빵도 기대보다 퍽퍽하지 않고 맛있다. 빵부분도 쫄깃하고 안에 감자가 들어간 속도 적당히 달달하고 담백하니 좋다.…"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "이디야커피 춘천포레스트점",
+    "address": "강원특별자치도 춘천시 옛경춘로 610",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nphoVyhmZh5WkqJ2RrJvvo4Fk4FLgsEU3iMW7aCYCPhka7DTxtz-hWYOV8jK9yFqXuyHU3YedFkXppNGflIJwXUARMgVz_dyzUb4w=w163-h92-k-no",
+    "rating_value": "별표 4.6개 ",
+    "call_value": "033-264-4716",
+    "review": [
+      {
+        "nickname": "방동수",
+        "rating": "별표 5개",
+        "text": "주변 경치도 좋고 주차장 넓고 제일 좋은거 의자가 너무 편해요.\n천장도 높고 자리배치가 잘되 있어서 시끄럽지도 않고 스피커 보스 스피커 비싼거 쓰셨네요."
+      },
+      {
+        "nickname": "Roy Shin",
+        "rating": "별표 4개",
+        "text": "이디야 커피 중에 이렇게 뷰가 좋은 곳은 개인적으로 처음인 것 같아요. 날씨도 한 몫하고 커피도 잘 마시고 빈백에서 잘 쉬다가 갔습니다."
+      },
+      {
+        "nickname": "Any Way",
+        "rating": "별표 5개",
+        "text": "춘천 카페 많지만 여기 좋아요.가을풍경 만끽하고 사진 찍기도 좋아요.너무 복잡하지도 않고 굿입니다.또 오고싶은곳. 일어나기 싫네요.춘천시내도 내려다 볼 수있고 능선도 한눈에 들어오는 멋진곳에 자리잡았네요."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "카페달달",
+    "address": "강원특별자치도 춘천시 동면 만군길",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noM7UbLAcn42drK-97p2QnmJhscoDVT4MX9F_vQva3_CBVTihnSWgOrtPHR6ZzHFnQK6NaH58zlBZci53rKALFeH3S45psbqaFRIz0=w163-h92-k-no",
+    "rating_value": "별표 4.9개 ",
+    "call_value": "가게에서 전화번호가 제공되지 않음",
+    "review": [
+      {
+        "nickname": "이승준",
+        "rating": "별표 5개",
+        "text": "분위기도 차분해서 좋고, 뷰도 좋아서 야외에서 차 한잔 하기 넘 좋은 것 같아요! 서비스로 티매트 만들기 체험도 할 수 있어요😄\n\n애플유자차가 너무 맛있어서 한번 더 시키고, 다른 차도 먹어보고 싶어서 청귤차, 대추차도 시켜서 먹었습니다! 서울에서 먹어볼 수 없는 과즙이 들어간 건강하지만 달달한 맛이었습니다!…"
+      },
+      {
+        "nickname": "이미진",
+        "rating": "별표 5개",
+        "text": "분위기좋고 뷰도~~우와! 넘 쪼아\n하나더 양말목 체험도~"
+      },
+      {
+        "nickname": "김정민 (어쩌다마주친)",
+        "rating": "별표 5개",
+        "text": "아기자기 이쁜곳이에요 사장님께서 양말목수강도하시고 계셔서 귀여운소품들이많고 다쿠아즈도맛있고 사진도 이쁘게 잘나오는곳입니다"
+      }
+    ]
+  }
+]
