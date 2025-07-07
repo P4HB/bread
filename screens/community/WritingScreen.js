@@ -10,7 +10,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { addPost } from './CommunityPostData';
 
 const WritingScreen = () => {
@@ -24,12 +24,11 @@ const WritingScreen = () => {
       mode: 'select',
       onGoBack: (images) => {
         if (images.length > 0) {
-          setSelectedImages(images); // 여러 장 저장
+          setSelectedImages(images);
         }
       },
     });
   };
-
 
   const handleSubmit = () => {
     const post = {
@@ -37,16 +36,16 @@ const WritingScreen = () => {
       title,
       content,
       writer: '익명',
-      images: selectedImages, // uri로 변환하지 않고 이미지 객체 그대로 저장
+      images: selectedImages,
     };
-  
+
     console.log('[작성됨]', post);
-    addPost(post);         // 메모리에 저장
-    navigation.goBack();   // 커뮤니티 목록으로 이동
+    addPost(post);
+    navigation.goBack();
   };
 
   return (
-    <SafeAreaView style={[styles.safe, { paddingBottom: 70 }]}>
+    <SafeAreaView style={styles.safe}>
       <View style={styles.header}>
         <Text style={styles.headerText}>빵뮤니티</Text>
         <Image
@@ -63,6 +62,7 @@ const WritingScreen = () => {
           value={title}
           onChangeText={setTitle}
           placeholder="제목을 입력하세요"
+          placeholderTextColor="#aaa"
         />
 
         <Text style={styles.label}>내용</Text>
@@ -71,6 +71,7 @@ const WritingScreen = () => {
           value={content}
           onChangeText={setContent}
           placeholder="내용을 입력하세요"
+          placeholderTextColor="#aaa"
           multiline
         />
 
@@ -79,16 +80,21 @@ const WritingScreen = () => {
         </TouchableOpacity>
 
         {selectedImages.length > 0 && (
-          <View style={styles.imageGrid}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.imageScroll}
+            contentContainerStyle={styles.imageScrollContent}
+          >
             {selectedImages.map((img, index) => (
               <Image
                 key={index}
                 source={img}
-                style={styles.gridImage}
+                style={styles.scrollImage}
                 resizeMode="cover"
               />
             ))}
-          </View>
+          </ScrollView>
         )}
 
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
@@ -98,14 +104,11 @@ const WritingScreen = () => {
     </SafeAreaView>
   );
 };
-const screenWidth = Dimensions.get('window').width;
-const imageSpacing = 8;
-const imageWidth = (screenWidth - 40 - imageSpacing) / 2; // 양쪽 padding 20씩 + 간격
 
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fdf2e7',
   },
   header: {
     backgroundColor: '#fdf2e7',
@@ -116,67 +119,71 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingBottom: 20,
   },
-  headerText: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#8b4a21',
-  },
-  headerImage: {
-    width: 200,
-    height: 120,
-  },
-  container: {
-    padding: 20,
-  },
+  headerText: {fontSize: 28, fontWeight: 'bold', color: '#8b4a21',},
+  headerImage: {width: 200, height: 120,},
+
+  container: {paddingHorizontal: 30, paddingVertical:15},
+
   label: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     marginTop: 12,
-    marginBottom: 6,
+    marginBottom: 10,
   },
   input: {
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#fff',
     padding: 12,
-    borderRadius: 8,
+    marginTop:5,
+    marginBottom:10,
+    borderRadius: 10,
+    fontSize: 15,
+    color: '#333',
   },
   textArea: {
     height: 120,
     textAlignVertical: 'top',
+    paddingHorizontal:20
   },
+
   galleryButton: {
-    marginTop: 16,
+    marginTop: 25,
     padding: 12,
     backgroundColor: '#d2691e',
-    borderRadius: 8,
+    borderRadius: 10,
     alignItems: 'center',
   },
   galleryButtonText: {
     color: '#fff',
     fontWeight: 'bold',
+    fontSize: 15,
   },
-  imageGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+
+  imageScroll: {
     marginTop: 16,
+    maxHeight: 130,
   },
-  gridImage: {
-    width: imageWidth,
-    height: 140,
-    borderRadius: 10,
-    marginBottom: 8,
+  imageScrollContent: {
+    paddingHorizontal: 4,
+    gap: 10,
   },
+  scrollImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 12,
+    marginRight: 10,
+  },
+
   button: {
     backgroundColor: '#8B4513',
-    marginTop: 24,
+    marginTop: 50,
     padding: 14,
-    borderRadius: 10,
+    borderRadius: 30,
     alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 17,
   },
 });
 

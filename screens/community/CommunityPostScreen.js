@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   SafeAreaView,
   Text,
@@ -7,20 +7,19 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
-  KeyboardAvoidingView,
-  Platform,
   TextInput,
+  Animated,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { updatePostById, getPosts } from './CommunityPostData'; // 🔧 수정 1: getPosts 추가
+import { updatePostById, getPosts } from './CommunityPostData';
 
 const CommunityPostScreen = ({ route }) => {
   const { post } = route.params;
   const [comment, setComment] = useState('');
+  const [commenterName, setCommenterName] = useState('');
   const [likeNum, setLikeNum] = useState(post.likes || 0);
   const [comments, setComments] = useState(post.comments || []);
+  const scaleAnim = useRef(new Animated.Value(1)).current;
 
-  // 🔧 수정 2: 최신 데이터 갱신 함수
   const refreshPostData = () => {
     const latest = getPosts().find((p) => p.id === post.id);
     if (latest) {
@@ -30,76 +29,74 @@ const CommunityPostScreen = ({ route }) => {
   };
 
   const handleCommentSubmit = async () => {
-    if (!comment.trim()) return;
-    const updatedComments = [...comments, comment];
+    if (!commenterName.trim() || !comment.trim()) return;
+    const newComment = { name: commenterName, text: comment };
+    const updatedComments = [...comments, newComment];
     setComments(updatedComments);
     setComment('');
-
+    setCommenterName('');
     await updatePostById(post.id, (prev) => ({
       ...prev,
       comments: updatedComments,
     }));
-
-    refreshPostData(); // 🔧 수정 3: 최신 데이터 반영
+    refreshPostData();
   };
 
   const handleLike = async () => {
+    Animated.sequence([
+      Animated.spring(scaleAnim, {
+        toValue: 1.4,
+        friction: 3,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        friction: 3,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
     const newLikeCount = likeNum + 1;
     setLikeNum(newLikeCount);
-
     await updatePostById(post.id, (prev) => ({
       ...prev,
       likes: newLikeCount,
     }));
-
-    refreshPostData(); // 🔧 수정 4: 최신 데이터 반영
+    refreshPostData();
   };
 
   return (
-    <SafeAreaView style={[styles.container, { paddingBottom: 70 }]}>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-          <View style={styles.profileRow}>
-            <Image
-              source={require('../../assets/walking_pig.png')}
-              style={styles.profileImage}
-            />
-            <Text style={styles.name}>{post.writer}</Text>
-          </View>
-
-          <View style={styles.titleBox}>
-            <Text style={styles.title}>{post.title}</Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.card}>
+          <View style={styles.headerRow}>
+            <View style={styles.authorInfo}>
+              <Image
+                source={require('../../assets/walking_pig.png')}
+                style={styles.profileImage}
+              />
+              <Text style={styles.authorName}>{post.writer}</Text>
+            </View>
+            <Text style={styles.likesText}>❤️ {likeNum} 공감</Text>
           </View>
 
           {post.images && post.images.length > 0 && (
-            <View style={styles.imageGrid}>
-              {post.images.map((img, index) => (
-                <Image
-                  key={index}
-                  source={typeof img === 'string' ? { uri: img } : img}
-                  style={styles.image}
-                  resizeMode="cover"
-                />
-              ))}
-            </View>
+            <Image
+              source={typeof post.images[0] === 'string' ? { uri: post.images[0] } : post.images[0]}
+              style={styles.postImage}
+              resizeMode="cover"
+            />
           )}
 
           <Text style={styles.content}>{post.content}</Text>
 
-          <View style={styles.likeCnt}>
-            <Text>공감수: {likeNum}</Text>
-          </View>
-
           <View style={styles.reactionRow}>
-            <TouchableOpacity style={styles.likeButton} onPress={handleLike}>
-              <Text style={styles.likeText}>👍 공감하기</Text>
-            </TouchableOpacity>
+            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+              <TouchableOpacity style={styles.likeButton} onPress={handleLike}>
+                <Text style={styles.likeText}>👍 공감하기</Text>
+              </TouchableOpacity>
+            </Animated.View>
           </View>
-
-          <View style={styles.separator} />
 
           <View style={styles.commentSection}>
             <Text style={styles.commentCount}>댓글 {comments.length}</Text>
@@ -109,21 +106,31 @@ const CommunityPostScreen = ({ route }) => {
               </Text>
             ) : (
               comments.map((cmt, idx) => (
-                <Text key={idx} style={{ marginBottom: 6 }}>
-                  {cmt}
-                </Text>
+                <View key={idx} style={styles.commentItem}>
+                  <View style={styles.commentHeader}>
+                    <Image
+                      source={require('../../assets/walking_pig.png')}
+                      style={styles.commentProfileImage}
+                    />
+                    <Text style={styles.commentAuthor}>{cmt.name}</Text>
+                  </View>
+                  <Text style={styles.commentContent}>{cmt.text}</Text>
+                </View>
               ))
             )}
           </View>
-        </ScrollView>
+        </View>
 
         <View style={styles.commentInputBar}>
-          <TouchableOpacity>
-            <Image source={require('../../assets/pig-community.png')} style={styles.icon} />
-          </TouchableOpacity>
+          <TextInput
+            style={styles.nameInput}
+            placeholder="이름"
+            value={commenterName}
+            onChangeText={setCommenterName}
+          />
           <TextInput
             style={styles.commentInput}
-            placeholder="댓글을 입력해주세요.."
+            placeholder="댓글을 입력해주세요..."
             value={comment}
             onChangeText={setComment}
           />
@@ -131,132 +138,112 @@ const CommunityPostScreen = ({ route }) => {
             <Text style={styles.sendButtonText}>작성</Text>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
+  container: { flex: 1, backgroundColor: '#fdf2e7' }, // 갈색 배경
+  scrollContent: { padding: 20, paddingBottom: 100 },
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    elevation: 5,
   },
-  profileRow: {
+  headerRow: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    marginBottom: 8,
+    marginBottom: 16,
   },
-  profileImage: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    marginRight: 12,
-  },
-  name: {
-    fontSize: 15,
-    color: '#333',
-    fontWeight: '500',
-  },
-  titleBox: {
-    paddingHorizontal: 20,
-    marginBottom: 10,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#222',
-  },
-  imageGrid: {
-    paddingHorizontal: 20,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 10,
-  },
-  image: {
+  authorInfo: { flexDirection: 'row', alignItems: 'center' },
+  profileImage: { width: 40, height: 40, borderRadius: 20, marginRight: 10 },
+  authorName: { fontSize: 20, marginLeft
+    :15, fontWeight: '600', color: '#333' },
+  likesText: { fontSize: 18, color: '#555' },
+  postImage: {
     width: '100%',
-    height: 240,
-    marginBottom: 10,
-    borderRadius: 10,
+    height: 200,
+    borderRadius: 16,
+    marginTop:16,
+    marginBottom: 16,
     backgroundColor: '#eee',
   },
   content: {
-    fontSize: 16,
+    fontSize: 18,
+    color: '#333',
     lineHeight: 24,
-    paddingHorizontal: 20,
-    paddingBottom: 40,
-    color: '#444',
+    textAlign: 'center',
+    marginTop:10,
+    marginBottom: 20,
   },
-  scrollContent: {
-    paddingBottom: 100,
-  },
-  reactionRow: {
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-  },
-  likeCnt: {
-    paddingHorizontal: 20,
-    margin: 8,
-  },
+  reactionRow: { alignItems: 'center', marginBottom: 20 },
+
   likeButton: {
-    backgroundColor: '#eee',
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    borderRadius: 8,
-    alignSelf: 'flex-start',
-  },
-  likeText: {
-    fontWeight: 'bold',
-    color: '#555',
-  },
-  separator: {
-    height: 1,
-    backgroundColor: '#e0e0e0',
-    marginHorizontal: 20,
-    marginVertical: 10,
-  },
-  commentSection: {
+    backgroundColor: '#8b4a21',
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingVertical: 10,
+    borderRadius: 30,
   },
-  commentCount: {
-    fontWeight: 'bold',
-    fontSize: 15,
-    marginBottom: 6,
+  likeText: { fontSize: 13, color: '#fff', fontWeight: 'bold' },
+
+  commentSection: { marginTop: 10 },
+  commentCount: { fontSize: 18, fontWeight: 'bold', marginLeft:10, marginBottom:10},
+  commentEmpty: { color: '#999', fontSize: 15, margin:15, textAlign:'center' },
+  commentItem: {
+    backgroundColor: '#f7f7f7',
+    borderRadius: 12,
+    padding: 10,
+    margin:10,
   },
-  commentEmpty: {
-    color: '#999',
+  commentHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
   },
+  commentProfileImage: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    marginRight: 8,
+  },
+  commentAuthor: { fontSize:16, fontWeight: 'bold', color: '#4A4A4A' },
+  commentContent: { fontSize:18, margin:10, color: '#333' },
   commentInputBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderTopWidth: 1,
-    borderColor: '#eee',
-    backgroundColor: '#fff',
-    position: 'absolute',
-    bottom: 10,
-    width: '100%',
+    backgroundColor: '#e0e0e0', // 회색으로 변경
+    borderRadius: 70,
+    paddingHorizontal: 16,
+    paddingVertical: 7,
+    marginTop: 20,
+    marginHorizontal:20
+  },
+
+  nameInput: {
+    width: 80,
+    fontSize: 15,
+    marginRight: 8,
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
   commentInput: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 20,
-    marginLeft: 8,
+    fontSize: 15,
+    marginRight: 8,
   },
   sendButtonText: {
-    marginLeft: 10,
-    color: '#8B4513',
+    color: '#e06666',
     fontWeight: 'bold',
     fontSize: 15,
-  },
-  icon: {
-    width: 24,
-    height: 24,
+    marginRight:20,
+    marginBottom:5
   },
 });
 

@@ -1,17 +1,10 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import React, { useState, useCallback } from 'react';
+import {SafeAreaView, ScrollView, View, Text, Image,
+  StyleSheet, TouchableOpacity,} from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getPosts } from './CommunityPostData';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const STORAGE_KEY = 'community_posts';
 
@@ -22,8 +15,7 @@ const CommunityScreen = ({ navigation }) => {
     try {
       const stored = await AsyncStorage.getItem(STORAGE_KEY);
       if (stored) {
-        const parsed = JSON.parse(stored);
-        setPosts(parsed);
+        setPosts(JSON.parse(stored));
       } else {
         const latest = getPosts();
         setPosts(latest);
@@ -50,8 +42,8 @@ const CommunityScreen = ({ navigation }) => {
         style={styles.card}
         onPress={() => navigation.navigate('글 내용', { post: item })}
       >
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>{item.title}</Text>
+        <View style={styles.cardHeader}>
+          <Text style={styles.writerText}>{item.writer}</Text>
         </View>
 
         {item.images && item.images.length > 0 && (
@@ -66,12 +58,16 @@ const CommunityScreen = ({ navigation }) => {
           />
         )}
 
-        <View style={styles.contentContainer}>
-          <Text style={styles.content}>{item.content}</Text>
+        <View style={styles.cardBody}>
+          <Text style={styles.titleText}>{item.title}</Text>
+          <Text style={styles.content} numberOfLines={2}>
+            {item.content}
+          </Text>
         </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.writerText}>{item.writer}</Text>
+        <View style={styles.cardFooter}>
+          <Text style={styles.iconText}>♥️ {item.likes || 0}</Text>
+          <Text style={styles.iconText}>💬 {(item.comments || []).length}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -101,12 +97,11 @@ const CommunityScreen = ({ navigation }) => {
             <View style={styles.column}>{rightColumn}</View>
           </View>
         </ScrollView>
-
         <TouchableOpacity
           style={styles.fab}
           onPress={() => navigation.navigate('글쓰기')}
         >
-          <Ionicons name="create-outline" size={24} color="white" />
+          <Text style={{ fontSize: 22, color: 'white' }}>✏️</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -138,52 +133,65 @@ const styles = StyleSheet.create({
     height: 120,
   },
   container: {
-    paddingVertical: 16,
-    paddingHorizontal: 12,
-    backgroundColor: '#fff',
+    paddingVertical: 20,
+    paddingHorizontal: 25,
+    backgroundColor: '#fdf2e7',
   },
   columns: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: 15,
   },
   column: {
     flex: 1,
-    gap: 16,
+    gap: 20,
   },
+  
   card: {
     backgroundColor: '#ffffff',
-    borderRadius: 10,
-    marginHorizontal: 6,
+    borderRadius: 16,
+    marginHorizontal: 4,
     overflow: 'hidden',
-    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    elevation: 8,
   },
-  titleContainer: {
-    padding: 10,
-  },
-  titleText: {
-    fontWeight: 'bold',
-    fontSize: 17,
-    color: '#333',
-  },
+  cardHeader: {padding: 10},
+  writerText: {fontSize: 14, color: '#333'},
   image: {
     width: '100%',
-    height: 160,
+    height: 140,
     backgroundColor: '#f3f0e8',
   },
-  contentContainer: {
-    padding: 10,
+
+  cardBody: {paddingHorizontal: 15, paddingVertical:11, gap: 5},
+  titleText: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    color: '#333',
   },
-  content: {
-    fontSize: 15,
+  content: {fontSize: 13, color: '#666'},
+  cardFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical:10, 
+    borderTopWidth: 0.5,
+    borderTopColor: '#eee',
+  },
+
+  iconGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  iconText: {
+    fontSize: 13,
     color: '#666',
   },
-  footer: {
-    padding: 10,
-  },
-  writerText: {
-    color: '#888',
-    fontSize: 13,
-  },
+
   fab: {
     position: 'absolute',
     bottom: 25,
