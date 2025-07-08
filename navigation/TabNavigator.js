@@ -5,6 +5,7 @@ import SplashScreen from '../screens/splashScreen';
 import FirstTabStack from './FirstTabStack';
 import MyGalleryScreen from '../screens/MyGalleryScreen';
 import CommunityTabStack from './CommunityTabStack';
+import MyPageScreen from '../screens/MyPageScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
@@ -56,6 +57,15 @@ const MainTabs = () => (
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="chatbubble-ellipses-outline" color={color} size={28} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="마이페이지"
+      component={MyPageScreen}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="person" color={color} size={28} />
         ),
       }}
     />
