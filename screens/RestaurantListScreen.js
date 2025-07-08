@@ -1,9 +1,16 @@
-import React, { useMemo } from 'react';
-import { Ionicons } from '@expo/vector-icons';
-import { SafeAreaView, FlatList, View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import React, { useState, useMemo } from 'react';
+import {
+  SafeAreaView,
+  FlatList,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import dummyImage from '../assets/list_dumimg.png';
-// const data = require('../crawl/results_googlemaps.json');
 
 const { width } = Dimensions.get('window');
 
@@ -20,47 +27,67 @@ const dataFiles = {
   '중앙동': require('../crawl/중앙동 카페_crawled.json'),
 };
 
-// 네비게이션 prop을 받아, 리스트 아이템 터치 시 상세 화면으로 이동 가능
 const RestaurantListScreen = ({ navigation, route }) => {
-  const numColumns = 2;
+  const [viewMode, setViewMode] = useState('gallery'); // 'gallery' or 'list'
   const { dong } = route.params;
-  const data = dataFiles[dong] || []; // 없는 dong이면 빈 배열
+  const data = dataFiles[dong] || [];
 
-  // 음식점 데이터 준비
   const fixedData = useMemo(() => {
+    if (viewMode !== 'gallery') return data;
     const temp = [...data];
-    if (temp.length % numColumns !== 0) {
+    if (temp.length % 2 !== 0) {
       temp.push({ id: 'dummy', isDummy: true });
     }
     return temp;
-  }, [data]);
+  }, [data, viewMode]);
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.itemContainer}
-      onPress={() => navigation.navigate('Gallery', { 
-        restaurantId: item.id,
-        dong: dong,
-       })}
-    >
-      <Image
-        source={
-          item.image && item.image.startsWith('http') ? { uri: item.image } : dummyImage
+  const renderItem = ({ item }) => {
+    if (item.isDummy) return <View style={{ flex: 1, margin: 8 }} />;
+
+    if (viewMode === 'list') {
+      return (
+        <TouchableOpacity
+          style={styles.listItemContainer}
+          onPress={() =>
+            navigation.navigate('Gallery', { restaurantId: item.id, dong })
+          }
+        >
+          <Image
+            source={item.image?.startsWith('http') ? { uri: item.image } : dummyImage}
+            style={styles.listImage}
+          />
+          <View style={styles.listTextBox}>
+            <Text style={styles.nameText}>{item.name}</Text>
+            <Text style={styles.addressText}>{item.address}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+
+    return (
+      <TouchableOpacity
+        style={styles.itemContainer}
+        onPress={() =>
+          navigation.navigate('Gallery', { restaurantId: item.id, dong })
         }
-        style={styles.image}
-      />
-      <View style={styles.nameContainer}>
-        <Text style={styles.nameText}>{item.name}</Text>
-      </View>
-      <View style={styles.addressContainer}>
-        <Text style={styles.addressText}>{item.address}</Text>
-      </View>
-    </TouchableOpacity>
-  );
+      >
+        <Image
+          source={item.image?.startsWith('http') ? { uri: item.image } : dummyImage}
+          style={styles.image}
+        />
+        <View style={styles.nameContainer}>
+          <Text style={styles.nameText}>{item.name}</Text>
+        </View>
+        <View style={styles.addressContainer}>
+          <Text style={styles.addressText}>{item.address}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', position: 'relative', paddingBottom: 70 }}>
-      {/* 상단 크림톤 배너 + 앱 이름 + 돼지 이미지 */}
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', paddingBottom: 70 }}>
+      {/* 헤더 */}
       <View style={styles.header}>
         <Text style={styles.headerText}>{dong} 빵집</Text>
         <Image
@@ -70,32 +97,58 @@ const RestaurantListScreen = ({ navigation, route }) => {
         />
       </View>
 
-        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={25} color="#FDF0C1" />
+      {/* 보기 전환 버튼 */}
+      <View style={styles.modeToggleBar}>
+        <TouchableOpacity
+          style={[styles.modeButton, viewMode === 'gallery' && styles.modeButtonSelected]}
+          onPress={() => setViewMode('gallery')}
+        >
+          <Text style={[styles.modeButtonText, viewMode === 'gallery' && styles.modeButtonTextSelected]}>
+            갤러리뷰
+          </Text>
         </TouchableOpacity>
-      {/* 음식점 리스트 */}
-      <FlatList
-        data={fixedData}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
-        numColumns={numColumns}
-        contentContainerStyle={styles.listContainer}
-      />
+        <TouchableOpacity
+          style={[styles.modeButton, viewMode === 'list' && styles.modeButtonSelected]}
+          onPress={() => setViewMode('list')}
+        >
+          <Text style={[styles.modeButtonText, viewMode === 'list' && styles.modeButtonTextSelected]}>
+            리스트뷰
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* 뒤로가기 버튼 */}
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={25} color="#FDF0C1" />
+      </TouchableOpacity>
+
+      {/* FlatList 분기 + key로 오류 방지 */}
+      {viewMode === 'gallery' ? (
+        <FlatList
+          key="gallery"
+          data={fixedData}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => item.id?.toString() || `dummy-${index}`}
+          numColumns={2}
+          contentContainerStyle={styles.listContainer}
+        />
+      ) : (
+        <FlatList
+          key="list"
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => item.id?.toString() || `dummy-${index}`}
+          numColumns={1}
+          contentContainerStyle={styles.listContainer}
+        />
+      )}
     </SafeAreaView>
   );
 };
 
-
 const styles = StyleSheet.create({
   header: {
-    backButton: {
-      position: 'absolute',
-      top: 45,
-      left: 20,
-      zIndex: 10,
-      padding: 8,
-    },
-    backgroundColor: '#fdf2e7',       // 따뜻한 크림톤 배경
+    backgroundColor: '#fdf2e7',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
@@ -109,13 +162,43 @@ const styles = StyleSheet.create({
     color: '#8b4a21',
   },
   headerImage: {
-    width: 120,
-    height: 120,
+    width: 100,
+    height: 100,
   },
-  
+  backButton: {
+    position: 'absolute',
+    top: 45,
+    left: 20,
+    zIndex: 10,
+    padding: 8,
+  },
+  modeToggleBar: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    backgroundColor: '#fff',
+    gap: 10,
+  },
+  modeButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    backgroundColor: '#eee',
+  },
+  modeButtonSelected: {
+    backgroundColor: '#8b4a21',
+  },
+  modeButtonText: {
+    fontSize: 14,
+    color: '#555',
+  },
+  modeButtonTextSelected: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
   listContainer: {
-    paddingVertical: 16,
     paddingHorizontal: 12,
+    paddingBottom: 16,
     backgroundColor: '#fff',
   },
   itemContainer: {
@@ -151,6 +234,26 @@ const styles = StyleSheet.create({
   addressText: {
     color: '#888888',
     fontSize: 14,
+  },
+  listItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 8,
+    marginHorizontal: 10,
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    elevation: 1,
+    padding: 10,
+  },
+  listImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 10,
+    backgroundColor: '#eee',
+  },
+  listTextBox: {
+    marginLeft: 12,
+    flex: 1,
   },
 });
 

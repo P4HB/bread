@@ -7,21 +7,6 @@ import { FlatList } from "react-native-gesture-handler";
 export default function HomeScreen() {
   const [search, setSearch] = useState("");
   const navigation = useNavigation(); // ✅ 추가
-
-  // const dummyImages = [
-  //   require("../assets/bread/bread1.png"),
-  //   require("../assets/bread/bread2.png"),
-  //   require("../assets/bread/bread3.png"),
-  //   require("../assets/bread/bread4.png"),
-  // ];
-
-  // const handleSearch = () => {
-  //   if (search.trim()) {
-  //     navigation.navigate("breadList", {
-  //       keyword: search,
-  //     });
-  //   }
-  // };
   
   const dongList = [
    '궁동', '괴정동', '노은동', '만년동', '법동',
@@ -119,13 +104,14 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   headerText: {
+    fontFamily: 'Yeongdeok Snow Crab',
     position: 'absolute',
     top:60,
     right: 40,
     width: 200,                    // 텍스트 박스 너비
     textAlign: 'center',
     fontSize: 55,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     color: '#8b4a21',
     zIndex: 2,
   },
