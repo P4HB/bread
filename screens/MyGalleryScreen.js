@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
+import {SafeAreaView, ScrollView, View, Image, Text,
+  TouchableOpacity, Modal, StyleSheet, Dimensions} from 'react-native';
 
 import { launchCamera } from 'react-native-image-picker'; // ✅ react-native-image-picker로 교체
 import AsyncStorage from '@react-native-async-storage/async-storage';
