@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import {
   SafeAreaView, StyleSheet, View, Image, Text,
   FlatList, TouchableOpacity
 } from 'react-native';
 import { getPosts } from './community/CommunityPostData';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const profileImages = [
   require('../assets/profileimage/pig_1.png'),
@@ -27,15 +28,17 @@ const colors = {
   separator: '#EBE4D4',
 };
 
+const SAVED_BAKERIES_KEY = 'saved_bakeries';
+
 const MyPageScreen = ({ route }) => {
   const navigation = useNavigation();
   const { user } = route.params;
   const [mainTab, setMainTab] = useState('activity');
   const [subTab, setSubTab] = useState('posts');
+  const [savedBakeries, setSavedBakeries] = useState([]);
 
   const allPosts = getPosts();
   const myPosts = allPosts.filter(post => post.writer === user.name);
-
   const myComments = useMemo(() => {
     const comments = [];
     allPosts.forEach(post => {
@@ -50,6 +53,15 @@ const MyPageScreen = ({ route }) => {
     return comments;
   }, [allPosts, user.name]);
 
+  useFocusEffect(
+    useCallback(() => {
+      const loadSavedBakeries = async () => {
+        const saved = await AsyncStorage.getItem(SAVED_BAKERIES_KEY);
+        setSavedBakeries(saved ? JSON.parse(saved) : []);
+      };
+      loadSavedBakeries();
+    }, [])
+  );
 
   const renderContent = () => {
     if (mainTab === 'activity') {
@@ -72,9 +84,8 @@ const MyPageScreen = ({ route }) => {
             </TouchableOpacity>
           </View>
 
-          {/* ⭐️ 이 부분을 수정했습니다. */}
           <FlatList
-            key={subTab} 
+            key={subTab}
             data={subTab === 'posts' ? myPosts : myComments}
             renderItem={subTab === 'posts' ? renderPostItem : renderCommentItem}
             keyExtractor={(item, index) => `${subTab}-${item.id || index}`}
@@ -83,11 +94,12 @@ const MyPageScreen = ({ route }) => {
         </>
       );
     } else {
+      // ⭐️ 저장한 빵집 목록 렌더링
       return (
         <FlatList
-          data={[]}
-          renderItem={() => null}
-          keyExtractor={(item, idx) => idx.toString()}
+          data={savedBakeries}
+          renderItem={renderSavedBakeryItem}
+          keyExtractor={(item) => `${item.dong}-${item.id}`}
           contentContainerStyle={styles.listContainer}
         />
       );
@@ -111,6 +123,20 @@ const MyPageScreen = ({ route }) => {
       </View>
     </TouchableOpacity>
   );
+
+  // ⭐️ 저장된 빵집 아이템 렌더링 함수
+  const renderSavedBakeryItem = ({ item }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('음식점', { screen: 'Gallery', params: { restaurantId: item.id, dong: item.dong }})}>
+       <View style={styles.savedBakeryItem}>
+         <Image source={typeof item.image === 'string' ? { uri: item.image } : item.image} style={styles.bakeryImage} />
+         <View>
+           <Text style={styles.itemTitle}>{item.name}</Text>
+           <Text style={styles.itemContent}>{item.dong}</Text>
+         </View>
+       </View>
+    </TouchableOpacity>
+  );
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -144,7 +170,6 @@ const MyPageScreen = ({ route }) => {
   );
 };
 
-// (스타일 코드는 이전과 동일하므로 생략합니다)
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background, paddingTop: "20%" },
   profileSection: { paddingVertical: 20, paddingHorizontal: 30, alignItems: 'center' },
@@ -164,6 +189,8 @@ const styles = StyleSheet.create({
   contentItem: { backgroundColor: colors.cardBackground, borderRadius: 12, padding: 16, marginBottom: 12 },
   itemTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 6, color: colors.textDark },
   itemContent: { fontSize: 14, color: colors.textDark, lineHeight: 20 },
+  savedBakeryItem: { flexDirection: 'row', alignItems: 'center', backgroundColor: colors.cardBackground, borderRadius: 12, padding: 16, marginBottom: 12, },
+  bakeryImage: { width: 60, height: 60, borderRadius: 10, marginRight: 15, },
 });
 
 export default MyPageScreen;

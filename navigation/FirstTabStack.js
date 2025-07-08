@@ -6,24 +6,29 @@ import RestaurantGalleryScreen from '../screens/RestaurantGalleryScreen';
 
 const Stack = createStackNavigator();
 
-const FirstTabStack = () => (
-  <Stack.Navigator initialRouteName='Home'>
-    <Stack.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{ headerShown: false }} 
-    />
-    <Stack.Screen
-      name="breadList"
-      component={RestaurantListScreen}
-      options={{ headerShown: false }} // 네이티브 헤더 숨기기
-    />
-    <Stack.Screen
-      name="Gallery"
-      component={RestaurantGalleryScreen}
-      options={{ headerShown: false }}
-    />
-  </Stack.Navigator>
-);
+const FirstTabStack = ({route}) => {
+    const {user} = route.params;
+
+    return(
+        <Stack.Navigator initialRouteName='Home'>
+            <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            initialParams={{user}}
+            options={{ headerShown: false }} 
+            />
+            <Stack.Screen
+            name="breadList"
+            component={RestaurantListScreen}
+            options={{ headerShown: false }}
+            />
+            <Stack.Screen
+            name="Gallery"
+            component={RestaurantGalleryScreen}
+            options={{ headerShown: false }}
+            />
+        </Stack.Navigator>
+    );
+};
 
 export default FirstTabStack;

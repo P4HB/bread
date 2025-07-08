@@ -1,15 +1,9 @@
-import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import data from '../crawl/results_googlemaps.json';
-import background_img from '../assets/background.png';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const RestaurantGalleryScreen = ({ route, navigation }) => {
-  // route : 현재 화면의 위치와 관련 데이터를 담고 있는 객체
-  // 현재 어떤 스택/탭/라우트에 위치해 있는지, 이동 시 전달받은 params는 무엇인지 등을 포함
-  const { restaurantId, dong } = route.params;
-  // 배열의 각 요소(r)에 대해 r.id가 restaurantId와 같은지 검사
-  const dataFiles = {
+const dataFiles = {
     '괴정동': require('../crawl/괴정동 카페_crawled.json'),
     '궁동': require('../crawl/궁동 카페_crawled.json'),
     '노은동': require('../crawl/노은동 카페_crawled.json'),
@@ -21,13 +15,59 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
     '월평동': require('../crawl/월평동 카페_crawled.json'),
     '중앙동': require('../crawl/중앙동 카페_crawled.json'),
   };
+
+const SAVED_BAKERIES_KEY = 'saved_bakeries';
+
+const RestaurantGalleryScreen = ({ route, navigation }) => {
+  const { restaurantId, dong } = route.params;
   const data = dataFiles[dong];
   const restaurant = data.find((r) => r.id === restaurantId);
+  const [isSaved, setIsSaved] = useState(false);
 
-  const restaurantName = restaurant.name;
-  const rating = restaurant.rating_value;
-  const phone = restaurant.call_value;
-  const reviews = restaurant.review.map((rev, index) => ({
+  useEffect(() => {
+    const checkIsSaved = async () => {
+      const saved = await AsyncStorage.getItem(SAVED_BAKERIES_KEY);
+      const savedList = saved ? JSON.parse(saved) : [];
+      if (savedList.some(item => item.id === restaurantId && item.dong === dong)) {
+        setIsSaved(true);
+      }
+    };
+    checkIsSaved();
+  }, [restaurantId, dong]);
+
+
+  const handleSave = async () => {
+    try {
+      const saved = await AsyncStorage.getItem(SAVED_BAKERIES_KEY);
+      let savedList = saved ? JSON.parse(saved) : [];
+
+      if (isSaved) {
+        savedList = savedList.filter(item => !(item.id === restaurantId && item.dong === dong));
+        Alert.alert('저장 취소', '저장된 빵집 목록에서 삭제되었습니다.');
+      } else {
+        savedList.push({ id: restaurantId, dong, name: restaurant.name, image: restaurant.image });
+        Alert.alert('저장 완료', '빵집이 저장되었습니다.');
+      }
+      
+      await AsyncStorage.setItem(SAVED_BAKERIES_KEY, JSON.stringify(savedList));
+      setIsSaved(!isSaved);
+
+    } catch (e) {
+      Alert.alert('오류', '빵집을 저장하는 데 실패했습니다.');
+    }
+  };
+
+
+  if (!restaurant) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text>해당하는 빵집 정보를 찾을 수 없습니다.</Text>
+      </SafeAreaView>
+    );
+  }
+
+  const { name, rating_value, call_value, review } = restaurant;
+  const reviews = review.map((rev, index) => ({
     id: index + 1,
     author: rev.nickname,
     text: rev.text,
@@ -41,33 +81,34 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
 
       <View style={{ flex: 1 }}>
         <ImageBackground
-          source={require('../assets/background.png')} // 배경 이미지 경로 수정 필요
+          source={require('../assets/background.png')}
           style={styles.topSection}
           resizeMode="cover"
         >
-          <Text style={styles.storeName}>{restaurantName}</Text>
-
-          {/* <View style={styles.ratingBox}>
-            <Text style={styles.ratingText}>🥐 {rating}</Text>
-          </View> */}
-
+          <Text style={styles.storeName}>{name}</Text>
           <View style={styles.phoneBox}>
-            <Text style={styles.phoneText}>TEL: {phone}</Text>
+            <Text style={styles.phoneText}>TEL: {call_value}</Text>
           </View>
         </ImageBackground>
 
+        {/* ⭐️ 저장하기 버튼 추가 */}
+        <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+            <Ionicons name={isSaved ? "heart" : "heart-outline"} size={24} color={isSaved ? "#FF6347" : "#FFF"} />
+            <Text style={styles.saveButtonText}>{isSaved ? '저장됨' : '저장하기'}</Text>
+        </TouchableOpacity>
+
         <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
           <View style={styles.reviewsSection}>
-            {reviews.map((review, index) => (
+            {reviews.map((item, index) => (
               <View
-                key={review.id}
+                key={item.id}
                 style={[
                   styles.speechBubble,
                   index % 2 === 0 ? styles.bubbleLeft : styles.bubbleRight,
                 ]}
               >
-                <Text style={styles.reviewAuthor}>{review.author}</Text>
-                <Text style={styles.reviewText}>{review.text}</Text>
+                <Text style={styles.reviewAuthor}>{item.author}</Text>
+                <Text style={styles.reviewText}>{item.text}</Text>
               </View>
             ))}
           </View>
@@ -79,78 +120,19 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FEF6DC' },
-  backButton: {
-    position: 'absolute',
-    top: 45,
-    left: 20,
-    zIndex: 10,
-    padding: 8,
-  },
-  topSection: {
-    padding:35,
-    paddingTop: 100, // 음식점명을 버튼과 겹치지 않도록 더 내림
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 30,
-    overflow: 'hidden',
-    elevation: 8,
-    marginBottom: 10,
-  },
-  storeName: {
-    fontSize: 34, // 크기 키움
-    fontWeight: 'bold',
-    color: '#FEF6DC',
-    marginBottom: 20,
-  },
-
-  ratingBox: {
-    // backgroundColor: '#B22222',
-    padding: 10,
-    borderRadius: 5,
-  },
-  ratingText: {
-    color: '#fff',
-    fontSize: 18,
-  },
-  phoneBox: {
-    // backgroundColor: '#FFD700',
-    padding: 10,
-    borderRadius: 5,
-  },
-  phoneText: {
-    color: '#fff',
-    fontSize: 16,
-  },
-
-  reviewsSection: {
-    paddingHorizontal: 0,
-  },
-  speechBubble: {
-    backgroundColor: '#fff',
-
-    padding: 15,
-    marginVertical: 15,
-    maxWidth: '75%',
-  },
-  bubbleLeft: {
-    alignSelf: 'flex-start',
-    borderTopRightRadius: 15,
-    borderBottomRightRadius: 15,
-    elevation: 10,
-  },
-  bubbleRight: {
-    alignSelf: 'flex-end',
-    borderTopLeftRadius: 15,
-    borderBottomLeftRadius: 15,
-    elevation: 10,
-  },
-  reviewAuthor: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    marginBottom: 5,
-  },
-  reviewText: {
-    fontSize: 15,
-  },
+  backButton: { position: 'absolute', top: 45, left: 20, zIndex: 10, padding: 8 },
+  topSection: { padding:35, paddingTop: 100, borderBottomLeftRadius: 0, borderBottomRightRadius: 30, overflow: 'hidden', elevation: 8, marginBottom: 10 },
+  storeName: { fontSize: 34, fontWeight: 'bold', color: '#FEF6DC', marginBottom: 20 },
+  phoneBox: { padding: 10, borderRadius: 5 },
+  phoneText: { color: '#fff', fontSize: 16 },
+  reviewsSection: { paddingHorizontal: 0 },
+  speechBubble: { backgroundColor: '#fff', padding: 15, marginVertical: 15, maxWidth: '75%' },
+  bubbleLeft: { alignSelf: 'flex-start', borderTopRightRadius: 15, borderBottomRightRadius: 15, elevation: 10 },
+  bubbleRight: { alignSelf: 'flex-end', borderTopLeftRadius: 15, borderBottomLeftRadius: 15, elevation: 10 },
+  reviewAuthor: { fontWeight: 'bold', fontSize: 20, marginBottom: 5 },
+  reviewText: { fontSize: 15 },
+  saveButton: { position: 'absolute', top: 180, right: 30, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.4)', paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20 },
+  saveButtonText: { color: '#fff', marginLeft: 8, fontWeight: 'bold' }
 });
 
 export default RestaurantGalleryScreen;
