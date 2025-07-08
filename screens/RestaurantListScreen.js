@@ -104,8 +104,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   headerText: {
-    fontSize: 28,
-    fontWeight: 'bold',
+    fontSize: 40,
+    // fontWeight: 'bold',
+    fontFamily : 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
   },
   headerImage: {
