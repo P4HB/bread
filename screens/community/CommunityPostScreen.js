@@ -1,25 +1,12 @@
-import React, { useState, useRef } from 'react';
-import {
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  Image,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  Animated,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from 'react-native';
+import React, { useState, useRef, useCallback } from 'react';
+import {SafeAreaView, Text, StyleSheet, Image, View,
+  ScrollView, TouchableOpacity, TextInput, Animated, KeyboardAvoidingView,
+  Platform, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { updatePostById, getPosts } from './CommunityPostData';
 
 const CommunityPostScreen = ({ route }) => {
-  const { post } = route.params;
+  const {post, user } = route.params;
   const [comment, setComment] = useState('');
-  const [commenterName, setCommenterName] = useState('');
   const [likeNum, setLikeNum] = useState(post.likes || 0);
   const [comments, setComments] = useState(post.comments || []);
   const scaleAnim = useRef(new Animated.Value(1)).current;
@@ -33,16 +20,17 @@ const CommunityPostScreen = ({ route }) => {
   };
 
   const handleCommentSubmit = async () => {
-    if (!commenterName.trim() || !comment.trim()) return;
-    const newComment = { name: commenterName, text: comment };
+    if (!comment.trim()) return;
+    const newComment = { name: user.name,
+      profileImage: user.profileImage, text: comment };
     const updatedComments = [...comments, newComment];
     setComments(updatedComments);
     setComment('');
-    setCommenterName('');
     await updatePostById(post.id, (prev) => ({
-      ...prev,
-      comments: updatedComments,
+      ...prev, //전부 복사
+      comments: updatedComments, //이것만 대체
     }));
+    
     refreshPostData();
   };
 
@@ -147,12 +135,6 @@ const CommunityPostScreen = ({ route }) => {
 
             <View style={styles.commentInputBar}>
               <TextInput
-                style={styles.nameInput}
-                placeholder="이름"
-                value={commenterName}
-                onChangeText={setCommenterName}
-              />
-              <TextInput
                 style={styles.commentInput}
                 placeholder="댓글을 입력해주세요..."
                 value={comment}
@@ -244,15 +226,9 @@ const styles = StyleSheet.create({
     borderRadius: 70,
     paddingHorizontal: 16,
     paddingVertical: 7,
+    paddingLeft:20,
     marginTop: 20,
     marginHorizontal: 20,
-  },
-  nameInput: {
-    width: 80,
-    fontSize: 15,
-    marginRight: 8,
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
   commentInput: {
     flex: 1,

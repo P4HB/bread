@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
 
     if (matched) {
       Alert.alert('로그인 성공', `${matched.name}님 환영합니다!`);
-      navigation.navigate('Main'); // 홈 화면으로 이동
+      navigation.navigate('Main', { user: matched }); // 홈 화면으로 이동
     } else {
       Alert.alert('로그인 실패', '아이디 또는 비밀번호가 일치하지 않습니다.');
     }
