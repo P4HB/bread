@@ -1,18 +1,29 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Image, SafeAreaView,
-  TouchableOpacity, ScrollView, StyleSheet} from "react-native";
+import React, { useRef } from "react";
+import {
+  View, Text, Image, SafeAreaView,
+  TouchableOpacity, StyleSheet, Animated,
+  Dimensions
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { FlatList } from "react-native-gesture-handler";
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+// 애니메이션 관련 상수
+const HEADER_MAX_HEIGHT = 280;
+const HEADER_MIN_HEIGHT = 200;
+const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
+
+const TEXT_MAX_FONT_SIZE = 60;
+const TEXT_MIN_FONT_SIZE = 50;
+const TEXT_BOX_WIDTH = 200;
 
 export default function HomeScreen() {
-  const [search, setSearch] = useState("");
-  const navigation = useNavigation(); // ✅ 추가
-  
-  const dongList = [
-   '궁동', '괴정동', '노은동', '만년동', '법동',
-   '석교동', '어은동', '오류동', '월평동', '중앙동'
-  ];
+  const navigation = useNavigation();
+  const scrollY = useRef(new Animated.Value(0)).current; // ✅ 스크롤 감지용
 
+  const dongList = [ '궁동', '괴정동', '노은동', '만년동', '법동', '석교동', '어은동', '오류동', '월평동', '중앙동' ];
+  
+  // 요청하신 breadImages 배열
   const breadImages = [
     require('../assets/bread/bread1.png'),
     require('../assets/bread/bread2.png'),
@@ -26,53 +37,107 @@ export default function HomeScreen() {
     require('../assets/bread/bread10.png'),
   ];
 
-  const handleSearch = () => {
-    console.log('[검색]', search);
+  const handleDongPress = (dong) => {
+    navigation.navigate('breadList', { dong });
   };
 
-  const handleDongPress = (dong) => {
-    navigation.navigate('breadList', { dong }); // 동 이름 prop으로 전달
-  };
+  // ✅ layout 속성 애니메이션 값 정의 (네이티브 드라이버 호환 속성으로 변경)
+
+  // 1. 헤더 자체를 위로 이동시켜 사라지는 효과
+  const headerTranslateY = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, -HEADER_SCROLL_DISTANCE],
+    extrapolate: 'clamp',
+  });
+
+  // // 2. 돼지 이미지 투명도 조절
+  // const imageOpacity = scrollY.interpolate({
+  //   inputRange: [0, HEADER_SCROLL_DISTANCE / 2],
+  //   outputRange: [1, 0],
+  //   extrapolate: 'clamp',
+  // });
+  
+  // ▼▼▼ 돼지 이미지 스케일 애니메이션 값 정의 ▼▼▼
+  const imageScale = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [1, 0.6], // 초기 크기 1에서 스크롤 끝까지 0.6배로 줄어듭니다. (조절 가능)
+    extrapolate: 'clamp',
+  });
+
+  const imageTranslateX = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, -65], // 왼쪽으로 40만큼 이동합니다. (값 조절 가능)
+    extrapolate: 'clamp',
+  });
+
+  const imageTranslateY = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, 40],
+    extrapolate: 'clamp',
+  });
+
+  // 3. 텍스트 크기를 scale로 조절
+  const textScale = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [1, TEXT_MIN_FONT_SIZE / TEXT_MAX_FONT_SIZE],
+    extrapolate: 'clamp',
+  });
+
+  // 4. 텍스트 세로 위치를 translateY로 조절
+  const textTranslateY = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, 80],
+    extrapolate: 'clamp',
+  });
+
+  // 5. 텍스트 가로 위치를 translateX로 조절
+  const initialLeft = SCREEN_WIDTH - TEXT_BOX_WIDTH - 40;
+  const finalLeft = (SCREEN_WIDTH - TEXT_BOX_WIDTH) / 2;
+  const textTranslateX = scrollY.interpolate({
+    inputRange: [0, HEADER_SCROLL_DISTANCE],
+    outputRange: [0, finalLeft - initialLeft],
+    extrapolate: 'clamp',
+  });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#8b4a21', position: 'relative', 
-      paddingTop: 0, paddingBottom: 80,}}>
-      {/* 상단 배너 */}
-      
-      <View style={styles.header}>
-        <Text style={styles.headerText}>오늘의 빵탐험</Text>
-        <Image
+    <SafeAreaView style={styles.safeArea}>
+      {/* ▼▼▼ 1. 테두리 역할을 할 View 추가 ▼▼▼ */}
+      <Animated.View style={[styles.headerBorder, { transform: [{ translateY: headerTranslateY }] }]} />
+
+      {/* 헤더: translateY를 적용해 위로 슬라이드 */}
+      <Animated.View style={[styles.header, { transform: [{ translateY: headerTranslateY }] }]}>
+        <Animated.Text style={[
+          styles.headerText,
+          {
+            transform: [
+              { translateX: textTranslateX },
+              { translateY: textTranslateY },
+              { scale: textScale },
+            ]
+          }
+        ]}>
+          오늘의 빵탐험
+        </Animated.Text>
+        <Animated.Image
           source={require('../assets/walking_pig.png')}
-          style={styles.headerImage}
+          style={[
+            styles.headerImage,
+            {
+              transform: [
+                { scale: imageScale },
+                { translateX: imageTranslateX },
+                { translateY: imageTranslateY }
+              ],
+            },
+          ]}
           resizeMode="contain"
         />
-      </View>
+      </Animated.View>
 
-      {/* 검색창 + 버튼
-      <View style={[styles.searchRow, {padding: 15}]}>
-        <TextInput
-          value={search}
-          onChangeText={setSearch}
-          placeholder="지역이나 가게명을 검색하세요"
-          style={styles.searchInput}
-        />
-        <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
-          <Text style={styles.searchButtonText}>검색</Text>
-        </TouchableOpacity>
-      </View> */}
-
-      {/* 빵 이미지 2x2
-      <View style={styles.grid}>
-        {dummyImages.map((img, idx) => (
-          <TouchableOpacity key={idx} style={styles.imageBox}>
-            <Image source={img} style={styles.image} resizeMode="cover" />
-          </TouchableOpacity>
-        ))}
-      </View> */}
-
-      {/* 동 버튼 리스트 */}
-      <FlatList
+      {/* FlatList: 이제 transform 없이 스크롤 이벤트만 감지 */}
+      <Animated.FlatList
         data={dongList}
+        contentContainerStyle={styles.buttonContainer}
         renderItem={({ item, index }) => (
           <TouchableOpacity
             style={styles.dongButton}
@@ -86,73 +151,76 @@ export default function HomeScreen() {
             <Text style={styles.dongButtonText}>{item}</Text>
           </TouchableOpacity>
         )}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(_, index) => index.toString()}
         numColumns={2}
-        contentContainerStyle={styles.buttonContainer}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: true } // 네이티브 드라이버 사용
+        )}
+        scrollEventThrottle={16}
       />
-
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#8b4a21',
+  },
+  // ▼▼▼ 1. 테두리 역할을 할 스타일 새로 추가 ▼▼▼
+  headerBorder: {
+    position: 'absolute',
+    top: 0,
+    left: -4,
+    right: -4,
+    zIndex: 99, // 헤더(100) 바로 뒤에 위치
+    height: HEADER_MAX_HEIGHT + 10, // 헤더보다 1px 더 크게
+    backgroundColor: '#4E342E', // 테두리 색상
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
+    elevation: 20, // 그림자 효과를 테두리에 적용
+  },
   header: {
-    height: 280,
-    position: 'relative',
-    borderBottomLeftRadius:35,
-    borderBottomRightRadius:35,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 100,
+    height: HEADER_MAX_HEIGHT, // 헤더 높이 고정
     backgroundColor: '#fdf2e7',
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
     elevation: 20,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#DDD', // 선 색상 (조절 가능)
   },
   headerText: {
-    fontFamily: 'Yeongdeok Snow Crab',
     position: 'absolute',
-    top:60,
-    right: 40,
-    width: 200,                    // 텍스트 박스 너비
+    top: 60,
+    left: SCREEN_WIDTH - TEXT_BOX_WIDTH - 40,
+    width: TEXT_BOX_WIDTH,
     textAlign: 'center',
-    fontSize: 60,
-    // fontWeight: 'bold',
-    fontFamily : 'SDSamliphopangcheTTFBasic',
+    fontSize: TEXT_MAX_FONT_SIZE,
+    fontFamily: 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
-    zIndex: 2,
   },
   headerImage: {
     position: 'absolute',
     left: 30,
-    bottom:20,
+    bottom: 20,
     width: 200,
     height: 120,
   },
-
-  // searchRow: {
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  // },
-  // searchInput: {
-  //   flex: 1,
-  //   backgroundColor: '#f2f2f2',
-  //   padding: 12,
-  //   borderRadius: 8,
-  //   marginRight: 10,
-  // },
-  // searchButton: {
-  //   padding: 12,
-  //   backgroundColor: '#d2691e',
-  //   borderRadius: 8,
-  // },
-  // searchButtonText: {
-  //   color: '#fff',
-  //   fontWeight: 'bold',
-  // },
-
+  // FlatList의 콘텐츠 시작점을 헤더 높이만큼 아래로 설정
   buttonContainer: {
-    paddingVertical:10,
+    paddingTop: HEADER_MAX_HEIGHT,
     paddingHorizontal: 35,
+    paddingTop:"65%",
+    paddingBottom: "20%",
   },
-
   dongButton: {
-    flex:1,
+    flex: 1,
     margin: 15,
     padding: 25,
     height: 160,
@@ -167,9 +235,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   breadImage: {
-  width: 80,
-  height: 80,
-  marginBottom: 8,
-},
-
+    width: 80,
+    height: 80,
+    marginBottom: 8,
+  },
 });
