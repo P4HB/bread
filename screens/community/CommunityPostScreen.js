@@ -4,8 +4,21 @@ import {SafeAreaView, Text, StyleSheet, Image, View,
   Platform, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { updatePostById, getPosts } from './CommunityPostData';
 
+const profileImages = [
+  require('../../assets/profileimage/pig_1.png'),
+  require('../../assets/profileimage/pig_2.png'),
+  require('../../assets/profileimage/pig_3.png'),
+  require('../../assets/profileimage/pig_4.png'),
+  require('../../assets/profileimage/pig_5.png'),
+  require('../../assets/profileimage/pig_6.png'),
+  require('../../assets/profileimage/pig_7.png'),
+  require('../../assets/profileimage/pig_8.png'),
+  require('../../assets/profileimage/pig_9.png')
+];
+
 const CommunityPostScreen = ({ route }) => {
   const {post, user } = route.params;
+    console.log('user:', user);
   const [comment, setComment] = useState('');
   const [likeNum, setLikeNum] = useState(post.likes || 0);
   const [comments, setComments] = useState(post.comments || []);
@@ -72,7 +85,7 @@ const CommunityPostScreen = ({ route }) => {
               <View style={styles.headerRow}>
                 <View style={styles.authorInfo}>
                   <Image
-                    source={require('../../assets/walking_pig.png')}
+                    source={profileImages[user.profile]}
                     style={styles.profileImage}
                   />
                   <Text style={styles.authorName}>{post.writer}</Text>

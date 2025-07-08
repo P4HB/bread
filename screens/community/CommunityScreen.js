@@ -8,7 +8,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const STORAGE_KEY = 'community_posts';
 
-const CommunityScreen = ({ navigation }) => {
+const profileImages = [
+  require('../../assets/profileimage/pig_1.png'),
+  require('../../assets/profileimage/pig_2.png'),
+  require('../../assets/profileimage/pig_3.png'),
+  require('../../assets/profileimage/pig_4.png'),
+  require('../../assets/profileimage/pig_5.png'),
+  require('../../assets/profileimage/pig_6.png'),
+  require('../../assets/profileimage/pig_7.png'),
+  require('../../assets/profileimage/pig_8.png'),
+  require('../../assets/profileimage/pig_9.png')
+];
+
+const CommunityScreen = ({ navigation, route }) => {
+  const {user} = route.params;
   const [posts, setPosts] = useState([]);
 
   const loadPostsFromStorage = async () => {
@@ -40,10 +53,16 @@ const CommunityScreen = ({ navigation }) => {
       <TouchableOpacity
         key={item.id}
         style={styles.card}
-        onPress={() => navigation.navigate('글 내용', { post: item })}
+        onPress={() => navigation.navigate('글 내용', { post: item, user:user })}
       >
         <View style={styles.cardHeader}>
-          <Text style={styles.writerText}>{item.writer}</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <Image
+              source={profileImages[item.profileImage]}
+              style={styles.profileThumb}
+            />
+            <Text style={styles.writerText}>{item.writer}</Text>
+          </View>
         </View>
 
         {item.images && item.images.length > 0 && (
@@ -99,7 +118,7 @@ const CommunityScreen = ({ navigation }) => {
         </ScrollView>
         <TouchableOpacity
           style={styles.fab}
-          onPress={() => navigation.navigate('글쓰기')}
+          onPress={() => navigation.navigate('글쓰기',{user})}
         >
           <Ionicons name="pencil" size={28} color="#fff"> </Ionicons>
         </TouchableOpacity>
@@ -160,6 +179,12 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   cardHeader: {padding: 10},
+  profileThumb: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: '#ddd',
+  },
   writerText: {fontSize: 14, color: '#333'},
   image: {
     width: '100%',

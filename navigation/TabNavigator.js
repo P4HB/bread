@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import {View} from 'react-native';
 import SplashScreen from '../screens/splashScreen';
 import FirstTabStack from './FirstTabStack';
 import MyGalleryScreen from '../screens/MyGalleryScreen';
@@ -38,6 +39,7 @@ function MainTabs ({ route }) {
       <Tab.Screen
         name="음식점"
         component={FirstTabStack}
+        initialParams={{user}}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="restaurant-outline" color={color} size={28} />
@@ -47,6 +49,7 @@ function MainTabs ({ route }) {
       <Tab.Screen
         name="나의 갤러리"
         component={MyGalleryScreen}
+        initialParams={{user}}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="images-outline" color={color} size={28} />
@@ -56,6 +59,7 @@ function MainTabs ({ route }) {
       <Tab.Screen
         name="커뮤니티"
         component={CommunityTabStack}
+        initialParams={{user}}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubble-ellipses-outline" color={color} size={28} />
@@ -65,6 +69,7 @@ function MainTabs ({ route }) {
       <Tab.Screen
         name="마이페이지"
         component={MyPageScreen}
+        initialParams={{user}}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" color={color} size={28} />

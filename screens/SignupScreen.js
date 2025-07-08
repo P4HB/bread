@@ -10,13 +10,20 @@ const profileImages = [
   require('../assets/profileimage/pig_1.png'),
   require('../assets/profileimage/pig_2.png'),
   require('../assets/profileimage/pig_3.png'),
-  require('../assets/profileimage/pig_4.png')
+  require('../assets/profileimage/pig_4.png'),
+  require('../assets/profileimage/pig_5.png'),
+  require('../assets/profileimage/pig_6.png'),
+  require('../assets/profileimage/pig_7.png'),
+  require('../assets/profileimage/pig_8.png'),
+  require('../assets/profileimage/pig_9.png')
 ];
 
 const SignupScreen = ({ navigation }) => {
+  
   const [nickname, setNickname] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [profileIndex, setProfileIndex] = useState(0);
   const [confirmPassword, setConfirmPassword] = useState('');
   const [selectedImage, setSelectedImage] = useState(profileImages[0]);
 
@@ -24,6 +31,7 @@ const SignupScreen = ({ navigation }) => {
     // 컴포넌트 마운트 시 랜덤 이미지 선택
     const randomIndex = Math.floor(Math.random() * profileImages.length);
     setSelectedImage(profileImages[randomIndex]);
+    setProfileIndex(randomIndex);
   }, []);
 
   const handleSignup = async () => {
@@ -50,7 +58,7 @@ const SignupScreen = ({ navigation }) => {
       username,
       password,
       name: nickname,
-      profile: '랜덤이미지', // 실제 경로 저장해도 되고 생략해도 됨
+      profile: profileIndex, // 실제 경로 저장해도 되고 생략해도 됨
     };
 
     users.push(newUser);

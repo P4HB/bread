@@ -13,7 +13,9 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { addPost } from './CommunityPostData';
 
-const WritingScreen = () => {
+const WritingScreen = ({route}) => {
+  const {user} = route.params;
+  console.log('user:', user);
   const navigation = useNavigation();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -35,7 +37,8 @@ const WritingScreen = () => {
       id: Date.now().toString(),
       title,
       content,
-      writer: '익명',
+      writer: user.name,
+      profileImage : user.profile,
       images: selectedImages,
     };
 
