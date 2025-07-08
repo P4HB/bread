@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />             <!-- google map api -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />               <!-- google map api -->
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -10,6 +11,10 @@
       android:allowBackup="false"
       android:theme="@style/AppTheme"
       android:supportsRtl="true">
+      <meta-data                                                    
+      android:name="com.google.android.geo.API_KEY" 
+      android:value="AIzaSyDl-vdSlnZWH5AeNRjAwIb9eb2SiVGKOKg"/>
+      <uses-library android:name="org.apache.http.legacy" android:required="false"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

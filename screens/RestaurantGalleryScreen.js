@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Alert } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 const dataFiles = {
     '괴정동': require('../crawl/괴정동 카페_crawled.json'),
     '궁동': require('../crawl/궁동 카페_crawled.json'),
@@ -114,6 +114,18 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
           </View>
         </ScrollView>
       </View>
+          <View>
+      <MapView
+        provider={PROVIDER_GOOGLE} 
+        initialRegion={{
+          latitude: 37.541,
+          longitude: 126.986,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        style={styles.map}
+      />
+   	</View>
     </SafeAreaView>
   );
 };
@@ -132,7 +144,11 @@ const styles = StyleSheet.create({
   reviewAuthor: { fontWeight: 'bold', fontSize: 20, marginBottom: 5 },
   reviewText: { fontSize: 15 },
   saveButton: { position: 'absolute', top: 180, right: 30, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.4)', paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20 },
-  saveButtonText: { color: '#fff', marginLeft: 8, fontWeight: 'bold' }
+  saveButtonText: { color: '#fff', marginLeft: 8, fontWeight: 'bold' },
+  map: {
+    height: "200",
+    width: "350"
+  }
 });
 
 export default RestaurantGalleryScreen;
