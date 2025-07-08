@@ -1,8 +1,11 @@
+// MyGalleryScreen.js with pagination and indicator
 import React, { useState, useEffect } from 'react';
-import {SafeAreaView, ScrollView, View, Image, Text,
-  TouchableOpacity, Modal, StyleSheet, Dimensions} from 'react-native';
-
-import { launchCamera } from 'react-native-image-picker'; // ✅ react-native-image-picker로 교체
+import {
+  SafeAreaView, View, Image, Text, ImageBackground,
+  TouchableOpacity, Modal, StyleSheet, Dimensions
+} from 'react-native';
+import PagerView from 'react-native-pager-view';
+import { launchCamera } from 'react-native-image-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -30,6 +33,7 @@ const staticImages = [
   require('../assets/galleryimage/bread_gallery19.png'),
   require('../assets/galleryimage/bread_gallery20.png'),
 ];
+const windowHeight = Dimensions.get('window').height;
 
 const MyGalleryScreen = ({ navigation, route }) => {
   const mode = route?.params?.mode || 'view';
@@ -39,16 +43,18 @@ const MyGalleryScreen = ({ navigation, route }) => {
   const [currentImage, setCurrentImage] = useState(null);
   const [userImages, setUserImages] = useState([]);
   const [imageList, setImageList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const loadImages = async () => {
       const stored = await AsyncStorage.getItem(STORAGE_KEY);
       const parsed = stored ? JSON.parse(stored) : [];
       setUserImages(parsed);
-      setImageList([
+      const all = [
         ...staticImages.map(i => ({ source: i })),
-        ...parsed.map(uri => ({ source: { uri } })),
-      ]);
+        ...parsed.map(uri => ({ source: { uri } }))
+      ];
+      setImageList(all);
     };
     loadImages();
   }, []);
@@ -57,9 +63,7 @@ const MyGalleryScreen = ({ navigation, route }) => {
     const img = imageList[index];
     if (mode === 'select') {
       setSelectedIndices((prev) =>
-        prev.includes(index)
-          ? prev.filter((i) => i !== index)
-          : [...prev, index]
+        prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
       );
     } else {
       setCurrentImage(img.source);
@@ -69,121 +73,143 @@ const MyGalleryScreen = ({ navigation, route }) => {
 
   const handleSelectConfirm = () => {
     const selectedImages = selectedIndices.map((i) => imageList[i].source);
-    if (onGoBack) {
-      onGoBack(selectedImages);
-    }
+    if (onGoBack) onGoBack(selectedImages);
     navigation.goBack();
   };
 
   const handleTakePhoto = async () => {
-    // react-native-image-picker는 별도의 권한 요청 API는 없고, AndroidManifest.xml에 권한만 설정하면 된다.
-
-    const result = await launchCamera(
+    await launchCamera(
       {
         mediaType: 'photo',
-        saveToPhotos: true,   // 📥 시스템 갤러리에 저장하려면 true
+        saveToPhotos: true,
         quality: 1,
       },
       async (response) => {
-        if (response.didCancel) {
-          return;
-        } else if (response.errorCode) {
-          alert(`사진 촬영 실패: ${response.errorMessage}`);
-          return;
-        } else if (response.assets && response.assets.length > 0) {
-          const uri = response.assets[0].uri;
-
-          // 🧠 AsyncStorage에도 URI 저장
+        if (response.didCancel || response.errorCode) return;
+        const uri = response.assets?.[0]?.uri;
+        if (uri) {
           const updated = [...userImages, uri];
           setUserImages(updated);
-
-          const fullList = [
+          const all = [
             ...staticImages.map(i => ({ source: i })),
-            ...updated.map(u => ({ source: { uri: u } })),
+            ...updated.map(u => ({ source: { uri: u } }))
           ];
-          setImageList(fullList);
-
+          setImageList(all);
           await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
         }
       }
     );
   };
 
+  const pageSize = 9;
+  const pages = [];
+  for (let i = 0; i < imageList.length; i += pageSize) {
+    pages.push(imageList.slice(i, i + pageSize));
+  }
+
+  let pagerRef = React.useRef(null);
+
+  const goToPrevPage = () => {
+    if (currentPage > 0) {
+      pagerRef.current.setPage(currentPage - 1);
+    }
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < pages.length - 1) {
+      pagerRef.current.setPage(currentPage + 1);
+    }
+  };
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>나의 갤러리</Text>
-        <Image
-          source={require('../assets/pig_gallery.png')}
-          style={styles.headerImage}
-          resizeMode="contain"
-        />
-      </View>
-      <ScrollView contentContainerStyle={[styles.grid, { paddingBottom: 70 }]}>
-        {imageList.map((img, index) => (
-          <TouchableOpacity
-            key={index}
-            style={[
-              styles.imageBox,
-              mode === 'select' && selectedIndices.includes(index) && styles.selectedBox,
-            ]}
-            onPress={() => handleImagePress(index)}
-          >
-            <Image source={img.source} style={styles.image} resizeMode="cover" />
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground
+        source={require('../assets/myGallery.png')}
+        style={{ flex: 1 }}
+        resizeMode="cover"
+      >
+        <PagerView
+          style={{ flex: 1 }}
+          initialPage={0}
+          ref={pagerRef}
+          onPageSelected={e => setCurrentPage(e.nativeEvent.position)}
+        >
+          {pages.map((pageImages, pageIndex) => (
+            <View key={pageIndex} style={styles.page}>
+              <View style={styles.grid}>
+                {pageImages.map((img, index) => (
+                  <TouchableOpacity
+                    key={index}
+                    style={[
+                      styles.imageBox,
+                      mode === 'select' &&
+                      selectedIndices.includes(pageIndex * pageSize + index) &&
+                      styles.selectedBox,
+                    ]}
+                    onPress={() => handleImagePress(pageIndex * pageSize + index)}
+                  >
+                    <Image source={img.source} style={styles.image} resizeMode="cover" />
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          ))}
+        </PagerView>
+
+        {/* 좌우 버튼 */}
+        <View style={styles.pageButtons}>
+          <TouchableOpacity onPress={goToPrevPage} disabled={currentPage === 0}>
+            <Ionicons name="chevron-back-circle" size={36} color={currentPage === 0 ? '#ccc' : '#8B4513'} />
           </TouchableOpacity>
-        ))}
-      </ScrollView>
-      {mode === 'select' && (
-        <TouchableOpacity style={styles.confirmButton} onPress={handleSelectConfirm}>
-          <Text style={styles.confirmText}>선택 완료</Text>
-        </TouchableOpacity>
-      )}
-      {mode === 'view' && (
-        <TouchableOpacity style={styles.takePhotoButton} onPress={handleTakePhoto}>
-          <Ionicons name="camera" size={28} color="#fff" />
-        </TouchableOpacity>
-      )}
-      {modalVisible && currentImage && (
-        <Modal transparent={true} animationType="fade">
-          <View style={styles.modalBackground}>
-            <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.modalImageWrapper}>
-              <Image source={currentImage} style={styles.modalImage} resizeMode="contain" />
-            </TouchableOpacity>
-          </View>
-        </Modal>
-      )}
+          <TouchableOpacity onPress={goToNextPage} disabled={currentPage === pages.length - 1}>
+            <Ionicons name="chevron-forward-circle" size={36} color={currentPage === pages.length - 1 ? '#ccc' : '#8B4513'} />
+          </TouchableOpacity>
+        </View>
+
+        {/* 페이지 indicator */}
+        <View style={styles.pageIndicator}>
+          <Text style={{ color: '#8B4513', fontWeight: 'bold' }}>{currentPage + 1} / {pages.length}</Text>
+        </View>
+
+        {mode === 'select' && (
+          <TouchableOpacity style={styles.confirmButton} onPress={handleSelectConfirm}>
+            <Text style={styles.confirmText}>선택 완료</Text>
+          </TouchableOpacity>
+        )}
+        {mode === 'view' && (
+          <TouchableOpacity style={styles.takePhotoButton} onPress={handleTakePhoto}>
+            <Ionicons name="camera" size={28} color="#fff" />
+          </TouchableOpacity>
+        )}
+        {modalVisible && currentImage && (
+          <Modal transparent animationType="fade">
+            <View style={styles.modalBackground}>
+              <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.modalImageWrapper}>
+                <Image source={currentImage} style={styles.modalImage} resizeMode="contain" />
+              </TouchableOpacity>
+            </View>
+          </Modal>
+        )}
+      </ImageBackground>
     </SafeAreaView>
   );
 };
 
 const windowWidth = Dimensions.get('window').width;
-const imageSize = (windowWidth - 48) / 3;
+const imageSize = (windowWidth - 60) / 3;
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#fdf2e7',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 20,
-  },
-  headerText: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#8b4a21',
-  },
-  headerImage: {
-    width: 200,
-    height: 120,
-  },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingBottom: 20,
+    paddingHorizontal: '6%',
+    // paddingBottom: '30%',
+  },
+  page: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    paddingTop: '78%',
   },
   imageBox: {
     width: imageSize,
@@ -201,6 +227,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+
+  // 이미지 클릭 시
   modalBackground: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.8)',
@@ -215,6 +243,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+
   confirmButton: {
     position: 'absolute',
     bottom: 90,
@@ -226,8 +255,8 @@ const styles = StyleSheet.create({
   },
   takePhotoButton: {
     position: 'absolute',
-    bottom: 100,
-    right: 24,
+    bottom: '11%',
+    right: '43%',
     width: 60,
     height: 60,
     borderRadius: 30,
@@ -243,6 +272,25 @@ const styles = StyleSheet.create({
   confirmText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+
+  pageButtons: {
+    position: 'absolute',
+    bottom: '14%',
+    left: '5%',
+    right: '5%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  pageIndicator: {
+    position: 'absolute',
+    bottom: 30,
+    alignSelf: 'center',
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
   },
 });
 
