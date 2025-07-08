@@ -38,6 +38,7 @@ export default function HomeScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#8b4a21', position: 'relative', 
       paddingTop: 0, paddingBottom: 80,}}>
       {/* 상단 배너 */}
+      
       <View style={styles.header}>
         <Text style={styles.headerText}>오늘의 빵탐험</Text>
         <Image
@@ -110,8 +111,9 @@ const styles = StyleSheet.create({
     right: 40,
     width: 200,                    // 텍스트 박스 너비
     textAlign: 'center',
-    fontSize: 55,
+    fontSize: 60,
     // fontWeight: 'bold',
+    fontFamily : 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
     zIndex: 2,
   },

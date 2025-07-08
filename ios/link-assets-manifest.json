@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/CookieRun Regular.ttf",
+      "sha1": "686100f288362722b98db8175cd14358d3afab58"
+    },
+    {
+      "path": "assets/fonts/SDSamliphopangcheTTFBasic.ttf",
+      "sha1": "0c8025fea6d93d589260513dcd64c204156129db"
+    },
+    {
+      "path": "assets/fonts/YeongdeokSnowCrab.ttf",
+      "sha1": "c877438821de13b90e7b7717df8e51f8da0b1f65"
+    }
+  ]
+}
