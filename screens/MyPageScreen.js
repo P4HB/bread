@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   SafeAreaView, StyleSheet, View, Image, Text,
   FlatList, TouchableOpacity
 } from 'react-native';
-import { getPosts } from './community/CommunityPostData'; // 게시글 데이터 함수
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { getPosts } from './community/CommunityPostData';
+import { useNavigation } from '@react-navigation/native';
 
 const profileImages = [
   require('../assets/profileimage/pig_1.png'),
@@ -28,12 +28,28 @@ const colors = {
 };
 
 const MyPageScreen = ({ route }) => {
-  const user = route.params.user;
+  const navigation = useNavigation();
+  const { user } = route.params;
   const [mainTab, setMainTab] = useState('activity');
   const [subTab, setSubTab] = useState('posts');
 
   const allPosts = getPosts();
-  const myPosts = allPosts.filter(post => post.writer === user.username);
+  const myPosts = allPosts.filter(post => post.writer === user.name);
+
+  const myComments = useMemo(() => {
+    const comments = [];
+    allPosts.forEach(post => {
+      if (post.comments && Array.isArray(post.comments)) {
+        post.comments.forEach(comment => {
+          if (comment.name === user.name) {
+            comments.push({ ...comment, post: post });
+          }
+        });
+      }
+    });
+    return comments;
+  }, [allPosts, user.name]);
+
 
   const renderContent = () => {
     if (mainTab === 'activity') {
@@ -56,10 +72,12 @@ const MyPageScreen = ({ route }) => {
             </TouchableOpacity>
           </View>
 
+          {/* ⭐️ 이 부분을 수정했습니다. */}
           <FlatList
-            data={subTab === 'posts' ? myPosts : []}
-            renderItem={renderPostItem}
-            keyExtractor={item => item.id}
+            key={subTab} 
+            data={subTab === 'posts' ? myPosts : myComments}
+            renderItem={subTab === 'posts' ? renderPostItem : renderCommentItem}
+            keyExtractor={(item, index) => `${subTab}-${item.id || index}`}
             contentContainerStyle={styles.listContainer}
           />
         </>
@@ -67,7 +85,7 @@ const MyPageScreen = ({ route }) => {
     } else {
       return (
         <FlatList
-          data={[]} // savedBakeries 미구현 상태
+          data={[]}
           renderItem={() => null}
           keyExtractor={(item, idx) => idx.toString()}
           contentContainerStyle={styles.listContainer}
@@ -77,10 +95,21 @@ const MyPageScreen = ({ route }) => {
   };
 
   const renderPostItem = ({ item }) => (
-    <View style={styles.contentItem}>
-      <Text style={styles.itemTitle}>{item.title}</Text>
-      <Text style={styles.itemContent}>{item.content}</Text>
-    </View>
+    <TouchableOpacity onPress={() => navigation.navigate('커뮤니티', { screen: '글 내용', params: { post: item, user: user } })}>
+      <View style={styles.contentItem}>
+        <Text style={styles.itemTitle}>{item.title}</Text>
+        <Text style={styles.itemContent} numberOfLines={2}>{item.content}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+
+  const renderCommentItem = ({ item }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('커뮤니티', { screen: '글 내용', params: { post: item.post, user: user } })}>
+      <View style={styles.contentItem}>
+        <Text style={styles.itemTitle}>{item.text}</Text>
+        <Text style={styles.itemContent} numberOfLines={1}>- 원본글: {item.post.title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -115,6 +144,7 @@ const MyPageScreen = ({ route }) => {
   );
 };
 
+// (스타일 코드는 이전과 동일하므로 생략합니다)
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background, paddingTop: "20%" },
   profileSection: { paddingVertical: 20, paddingHorizontal: 30, alignItems: 'center' },
