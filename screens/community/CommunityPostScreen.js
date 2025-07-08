@@ -81,12 +81,25 @@ const CommunityPostScreen = ({ route }) => {
           </View>
 
           {post.images && post.images.length > 0 && (
-            <Image
-              source={typeof post.images[0] === 'string' ? { uri: post.images[0] } : post.images[0]}
-              style={styles.postImage}
-              resizeMode="cover"
-            />
-          )}
+  <ScrollView
+    horizontal
+    showsHorizontalScrollIndicator={false}
+    style={styles.imageScrollView}
+  >
+    {post.images.map((img, index) => {
+      const source = typeof img === 'string' ? { uri: img } : img;
+      return (
+        <Image
+          key={index}
+          source={source}
+          style={styles.postImage}
+          resizeMode="cover"
+        />
+      );
+    })}
+  </ScrollView>
+)}
+
 
           <Text style={styles.content}>{post.content}</Text>
 
@@ -167,14 +180,13 @@ const styles = StyleSheet.create({
   authorName: { fontSize: 20, marginLeft
     :15, fontWeight: '600', color: '#333' },
   likesText: { fontSize: 18, color: '#555' },
-  postImage: {
-    width: '100%',
-    height: 200,
-    borderRadius: 16,
-    marginTop:16,
-    marginBottom: 16,
-    backgroundColor: '#eee',
-  },
+postImage: {
+  width: 300,
+  height: 180,
+  marginRight: 10,
+  borderRadius: 8,
+  backgroundColor: '#eee', // 디버깅용 배경색
+},
   content: {
     fontSize: 18,
     color: '#333',
