@@ -6,7 +6,8 @@ import FirstTabStack from './FirstTabStack';
 import MyGalleryScreen from '../screens/MyGalleryScreen';
 import CommunityTabStack from './CommunityTabStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import LoginScreen from '../screens/LoginScreen';
+import SignupScreen from '../screens/SignupScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -65,6 +66,8 @@ const MainTabs = () => (
 const RootNavigator = () => (
   <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Splash" component={SplashScreen} />
+    <Stack.Screen name="Login" component = {LoginScreen} />
+    <Stack.Screen name="Signup" component = {SignupScreen} />
     <Stack.Screen name="Main" component={MainTabs} />
   </Stack.Navigator>
 );
