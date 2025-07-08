@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView, FlatList, View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import dummyImage from '../assets/list_dumimg.png';
