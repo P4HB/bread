@@ -101,7 +101,7 @@ const CommunityScreen = ({ navigation }) => {
           style={styles.fab}
           onPress={() => navigation.navigate('글쓰기')}
         >
-          <Text style={{ fontSize: 22, color: 'white' }}>✏️</Text>
+          <Ionicons name="pencil" size={28} color="#fff"> </Ionicons>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -194,12 +194,12 @@ const styles = StyleSheet.create({
 
   fab: {
     position: 'absolute',
-    bottom: 25,
-    right: 20,
+    bottom: 30,
+    right: 25,
     backgroundColor: '#8B4513',
-    width: 56,
-    height: 56,
-    borderRadius: 28,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 6,

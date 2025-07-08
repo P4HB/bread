@@ -11,8 +11,7 @@ import {
   Dimensions,
 } from 'react-native';
 
-import * as ImagePicker from 'expo-image-picker';
-import * as MediaLibrary from 'expo-media-library';
+import { launchCamera } from 'react-native-image-picker'; // ✅ react-native-image-picker로 교체
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -43,7 +42,6 @@ const staticImages = [
 
 const MyGalleryScreen = ({ navigation, route }) => {
   const mode = route?.params?.mode || 'view';
-  const onSelect = route?.params?.onSelect;
   const onGoBack = route?.params?.onGoBack;
   const [selectedIndices, setSelectedIndices] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -53,11 +51,13 @@ const MyGalleryScreen = ({ navigation, route }) => {
 
   useEffect(() => {
     const loadImages = async () => {
-      const { status } = await MediaLibrary.requestPermissionsAsync();
       const stored = await AsyncStorage.getItem(STORAGE_KEY);
       const parsed = stored ? JSON.parse(stored) : [];
       setUserImages(parsed);
-      setImageList([...staticImages.map(i => ({ source: i })), ...parsed.map(uri => ({ source: { uri } }))]);
+      setImageList([
+        ...staticImages.map(i => ({ source: i })),
+        ...parsed.map(uri => ({ source: { uri } })),
+      ]);
     };
     loadImages();
   }, []);
@@ -84,38 +84,39 @@ const MyGalleryScreen = ({ navigation, route }) => {
     navigation.goBack();
   };
 
-const handleTakePhoto = async () => {
-  const { status } = await ImagePicker.requestCameraPermissionsAsync();
-  if (status !== 'granted') {
-    alert('카메라 접근 권한이 필요합니다.');
-    return;
-  }
+  const handleTakePhoto = async () => {
+    // react-native-image-picker는 별도의 권한 요청 API는 없고, AndroidManifest.xml에 권한만 설정하면 된다.
 
-  const result = await ImagePicker.launchCameraAsync({
-    allowsEditing: true,
-    quality: 1,
-    mediaTypes: ImagePicker.MediaType.IMAGE,
-  });
+    const result = await launchCamera(
+      {
+        mediaType: 'photo',
+        saveToPhotos: true,   // 📥 시스템 갤러리에 저장하려면 true
+        quality: 1,
+      },
+      async (response) => {
+        if (response.didCancel) {
+          return;
+        } else if (response.errorCode) {
+          alert(`사진 촬영 실패: ${response.errorMessage}`);
+          return;
+        } else if (response.assets && response.assets.length > 0) {
+          const uri = response.assets[0].uri;
 
-  if (!result.canceled && result.assets?.[0]) {
-    const uri = result.assets[0].uri;
+          // 🧠 AsyncStorage에도 URI 저장
+          const updated = [...userImages, uri];
+          setUserImages(updated);
 
-    // 📥 사진을 시스템 갤러리에 저장
-    const asset = await MediaLibrary.createAssetAsync(uri);
+          const fullList = [
+            ...staticImages.map(i => ({ source: i })),
+            ...updated.map(u => ({ source: { uri: u } })),
+          ];
+          setImageList(fullList);
 
-    // 🧠 AsyncStorage에도 URI 저장
-    const updated = [...userImages, asset.uri];
-    setUserImages(updated);
-
-    const fullList = [
-      ...staticImages.map(i => ({ source: i })),
-      ...updated.map(u => ({ source: { uri: u } })),
-    ];
-    setImageList(fullList);
-
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-  }
-};
+          await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+        }
+      }
+    );
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
@@ -127,7 +128,7 @@ const handleTakePhoto = async () => {
           resizeMode="contain"
         />
       </View>
-      <ScrollView contentContainerStyle={[styles.grid, {paddingBottom : 70}]}>
+      <ScrollView contentContainerStyle={[styles.grid, { paddingBottom: 70 }]}>
         {imageList.map((img, index) => (
           <TouchableOpacity
             key={index}
