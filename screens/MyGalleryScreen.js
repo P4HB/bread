@@ -196,28 +196,28 @@ const MyGalleryScreen = ({ navigation, route }) => {
 };
 
 const windowWidth = Dimensions.get('window').width;
-const imageSize = (windowWidth - 60) / 3;
+const imageSize = (windowWidth - 90) / 3;
 
 const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingHorizontal: '6%',
+    paddingHorizontal: '8%',
     // paddingBottom: '30%',
   },
   page: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: '78%',
+    paddingTop: '86%',
   },
   imageBox: {
     width: imageSize,
     height: imageSize,
-    marginBottom: 16,
+    marginBottom: 13,
     borderRadius: 12,
     overflow: 'hidden',
-    backgroundColor: '#eee',
+    backgroundColor: '#000',
   },
   selectedBox: {
     borderWidth: 3,
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
 
   confirmButton: {
     position: 'absolute',
-    bottom: 90,
+    bottom: 80,
     right: 24,
     backgroundColor: '#8B4513',
     paddingHorizontal: 20,
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
   takePhotoButton: {
     position: 'absolute',
     bottom: '11%',
-    right: '43%',
+    alignSelf: 'center',
     width: 60,
     height: 60,
     borderRadius: 30,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
 
   pageButtons: {
     position: 'absolute',
-    bottom: '14%',
+    bottom: '12%',
     left: '5%',
     right: '5%',
     flexDirection: 'row',
