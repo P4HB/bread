@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
   phoneText: { color: '#fff', fontFamily : 'SDSamliphopangcheTTFBasic', fontSize: 16 },
   saveButton: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.4)', paddingHorizontal: 15, paddingVertical: 10, borderRadius: 16, },
   saveButtonText: { color: '#fff', marginLeft: 6, fontWeight: 'bold', fontSize: 13, },
-  reviewSection: { paddingHorizontal: 20 },
+  reviewSection: { },
   SectionText:{ paddingTop:"8%", fontSize: 30, fontFamily : 'SDSamliphopangcheTTFBasic', color: '#8b4a21', paddingLeft:"3%", paddingBottom: 10, borderBottomWidth: 2, borderBottomColor: '#8b4a21', maxWidth: '20%', },
   speechBubble: { backgroundColor: '#fff', padding: 15, marginVertical: 15, maxWidth: '75%', borderRadius: 15 },
   bubbleLeft: { alignSelf: 'flex-start', borderBottomLeftRadius: 0, elevation: 5 },
