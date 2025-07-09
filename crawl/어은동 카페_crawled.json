@@ -76,21 +76,26 @@
   },
   {
     "id": 4,
-    "name": "한빛스터디카페어은점",
-    "address": "대전광역시 유성구 어은동 번지 2층 110-4 3층",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWBrI_5dhP-kbQqQvdLDAlClnKqLuRQV1OobyrmdZ9q8X3tca9r01fG5Yrw2B1VqBwa_RbdFEAYVhEscu_fQNPE8eGP6znwpl_lK54p8LfybHsFnm0eCeltjhn8dD4cp96xrTd=w122-h92-k-no",
+    "name": "당신을 위한 빵집",
+    "address": "대전광역시 서구 월평2동 218",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqLfzmUHwjZqUvxkKKxvIgItt8FPG1GCflJxb9ZiIvWgK0MgQSCxv0ytDIfUnnaUeWM864c_HDVYEOs-ikv_NC2T_pm4P9ZgKEgeZQtPTJFBnJ8hHki58ZUn3u1MBf_bqzDHEMt_g=w122-h92-k-no",
     "rating_value": "별표 5.0개 ",
-    "call_value": "041-716-7000",
+    "call_value": "010-6785-5949",
     "review": [
       {
-        "nickname": "코코팕",
+        "nickname": "Yousang Jo",
         "rating": "별표 5개",
-        "text": "쾌적하고 면학 분위기가 아주 잘 조성되어있음"
+        "text": "호두파이와 캐슈넛쌀쿠키가 맛있는 동네 빵집입니다. 30년간 하셨다는 나이 지긋하신 사장님이 혼자 하시는데, 가격도 괜찮고 맛도 훌륭합니다. 자주가면 종종 챙겨주시기도 하네요."
       },
       {
-        "nickname": "Jinsuk Kim",
+        "nickname": "Hanul Kim (김한을)",
         "rating": "별표 5개",
-        "text": "넓고 쾌적한 공부카페."
+        "text": "쿠키 맛있습니다.\n초코 쿠키류를 추천하고 싶고\n호두파이 솔직히 저는 대전 원탑 (오래된거 말고 갓 나온거 사세요)\n많이 사면 서비스도 많이 주심"
+      },
+      {
+        "nickname": "good make",
+        "rating": "별표 5개",
+        "text": "동네빵집. 빵보다는 쿠키나 휘낭시에같은 커피와 먹을것을 산다. 가성비가 훌륭한편."
       }
     ]
   },
