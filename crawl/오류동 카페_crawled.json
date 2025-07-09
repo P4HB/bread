@@ -76,26 +76,26 @@
   },
   {
     "id": 4,
-    "name": "커피프레스까",
-    "address": "오류동 191-18번지 중구 대전광역시 KR",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqkAo9FOGk6WsLKZnnytNx7pU3qBrgqKD-gr68bZpd9sqC-IkBWzJJzURPscQoCi1L8chlO5v-OYjPY6ZiyprCDIPKWm7N51xdhWCSVNvwzTL0bonG7mfp8KkaBAJ7eALkPFtvJ=w92-h92-k-no",
-    "rating_value": "별표 4.6개 ",
-    "call_value": "042-527-4264",
+    "name": "정성을다하는베이커리",
+    "address": "대전광역시 중구 계백로 1619",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr2-OgiSoGN8RKRvTkCXAKWo9jnKX36bVWE72_ImFuVuJppeC_kt_y7505_2aeEVn0ihl9IeoTSB3yi3_JSMypqPo-vuuOv4Dxs7lUCEqczlWXiVge_xE2SCbSYcyy2KlurQirY=w92-h92-k-no",
+    "rating_value": "별표 4.8개 ",
+    "call_value": "042-523-1579",
     "review": [
       {
-        "nickname": "jung러블리쎄",
+        "nickname": "KL K",
         "rating": "별표 5개",
-        "text": "에스프레소마끼아토와 라떼가 맛있어요\n오랜시간 로스터리카페 중 한결같이 그자리에서\n맛을 똑같이 유지하는 곳이예요☕️〰️♥️"
+        "text": "기업베이커리인 성심당만큼 다양한 빵 종류는 없지만, 생크림단팥빵이나 고로케 등이 훨씬 맛이 있다. 롯데 백화점에 간 김에 성심당에서 크리스마스 케잌 사려다 줄 서 있는 인원과 가격에 포기하고 집 근처 이 곳에서 케잌을 샀는데 아주 맛있게 잘 먹었다. 가격도 케잌만큼은 여기가 더 만족스럽다.특히 단 맛이 강하지 않아 크림이 더욱 맛있고, 다음날에 먹어도 별 차이가 없어 엄지 척."
       },
       {
-        "nickname": "도윤숙",
-        "rating": "별표 4개",
-        "text": "커피 맛있어요 매장커피향기가 가득한곳?\n전에 커피마시고 사진을 못찍었는데\n오늘 커피마시러 왔더니 문닫,,,\n일요일은 쉽니다"
+        "nickname": "곽지원",
+        "rating": "별표 5개",
+        "text": "서대전역에 내렸는데 검색하다가 알게됐어요.\n팥빵이 일품이라고 해서 이것저것 구매했어요.\n생크림팥빵, 그냥 팥빵, 찹쌀떡, 아몬드파이(?) 를 구매했는데,…"
       },
       {
-        "nickname": "노랑머리소년",
+        "nickname": "송홍섭",
         "rating": "별표 5개",
-        "text": "커피향이 가득한곳\n편안한 분위기를 느끼고 싶다면."
+        "text": "빵들 다  가격대비 먹을만함  타 프렌차이즈  보다는 맛있음"
       }
     ]
   },

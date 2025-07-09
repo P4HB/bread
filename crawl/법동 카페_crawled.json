@@ -3,7 +3,7 @@
     "id": 1,
     "name": "은유네카페",
     "address": "대전광역시 대덕구 법동 287-7번지 1층 103호",
-    "image": "/path/to/my_dummy_image.png",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4novNl6OIcO94Apy6-xssrQOpuPMe-kcPkjjAFjrAmsi7wYopva76kUkgHlIxIzkODw-YjnoKwEobQ5y7knMl-rxDPCMy-QP9qTdZeYUw3SVD4fz4jKTn48q79B-SmC6uMA3wtY6=w80-h106-k-no",
     "rating_value": "별표 4.8개 ",
     "call_value": "가게에서 전화번호가 제공되지 않음",
     "review": [
@@ -41,21 +41,21 @@
   },
   {
     "id": 3,
-    "name": "법동키즈카페",
-    "address": "대전광역시 대덕구 법동 번지 지하 287-1 1층",
-    "image": "https://maps.gstatic.com/tactile/pane/result-no-thumbnail-2x.png",
-    "rating_value": "별표 5.0개 ",
-    "call_value": "042-631-8724",
+    "name": "카페허밍 바이런베이점",
+    "address": "대전광역시 대덕구 189-9 1층 카페허밍바이런베이점",
+    "image": "https://lh3.googleusercontent.com/p/AF1QipPyyKSICZ1w6ltFIkIdt1a0_Yj3n6XrwDhTQVsW=w408-h725-k-no",
+    "rating_value": "별표 4.4개 ",
+    "call_value": "070-7637-1021",
     "review": [
       {
         "nickname": "이이차만",
         "rating": "별표 5개",
-        "text": "열무김치가  굿"
+        "text": "열매봉중학교에서 가까운 분위기와 커피향이 좋은 커피집입니다. 점심 때 가봤는데 거의 만석이네요."
       },
       {
         "nickname": "서영",
         "rating": "별표 5개",
-        "text": "재미있어요"
+        "text": "주말에 계족산 소방로따라 산행후 오전에 들러 아이스아메리카노를 꼭 마시는데 유난히 원두맛이 남다른곳 입니다.사장님도 친절하시고 분위기 좋은 까페입니다~~"
       }
     ]
   },
@@ -136,15 +136,6 @@
   },
   {
     "id": 7,
-    "name": "달콤공작소",
-    "address": "대전광역시 대덕구 법동 200 12번지 1층 102호",
-    "image": "https://maps.gstatic.com/tactile/pane/result-no-thumbnail-2x.png",
-    "rating_value": "별표 5.0개 ",
-    "call_value": "가게에서 전화번호가 제공되지 않음",
-    "review": []
-  },
-  {
-    "id": 8,
     "name": "투썸플레이스 대전법동점",
     "address": "대전광역시 대덕구 동춘당로 187",
     "image": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrAWVHe1sjmg-Ab_OYuIBZdl0rO44Bkgi7Ab0Xb5HBRaRDPlKi5wmxfRCsARr5B3YrDM03URLxdQsVPbt50sQqja2ictiM8sWJLh8zRAR3_P0lZ0sSe8eePZedy-M9vIvK1L76J=w204-h92-k-no",
