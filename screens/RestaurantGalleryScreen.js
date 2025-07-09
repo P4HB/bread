@@ -80,7 +80,7 @@ const SAVED_BAKERIES_KEY = 'saved_bakeries';
 // ⭐️ 방문 기록을 저장할 새로운 키
 const VISIT_HISTORY_KEY = 'visit_history';
 
-Geocoder.init("YOUR_GOOGLE_API_KEY"); 
+Geocoder.init("AIzaSyDlqEZ2PlL91fds8yJwGWmMFPQ8U85tItU"); 
 
 const RestaurantGalleryScreen = ({ route, navigation }) => {
   const { restaurantId, dong } = route.params;
