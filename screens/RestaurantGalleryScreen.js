@@ -4,6 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import Geocoder from 'react-native-geocoding';
+import { Linking } from 'react-native';
 
 const dataFiles = {
     // ... (데이터 파일 require 부분)
@@ -81,7 +82,7 @@ const parseRating = (ratingStr) => {
 const SAVED_BAKERIES_KEY = 'saved_bakeries';
 
 // ⭐️ API 키를 다시 한번 확인해주세요!
-Geocoder.init("AIzaSyDl-vdSlnZWH5AeNRjAwIb9eb2SiVGKOKg"); 
+Geocoder.init("AIzaSyDlqEZ2PlL91fds8yJwGWmMFPQ8U85tItU"); 
 
 const RestaurantGalleryScreen = ({ route, navigation }) => {
   const { restaurantId, dong } = route.params;
@@ -91,7 +92,34 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
   
   const [coordinates, setCoordinates] = useState(null);
   const [isMapLoading, setIsMapLoading] = useState(true);
+//   const openInGoogleMaps = () => {
+//   if (!coordinates) return;
+//   const { latitude, longitude } = coordinates;
+//   const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+//   Linking.openURL(url).catch(() => {
+//     Alert.alert('오류', 'Google 지도를 열 수 없습니다.');
+//   });
+// };
 
+// const openInGoogleMapsByAddress = (address) => {
+//   if (!address) return;
+
+//   const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+//   Linking.openURL(url).catch(err => {
+//     console.warn("Google Maps 열기 실패:", err);
+//   });
+// };
+const openInGoogleMapsByNameAndAddress = (name, address) => {
+  if (!name || !address) return;
+
+  const query = `${name} ${address}`;
+  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+  Linking.openURL(url).catch(err => {
+    console.warn("Google Maps 열기 실패:", err);
+  });
+};
   // ... (useEffect, handleSave 등 다른 로직은 이전과 동일합니다)
   useEffect(() => {
     if (restaurant?.address) {
@@ -236,6 +264,7 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
                   title={name}
                 />
               </MapView>
+              
             </View>
           ) : (
             <View style={[styles.mapBorder, styles.mapErrorContainer]}>
@@ -243,6 +272,18 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
             </View>
           )}
         </View>
+        {/* <TouchableOpacity style={styles.googleMapButton} onPress={openInGoogleMaps}>
+        <Text style={styles.googleMapButtonText}>Google 지도에서 보기</Text>
+      </TouchableOpacity> */}
+      {/* <TouchableOpacity onPress={() => openInGoogleMapsByAddress(restaurant.address)} style={{ marginTop: 10 }}>
+  <Text style={{ color: '#007AFF', textAlign: 'center' }}>Google 지도에서 보기</Text>
+</TouchableOpacity> */}
+<TouchableOpacity
+  onPress={() => openInGoogleMapsByNameAndAddress(restaurant.name, restaurant.address)}
+  style={{ marginTop: 10, alignSelf: 'center', backgroundColor: '#8B4513', padding: 10, borderRadius: 10 }}
+>
+  <Text style={{ color: 'white', fontWeight: 'bold' }}>Google 지도에서 보기</Text>
+</TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -375,7 +416,20 @@ reviewText: { fontSize: 15 },
     textAlign: 'center',
     fontSize: 16,
     color: '#666',
-  }
+  },
+  googleMapButton: {
+  marginTop: 15,
+  backgroundColor: '#FFB347',
+  paddingVertical: 10,
+  paddingHorizontal: 20,
+  borderRadius: 10,
+  alignSelf: 'center',
+},
+googleMapButtonText: {
+  color: '#fff',
+  fontSize: 16,
+  fontWeight: 'bold',
+},
 });
 
 export default RestaurantGalleryScreen;

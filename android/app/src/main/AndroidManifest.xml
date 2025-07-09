@@ -13,7 +13,7 @@
       android:supportsRtl="true">
       <meta-data                                                    
       android:name="com.google.android.geo.API_KEY" 
-      android:value="AIzaSyDl-vdSlnZWH5AeNRjAwIb9eb2SiVGKOKg"/>
+      android:value="AIzaSyDlqEZ2PlL91fds8yJwGWmMFPQ8U85tItU"/>
       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
       <activity
         android:name=".MainActivity"
