@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Alert } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Alert, ActivityIndicator,Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import Geocoder from 'react-native-geocoding';
+
 const dataFiles = {
+    // ... (데이터 파일 require 부분)
     '괴정동': require('../crawl/괴정동 카페_crawled.json'),
     '궁동': require('../crawl/궁동 카페_crawled.json'),
     '노은동': require('../crawl/노은동 카페_crawled.json'),
@@ -14,15 +17,102 @@ const dataFiles = {
     '오류동': require('../crawl/오류동 카페_crawled.json'),
     '월평동': require('../crawl/월평동 카페_crawled.json'),
     '중앙동': require('../crawl/중앙동 카페_crawled.json'),
-  };
+};
+
+const BREAD_ICON_WIDTH = 24;
+const BREAD_ICON_HEIGHT = 24;
+const MAX_BREADS = 5;
+
+// 별점 코드
+const BreadRating = ({ rating }) => {
+  const fullCount = Math.floor(rating);
+  const decimal = rating - fullCount;
+  const breads = [];
+
+  for (let i = 0; i < fullCount; i++) {
+    breads.push(
+      <Image
+        key={`full-${i}`}
+        source={require('../assets/review_bread/bread_full.png')}
+        style={styles.breadIcon}
+      />
+    );
+  }
+
+  // 소수점 처리 (예: 0.6이면 60%만 보여줌)
+  if (decimal > 0) {
+    breads.push(
+      <View
+        key="clipped"
+        style={[styles.breadClipContainer, { width: BREAD_ICON_WIDTH * decimal }]}
+      >
+        <Image
+          source={require('../assets/review_bread/bread_full.png')}
+          style={styles.breadIcon}
+        />
+      </View>
+    );
+  }
+
+  // 빈 빵 아이콘 추가
+  while (breads.length < MAX_BREADS) {
+    breads.push(
+      <Image
+        key={`empty-${breads.length}`}
+        source={require('../assets/review_bread/bread_empty.png')}
+        style={styles.breadIcon}
+      />
+    );
+  }
+
+  return <View style={styles.breadRow}>{breads}</View>;
+};
+
+const parseRating = (ratingStr) => {
+  if (!ratingStr) return 0;
+  const match = ratingStr.match(/([\d.]+)/);  // 숫자와 점(.) 포함 추출
+  return match ? parseFloat(match[1]) : 0;
+};
+
 
 const SAVED_BAKERIES_KEY = 'saved_bakeries';
+
+// ⭐️ API 키를 다시 한번 확인해주세요!
+Geocoder.init("AIzaSyDl-vdSlnZWH5AeNRjAwIb9eb2SiVGKOKg"); 
 
 const RestaurantGalleryScreen = ({ route, navigation }) => {
   const { restaurantId, dong } = route.params;
   const data = dataFiles[dong];
   const restaurant = data.find((r) => r.id === restaurantId);
   const [isSaved, setIsSaved] = useState(false);
+  
+  const [coordinates, setCoordinates] = useState(null);
+  const [isMapLoading, setIsMapLoading] = useState(true);
+
+  // ... (useEffect, handleSave 등 다른 로직은 이전과 동일합니다)
+  useEffect(() => {
+    if (restaurant?.address) {
+      const fetchCoordinates = async () => {
+        setIsMapLoading(true);
+        try {
+          const json = await Geocoder.from(restaurant.address);
+          const location = json.results[0].geometry.location;
+          setCoordinates({
+            latitude: location.lat,
+            longitude: location.lng,
+          });
+        } catch (error) {
+          console.warn("지오코딩 실패:", error);
+          setCoordinates(null);
+        } finally {
+          setIsMapLoading(false);
+        }
+      };
+      fetchCoordinates();
+    } else {
+        setIsMapLoading(false);
+    }
+  }, [restaurant?.address]);
 
   useEffect(() => {
     const checkIsSaved = async () => {
@@ -34,7 +124,6 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
     };
     checkIsSaved();
   }, [restaurantId, dong]);
-
 
   const handleSave = async () => {
     try {
@@ -65,89 +154,191 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
       </SafeAreaView>
     );
   }
-
-  const { name, rating_value, call_value, review } = restaurant;
+  
+  const { name, call_value, review } = restaurant;
   const reviews = review.map((rev, index) => ({
     id: index + 1,
     author: rev.nickname,
     text: rev.text,
   }));
 
-  return (
-    <SafeAreaView style={[styles.container, { paddingBottom: 70 }]}>
-       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={25} color="#fff" />
-      </TouchableOpacity>
 
-      <View style={{ flex: 1 }}>
-        <ImageBackground
-          source={require('../assets/background.png')}
-          style={styles.topSection}
-          resizeMode="cover"
-        >
+  return (
+    <SafeAreaView style={styles.container}>
+
+      
+      {/* ScrollView가 화면 전체를 차지하도록 수정 */}
+      <ScrollView contentContainerStyle={styles.scrollContentContainer}>
+        <View style={styles.topSection}>
+          <View style={styles.topHeaderRow}>
+            <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={28} color="#fff" />
+            </TouchableOpacity>
+
+            {/* 가운데: 공간 채우기 */}
+            <View style={{ flex: 1 }} />
+
+            {/* 오른쪽: 저장 */}
+            <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+              <Ionicons name={isSaved ? "heart" : "heart-outline"} size={18} color={isSaved ? "#FF6347" : "#FFF"} />
+              <Text style={styles.saveButtonText}>{isSaved ? '저장됨' : '저장'}</Text>
+            </TouchableOpacity>
+          </View>
+
           <Text style={styles.storeName}>{name}</Text>
+          <BreadRating rating={parseRating(restaurant.rating_value)} />
           <View style={styles.phoneBox}>
             <Text style={styles.phoneText}>TEL: {call_value}</Text>
           </View>
-        </ImageBackground>
+        </View>
 
-        {/* ⭐️ 저장하기 버튼 추가 */}
-        <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
-            <Ionicons name={isSaved ? "heart" : "heart-outline"} size={24} color={isSaved ? "#FF6347" : "#FFF"} />
-            <Text style={styles.saveButtonText}>{isSaved ? '저장됨' : '저장하기'}</Text>
-        </TouchableOpacity>
+        <View style={styles.reviewsSection}>
+          {reviews.map((item, index) => (
+            <View
+              key={item.id}
+              style={[
+                styles.speechBubble,
+                index % 2 === 0 ? styles.bubbleLeft : styles.bubbleRight,
+              ]}
+            >
+              <Text style={styles.reviewAuthor}>{item.author}</Text>
+              <Text style={styles.reviewText}>{item.text}</Text>
+            </View>
+          ))}
+        </View>
 
-        <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
-          <View style={styles.reviewsSection}>
-            {reviews.map((item, index) => (
-              <View
-                key={item.id}
-                style={[
-                  styles.speechBubble,
-                  index % 2 === 0 ? styles.bubbleLeft : styles.bubbleRight,
-                ]}
+        {/* ⭐️ --- 지도 섹션 --- ⭐️ */}
+        <View style={styles.mapOuterContainer}>
+          {isMapLoading ? (
+            <ActivityIndicator size="large" color="#8B4513" style={{ height: 250 }}/>
+          ) : coordinates ? (
+            // ⭐️ 테두리를 위한 부모 View 추가
+            <View style={styles.mapBorder}> 
+              <MapView
+                provider={PROVIDER_GOOGLE}
+                style={styles.map}
+                initialRegion={{
+                  ...coordinates,
+                  latitudeDelta: 0.005,
+                  longitudeDelta: 0.0025,
+                }}
+                // ⭐️ scrollEnabled와 zoomEnabled를 true로 변경 (또는 속성 자체를 제거)
+                scrollEnabled={true}
+                zoomEnabled={true}
               >
-                <Text style={styles.reviewAuthor}>{item.author}</Text>
-                <Text style={styles.reviewText}>{item.text}</Text>
-              </View>
-            ))}
-          </View>
-        </ScrollView>
-      </View>
-          <View>
-      <MapView
-        provider={PROVIDER_GOOGLE} 
-        initialRegion={{
-          latitude: 37.541,
-          longitude: 126.986,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        style={styles.map}
-      />
-   	</View>
+                <Marker
+                  coordinate={coordinates}
+                  title={name}
+                />
+              </MapView>
+            </View>
+          ) : (
+            <View style={[styles.mapBorder, styles.mapErrorContainer]}>
+                <Text style={styles.mapErrorText}>지도 정보를 불러올 수 없습니다.</Text>
+            </View>
+          )}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FEF6DC' },
-  backButton: { position: 'absolute', top: 45, left: 20, zIndex: 10, padding: 8 },
-  topSection: { padding:35, paddingTop: 100, borderBottomLeftRadius: 0, borderBottomRightRadius: 30, overflow: 'hidden', elevation: 8, marginBottom: 10 },
+  backButton : {
+    padding :0,
+    borderRadius:6
+  },
+  // ⭐️ ScrollView 관련 스타일 수정
+  scrollContentContainer: {
+    flexGrow : 1,
+    paddingBottom: 100,
+  },
+  topSection: { 
+  backgroundColor: '#8B4513',  // 갈색
+  paddingTop: 100,
+  paddingBottom: 30,
+  paddingHorizontal: 35,
+  borderBottomRightRadius: 30,
+  elevation: 8,
+  marginBottom: 10,
+  position: 'relative',
+  },
+  topHeaderRow: {
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  marginBottom:30,
+},
   storeName: { fontSize: 34, fontWeight: 'bold', color: '#FEF6DC', marginBottom: 20 },
+  breadRow: {
+  flexDirection: 'row',
+  marginTop:10,
+  marginBottom: 10,
+},
+breadIcon: {
+  width: BREAD_ICON_WIDTH,
+  height: BREAD_ICON_HEIGHT,
+  resizeMode: 'contain',
+  marginRight: 2,
+},
+breadClipContainer: {
+  overflow: 'hidden',
+  height: BREAD_ICON_HEIGHT,
+  marginRight: 2,
+},
   phoneBox: { padding: 10, borderRadius: 5 },
   phoneText: { color: '#fff', fontSize: 16 },
-  reviewsSection: { paddingHorizontal: 0 },
+  // ⭐️ 저장 버튼 위치 조정 (topSection 기준)
+saveButton: { 
+  flexDirection: 'row', 
+  alignItems: 'center', 
+  backgroundColor: 'rgba(0,0,0,0.4)', 
+  paddingHorizontal: 15, 
+  paddingVertical: 10, 
+  borderRadius: 16, 
+},
+saveButtonText: {
+  color: '#fff',
+  marginLeft: 6,
+  fontWeight: 'bold',
+  fontSize: 13,
+},
+  reviewsSection: {},
   speechBubble: { backgroundColor: '#fff', padding: 15, marginVertical: 15, maxWidth: '75%' },
   bubbleLeft: { alignSelf: 'flex-start', borderTopRightRadius: 15, borderBottomRightRadius: 15, elevation: 10 },
   bubbleRight: { alignSelf: 'flex-end', borderTopLeftRadius: 15, borderBottomLeftRadius: 15, elevation: 10 },
   reviewAuthor: { fontWeight: 'bold', fontSize: 20, marginBottom: 5 },
   reviewText: { fontSize: 15 },
-  saveButton: { position: 'absolute', top: 180, right: 30, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.4)', paddingHorizontal: 12, paddingVertical: 8, borderRadius: 20 },
-  saveButtonText: { color: '#fff', marginLeft: 8, fontWeight: 'bold' },
+  
+  // ⭐️ 지도 관련 스타일 수정
+  mapOuterContainer: {
+    marginTop: 30,
+    alignItems: 'center', // 내부 컨텐츠(mapBorder)를 중앙에 위치시킴
+  },
+  // ⭐️ 테두리를 위한 View 스타일
+  mapBorder: {
+    width: '90%',
+    height: 250,
+    borderRadius: 20,
+    borderWidth: 4,
+    borderColor: '#8B4513',
+    overflow: 'hidden', // 이 부분이 중요! 자식인 MapView가 테두리를 넘어가지 않도록 함
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  // ⭐️ MapView 자체의 스타일
   map: {
-    height: "200",
-    width: "350"
+    width: '100%',
+    height: '100%',
+  },
+  mapErrorContainer: {
+    backgroundColor: '#E0E0E0'
+  },
+  mapErrorText: {
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#666',
   }
 });
 
