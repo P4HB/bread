@@ -196,25 +196,25 @@ const MyGalleryScreen = ({ navigation, route }) => {
 };
 
 const windowWidth = Dimensions.get('window').width;
-const imageSize = (windowWidth - 90) / 3;
+const imageSize = (windowWidth - windowWidth * 0.16 * 2) / 3;
 
 const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingHorizontal: '8%',
+    paddingHorizontal: '14%',
     // paddingBottom: '30%',
   },
   page: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingTop: '86%',
+    paddingTop: '76%',
   },
   imageBox: {
     width: imageSize,
     height: imageSize,
-    marginBottom: 13,
+    marginBottom: '3%',
     borderRadius: 12,
     overflow: 'hidden',
     backgroundColor: '#000',
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
 
   confirmButton: {
     position: 'absolute',
-    bottom: 80,
+    bottom: '12%',
     right: 24,
     backgroundColor: '#8B4513',
     paddingHorizontal: 20,
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   },
   takePhotoButton: {
     position: 'absolute',
-    bottom: '11%',
+    bottom: '13%',
     alignSelf: 'center',
     width: 60,
     height: 60,
@@ -276,9 +276,9 @@ const styles = StyleSheet.create({
 
   pageButtons: {
     position: 'absolute',
-    bottom: '12%',
-    left: '5%',
-    right: '5%',
+    top:'20%',
+    left: '10%',
+    right: '10%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

@@ -86,7 +86,7 @@ const RestaurantListScreen = ({ navigation, route }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', paddingBottom: 70 }}>
+    <SafeAreaView style={{ flex: 1, paddingBottom: 70 }}>
       {/* 헤더 */}
       <View style={styles.header}>
         <Text style={styles.headerText}>{dong} 빵집</Text>
@@ -119,7 +119,7 @@ const RestaurantListScreen = ({ navigation, route }) => {
 
       {/* 뒤로가기 버튼 */}
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={25} color="#FDF0C1" />
+        <Ionicons name="arrow-back" size={25} color="#8b4a21" />
       </TouchableOpacity>
 
       {/* FlatList 분기 + key로 오류 방지 */}
@@ -153,26 +153,34 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 20,
+    paddingTop: '7%',
+    paddingBottom: '3%',
+    height:'25%'
   },
   headerText: {
     fontSize: 40,
     // fontWeight: 'bold',
     fontFamily : 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
+    marginLeft:'5%',
+    bottom:'32%',
+    left:'2%'
   },
   headerImage: {
-    width: 100,
+    width: 160,
     height: 100,
+    right:'6%'
   },
+
   backButton: {
     position: 'absolute',
-    top: 45,
+    top: '3%',
     left: 20,
     zIndex: 10,
     padding: 8,
+    color:'#8b4a21'
   },
+
   modeToggleBar: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -197,28 +205,22 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
-  listContainer: {
-    paddingHorizontal: 12,
-    paddingBottom: 16,
-    backgroundColor: '#fff',
-  },
+
   itemContainer: {
     flex: 1,
-    margin: 8,
+    marginInlineStart:'3%',
+    margin:"3%",
     borderRadius: 20,
     backgroundColor: '#ffffff',
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 5,
+    elevation: 7,
   },
   image: {
-    width: '100%',
-    height: 160,
+    width: 150,
+    height: 90,
     backgroundColor: '#f3f0e8',
   },
+
   nameContainer: {
     paddingVertical: 10,
     paddingHorizontal: 14,
@@ -228,27 +230,34 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 17,
   },
+
   addressContainer: {
     paddingHorizontal: 14,
-    paddingBottom: 12,
+    paddingBottom:15
   },
   addressText: {
     color: '#888888',
     fontSize: 14,
   },
+
+  listContainer: {
+    paddingHorizontal: 12,
+    paddingBottom: '7%',
+    backgroundColor: '#fff',
+  },
   listItemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 8,
+    marginVertical: '2%',
     marginHorizontal: 10,
     backgroundColor: '#fff',
     borderRadius: 12,
-    elevation: 1,
+    elevation: 6,
     padding: 10,
   },
   listImage: {
-    width: 70,
-    height: 70,
+    width: 50,
+    height: 50,
     borderRadius: 10,
     backgroundColor: '#eee',
   },

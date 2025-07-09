@@ -19,8 +19,8 @@ const dataFiles = {
     '중앙동': require('../crawl/중앙동 카페_crawled.json'),
 };
 
-const BREAD_ICON_WIDTH = 24;
-const BREAD_ICON_HEIGHT = 24;
+const BREAD_ICON_WIDTH = 40;
+const BREAD_ICON_HEIGHT = 40;
 const MAX_BREADS = 5;
 
 // 별점 코드
@@ -65,7 +65,10 @@ const BreadRating = ({ rating }) => {
     );
   }
 
-  return <View style={styles.breadRow}>{breads}</View>;
+  return <View style={styles.breadRow}>
+    <Text style={styles.breadText}>- 별점: </Text>
+    {breads}
+  </View>;
 };
 
 const parseRating = (ratingStr) => {
@@ -188,11 +191,12 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
           <Text style={styles.storeName}>{name}</Text>
           <BreadRating rating={parseRating(restaurant.rating_value)} />
           <View style={styles.phoneBox}>
-            <Text style={styles.phoneText}>TEL: {call_value}</Text>
+            <Text style={styles.phoneText}>- TEL: {call_value}</Text>
           </View>
         </View>
 
-        <View style={styles.reviewsSection}>
+        <View style={styles.reviewSection}>
+          <Text style={styles.SectionText}>리뷰</Text>
           {reviews.map((item, index) => (
             <View
               key={item.id}
@@ -207,6 +211,7 @@ const RestaurantGalleryScreen = ({ route, navigation }) => {
           ))}
         </View>
 
+        <Text style={styles.SectionText}>지도</Text>
         {/* ⭐️ --- 지도 섹션 --- ⭐️ */}
         <View style={styles.mapOuterContainer}>
           {isMapLoading ? (
@@ -255,26 +260,38 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   topSection: { 
-  backgroundColor: '#8B4513',  // 갈색
-  paddingTop: 100,
-  paddingBottom: 30,
-  paddingHorizontal: 35,
-  borderBottomRightRadius: 30,
-  elevation: 8,
-  marginBottom: 10,
-  position: 'relative',
+    backgroundColor: '#8B4513',  // 갈색
+    paddingTop: '10%',
+    paddingBottom: 20,
+    paddingHorizontal: 35,
+    marginBototm:20,
+    borderBottomRightRadius: 30,
+    elevation: 8,
+    position: 'relative',
   },
   topHeaderRow: {
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  marginBottom:30,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginBottom:30,
 },
-  storeName: { fontSize: 34, fontWeight: 'bold', color: '#FEF6DC', marginBottom: 20 },
-  breadRow: {
+
+storeName: {
+  fontSize: 50,
+  fontFamily : 'SDSamliphopangcheTTFBasic',
+  color: '#FEF6DC',
+  marginBottom: 20
+},
+
+breadText: {
+  fontFamily : 'SDSamliphopangcheTTFBasic',
+  color: '#fff',
+  fontSize: 18,
+  paddingTop:10
+},
+breadRow: {
+  paddingHorizontal: 10,
   flexDirection: 'row',
-  marginTop:10,
-  marginBottom: 10,
 },
 breadIcon: {
   width: BREAD_ICON_WIDTH,
@@ -287,9 +304,15 @@ breadClipContainer: {
   height: BREAD_ICON_HEIGHT,
   marginRight: 2,
 },
-  phoneBox: { padding: 10, borderRadius: 5 },
-  phoneText: { color: '#fff', fontSize: 16 },
-  // ⭐️ 저장 버튼 위치 조정 (topSection 기준)
+
+phoneBox: { padding: 10, borderRadius: 5 },
+phoneText: {
+  color: '#fff',
+  fontFamily : 'SDSamliphopangcheTTFBasic',
+  fontSize: 16
+},
+
+// ⭐️ 저장 버튼 위치 조정 (topSection 기준)
 saveButton: { 
   flexDirection: 'row', 
   alignItems: 'center', 
@@ -304,16 +327,29 @@ saveButtonText: {
   fontWeight: 'bold',
   fontSize: 13,
 },
-  reviewsSection: {},
-  speechBubble: { backgroundColor: '#fff', padding: 15, marginVertical: 15, maxWidth: '75%' },
-  bubbleLeft: { alignSelf: 'flex-start', borderTopRightRadius: 15, borderBottomRightRadius: 15, elevation: 10 },
-  bubbleRight: { alignSelf: 'flex-end', borderTopLeftRadius: 15, borderBottomLeftRadius: 15, elevation: 10 },
-  reviewAuthor: { fontWeight: 'bold', fontSize: 20, marginBottom: 5 },
-  reviewText: { fontSize: 15 },
+
+reviewSection: {},
+SectionText:{
+  paddingTop:"8%",
+  fontSize: 30, // 텍스트 크기 증가
+  fontFamily : 'SDSamliphopangcheTTFBasic',
+  color: '#8b4a21',
+  paddingLeft:"3%",
+  paddingBottom: 10,
+  borderBottomWidth: 2,
+  borderBottomWidth: 2, // 하단에 선 추가
+  borderBottomColor: '#8b4a21', // 선 색상
+  maxWidth: '20%', // 선의 최대 너비를 제한하여 글자 밑에만 오도록 (조절 가능)
+},
+speechBubble: { backgroundColor: '#fff', padding: 15, marginVertical: 15, maxWidth: '75%' },
+bubbleLeft: { alignSelf: 'flex-start', borderTopRightRadius: 15, borderBottomRightRadius: 15, elevation: 10 },
+bubbleRight: { alignSelf: 'flex-end', borderTopLeftRadius: 15, borderBottomLeftRadius: 15, elevation: 10 },
+reviewAuthor: { fontWeight: 'bold', fontSize: 20, marginBottom: 5 },
+reviewText: { fontSize: 15 },
   
   // ⭐️ 지도 관련 스타일 수정
   mapOuterContainer: {
-    marginTop: 30,
+    marginTop: "5%",
     alignItems: 'center', // 내부 컨텐츠(mapBorder)를 중앙에 위치시킴
   },
   // ⭐️ 테두리를 위한 View 스타일
@@ -322,7 +358,7 @@ saveButtonText: {
     height: 250,
     borderRadius: 20,
     borderWidth: 4,
-    borderColor: '#8B4513',
+    borderColor: '#f3f3f3',
     overflow: 'hidden', // 이 부분이 중요! 자식인 MapView가 테두리를 넘어가지 않도록 함
     justifyContent: 'center',
     alignItems: 'center',

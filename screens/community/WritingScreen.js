@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
   safe: {
     flex: 1,
     backgroundColor: '#fdf2e7',
+    paddingBottom: 80 
   },
   header: {
     backgroundColor: '#fdf2e7',
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: '7%',
     paddingBottom: '3%',
+    height:'25%'
   },
   headerText: {
     fontSize: 40,
@@ -187,7 +189,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: '#8B4513',
-    marginTop: '10%',
+    marginTop: '15%',
     padding: 14,
     borderRadius: 30,
     alignItems: 'center',

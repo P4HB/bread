@@ -21,6 +21,7 @@ function MainTabs ({ route }) {
       screenOptions={{
             headerShown: false,
             tabBarShowLabel: false, // 라벨 숨기고 아이콘만
+            tabBarHideOnKeyboard: true,
             tabBarStyle: {
               position: 'absolute',
               left: 20,         // 좌측 여백

@@ -146,6 +146,7 @@ const MyPageScreen = ({ route }) => {
           style={styles.profileImage}
         />
         <Text style={styles.nickname}>{user.name}</Text>
+        <Text style={styles.profileSubtitle}>빵순이의 일상 기록</Text>
       </View>
 
       <View style={styles.mainTabSection}>
@@ -171,20 +172,30 @@ const MyPageScreen = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.background, paddingTop: "20%" },
-  profileSection: { paddingVertical: 20, paddingHorizontal: 30, alignItems: 'center' },
+  container: { flex: 1, backgroundColor: colors.background, paddingTop: "15%", paddingBottom: 80  },
+  
+  profileSection: {paddingHorizontal: 30, alignItems: 'center' },
   profileImage: { width: 90, height: 90, borderRadius: 45, marginBottom: 12 },
+  profileSubtitle: {
+    fontSize: 14,
+    color: colors.textLight,
+    marginTop: 4,
+    fontFamily: 'SDSamliphopangcheTTFBasic', // 메인과 일관성
+  },
   nickname: { fontSize: 22, fontWeight: 'bold', color: colors.textDark },
+  
   mainTabSection: { flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: colors.separator },
   mainTab: { flex: 1, paddingVertical: 15, alignItems: 'center' },
   activeMainTab: { borderBottomWidth: 2.5, borderBottomColor: colors.point },
   mainTabText: { fontSize: 16, color: colors.textLight, fontWeight: '500' },
   activeMainTabText: { color: colors.textDark, fontWeight: 'bold' },
+  
   subTabSection: { flexDirection: 'row', paddingHorizontal: 20, paddingTop: 20, paddingBottom: 10 },
   subTab: { marginRight: 20, paddingBottom: 8 },
   activeSubTab: { borderBottomWidth: 2, borderBottomColor: colors.point },
   subTabText: { fontSize: 15, color: colors.textLight },
   activeSubTabText: { fontWeight: 'bold', color: colors.textDark },
+  
   listContainer: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 20 },
   contentItem: { backgroundColor: colors.cardBackground, borderRadius: 12, padding: 16, marginBottom: 12 },
   itemTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 6, color: colors.textDark },

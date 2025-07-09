@@ -9,8 +9,8 @@ import { useNavigation } from "@react-navigation/native";
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // 애니메이션 관련 상수
-const HEADER_MAX_HEIGHT = 280;
-const HEADER_MIN_HEIGHT = 200;
+const HEADER_MAX_HEIGHT = 200;
+const HEADER_MIN_HEIGHT = 130;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const TEXT_MAX_FONT_SIZE = 60;
@@ -50,13 +50,6 @@ export default function HomeScreen() {
     extrapolate: 'clamp',
   });
 
-  // // 2. 돼지 이미지 투명도 조절
-  // const imageOpacity = scrollY.interpolate({
-  //   inputRange: [0, HEADER_SCROLL_DISTANCE / 2],
-  //   outputRange: [1, 0],
-  //   extrapolate: 'clamp',
-  // });
-  
   // ▼▼▼ 돼지 이미지 스케일 애니메이션 값 정의 ▼▼▼
   const imageScale = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
@@ -66,13 +59,13 @@ export default function HomeScreen() {
 
   const imageTranslateX = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
-    outputRange: [0, -65], // 왼쪽으로 40만큼 이동합니다. (값 조절 가능)
+    outputRange: [0, -53],
     extrapolate: 'clamp',
   });
 
   const imageTranslateY = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
-    outputRange: [0, 40],
+    outputRange: [0,40],
     extrapolate: 'clamp',
   });
 
@@ -86,12 +79,12 @@ export default function HomeScreen() {
   // 4. 텍스트 세로 위치를 translateY로 조절
   const textTranslateY = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
-    outputRange: [0, 80],
+    outputRange: [0, 44],
     extrapolate: 'clamp',
   });
 
   // 5. 텍스트 가로 위치를 translateX로 조절
-  const initialLeft = SCREEN_WIDTH - TEXT_BOX_WIDTH - 40;
+  const initialLeft = SCREEN_WIDTH - TEXT_BOX_WIDTH - 16;
   const finalLeft = (SCREEN_WIDTH - TEXT_BOX_WIDTH) / 2;
   const textTranslateX = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
@@ -197,33 +190,35 @@ const styles = StyleSheet.create({
   },
   headerText: {
     position: 'absolute',
-    top: 60,
-    left: SCREEN_WIDTH - TEXT_BOX_WIDTH - 40,
+    top: '16%',
+    left: SCREEN_WIDTH - TEXT_BOX_WIDTH,
     width: TEXT_BOX_WIDTH,
     textAlign: 'center',
     fontSize: TEXT_MAX_FONT_SIZE,
     fontFamily: 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
+    paddingRight:'9%'
   },
   headerImage: {
     position: 'absolute',
-    left: 30,
-    bottom: 20,
-    width: 200,
+    left: '9%',
+    bottom: '2%',
+    width: 140,
     height: 120,
   },
   // FlatList의 콘텐츠 시작점을 헤더 높이만큼 아래로 설정
   buttonContainer: {
     paddingTop: HEADER_MAX_HEIGHT,
-    paddingHorizontal: 35,
-    paddingTop:"65%",
-    paddingBottom: "20%",
+    paddingHorizontal: '8%',
+    paddingTop:"60%",
+    paddingBottom: "25%",
   },
   dongButton: {
     flex: 1,
-    margin: 15,
-    padding: 25,
-    height: 160,
+    marginVertical:'3%',
+    marginHorizontal:'3%',
+    padding: '8%',
+    // height:'70%',
     backgroundColor: '#fdf2e7',
     borderRadius: 40, borderTopRightRadius: 90,
     alignItems: 'center',
@@ -235,8 +230,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   breadImage: {
-    width: 80,
+    width: '90%',
     height: 80,
-    marginBottom: 8,
   },
 });
