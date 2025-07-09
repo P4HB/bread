@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet, Alert,
-  Image,
+  Image, SafeAreaView
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -27,55 +27,58 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-        <Image
-            source={require('../assets/login_pig.png')}
-            style={styles.pigImage}
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+          <Image
+              source={require('../assets/login_pig.png')}
+              style={styles.pigImage}
+          />
+        <Text style={styles.title}>로그인</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="아이디"
+          onChangeText={setUsername}
+          value={username}
         />
-      <Text style={styles.title}>로그인</Text>
 
-      <TextInput
-        style={styles.input}
-        placeholder="아이디"
-        onChangeText={setUsername}
-        value={username}
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="비밀번호"
+          secureTextEntry
+          onChangeText={setPassword}
+          value={password}
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="비밀번호"
-        secureTextEntry
-        onChangeText={setPassword}
-        value={password}
-      />
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+          <Text style={styles.buttonText}>로그인</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>로그인</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.link}>아직 회원이 아니신가요? 회원가입</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.link}>아직 회원이 아니신가요? 회원가입</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex:1,
+    backgroundColor: "#FEF6DC"
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#FEF6DC',
     padding: 20,
   },
     pigImage: {
-    width: 250,
-    height: 250,
+    width: 200,
+    height: 200,
     alignSelf: 'center',
-    marginBottom: 20
   },
   title: {
     fontSize: 35,
-    // fontWeight: 'bold',
     marginBottom: 30,
     textAlign: 'center',
     fontFamily : 'SDSamliphopangcheTTFBasic',

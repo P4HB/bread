@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  Alert
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// 프로필 이미지 목록
 const profileImages = [
   require('../assets/profileimage/pig_1.png'),
   require('../assets/profileimage/pig_2.png'),
@@ -19,7 +25,6 @@ const profileImages = [
 ];
 
 const SignupScreen = ({ navigation }) => {
-  
   const [nickname, setNickname] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +33,6 @@ const SignupScreen = ({ navigation }) => {
   const [selectedImage, setSelectedImage] = useState(profileImages[0]);
 
   useEffect(() => {
-    // 컴포넌트 마운트 시 랜덤 이미지 선택
     const randomIndex = Math.floor(Math.random() * profileImages.length);
     setSelectedImage(profileImages[randomIndex]);
     setProfileIndex(randomIndex);
@@ -58,7 +62,7 @@ const SignupScreen = ({ navigation }) => {
       username,
       password,
       name: nickname,
-      profile: profileIndex, // 실제 경로 저장해도 되고 생략해도 됨
+      profile: profileIndex,
     };
 
     users.push(newUser);
@@ -68,17 +72,18 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
-      {/* 뒤로가기 버튼 */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+    <SafeAreaView style={styles.safeArea}>
+      {/* 상단 고정 영역 */}
+      <View style={styles.backButtonContainer}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={28} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.headerText}> 환영합니다! </Text>
       </View>
 
-      <View style={styles.container}>
-        {/* 이미지 + 닉네임 */}
+      {/* 메인 콘텐츠 영역 */}
+      <View style={styles.mainContentContainer}>
+        <Text style={styles.welcomeText}>환영합니다!</Text>
+
         <View style={styles.imageRow}>
           <Image source={selectedImage} style={styles.profileImage} />
           <TextInput
@@ -89,12 +94,12 @@ const SignupScreen = ({ navigation }) => {
           />
         </View>
 
-        {/* 아래쪽 입력 필드들 */}
         <TextInput
           style={styles.input}
           placeholder="아이디"
           value={username}
           onChangeText={setUsername}
+          autoCapitalize="none"
         />
         <TextInput
           style={styles.input}
@@ -110,69 +115,78 @@ const SignupScreen = ({ navigation }) => {
           value={confirmPassword}
           onChangeText={setConfirmPassword}
         />
+
         <TouchableOpacity style={styles.button} onPress={handleSignup}>
           <Text style={styles.buttonText}>회원가입</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default SignupScreen;
 
 const styles = StyleSheet.create({
-  header: {
-    position: 'absolute',
-    top: 50,
-    left: 20,
-    zIndex: 10
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#FEF6DC',
   },
-  headerText: {
-    position: 'absolute',
-    top : 100,
-    width : 370,
-    textAlign : 'center',
-    fontSize: 40,
-    // fontWeight: 'bold',
-    fontFamily : 'SDSamliphopangcheTTFBasic',
+  backButtonContainer: {
+    paddingHorizontal: '5%',
+    paddingTop: '10%',
+  },
+  backButton: {
+    padding: 5,
+  },
+  welcomeText: {
+    fontSize: 32,
+    fontFamily: 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
+    textAlign: 'center',
+    marginBottom: '15%',
   },
-  container: {
+  mainContentContainer: {
     flex: 1,
     justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#FEF6DC',
+    paddingHorizontal: '10%',
   },
   imageRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: '10%',
   },
   profileImage: {
-    width: 160,
-    height: 160,
-    borderRadius: 100,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    // backgroundColor: 'pink'
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: '#D2B48C',
   },
   input: {
     height: 50,
-    borderColor: '#ccc',
+    borderColor: '#D2B48C',
     borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 15,
-    paddingHorizontal: 10
+    borderRadius: 10,
+    marginBottom: '5%',
+    paddingHorizontal: 15,
+    backgroundColor: '#FFF',
+    fontSize: 16,
   },
   button: {
-    backgroundColor: '#D2B48C',
-    padding: 15,
-    borderRadius: 5,
-    alignItems: 'center'
-    
+    backgroundColor: '#8b4a21',
+    paddingVertical: 18,
+    borderRadius: 20,
+    alignItems: 'center',
+    marginBottom: '25%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 8,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16
-  }
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });

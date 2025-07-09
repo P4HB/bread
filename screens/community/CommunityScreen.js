@@ -139,18 +139,20 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 20,
+    paddingTop: '7%',
+    paddingBottom: '3%',
   },
   headerText: {
     fontSize: 40,
     // fontWeight: 'bold',
     fontFamily : 'SDSamliphopangcheTTFBasic',
     color: '#8b4a21',
+    marginLeft:'5%'
   },
   headerImage: {
-    width: 200,
+    width: 160,
     height: 120,
+    marginRight:'5%'
   },
   container: {
     paddingVertical: 20,
@@ -185,20 +187,22 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: '#ddd',
   },
-  writerText: {fontSize: 14, color: '#333'},
+  writerText: {fontSize: 13, color: '#333'},
   image: {
-    width: '100%',
-    height: 140,
+    width: '94%',
+    height: 100,
     backgroundColor: '#f3f0e8',
+    margin:'3%',
+    borderRadius:10
   },
 
-  cardBody: {paddingHorizontal: 15, paddingVertical:11, gap: 5},
+  cardBody: {paddingHorizontal: 15, paddingVertical:8, gap: 3},
   titleText: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 16,
     color: '#333',
   },
-  content: {fontSize: 13, color: '#666'},
+  content: {fontSize: 12, color: '#666'},
   cardFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -221,10 +225,10 @@ const styles = StyleSheet.create({
   fab: {
     position: 'absolute',
     bottom: 30,
-    right: 25,
+    right: 30,
     backgroundColor: '#8B4513',
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',

@@ -119,12 +119,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 20,
+    paddingTop: '7%',
+    paddingBottom: '3%',
   },
-  headerText: {fontSize: 28, fontWeight: 'bold', color: '#8b4a21',},
-  headerImage: {width: 200, height: 120,},
-
+  headerText: {
+    fontSize: 40,
+    // fontWeight: 'bold',
+    fontFamily : 'SDSamliphopangcheTTFBasic',
+    color: '#8b4a21',
+    marginLeft:'5%'
+  },
+  headerImage: {
+    width: 160,
+    height: 120,
+    marginRight:'5%'
+  },
   container: {paddingHorizontal: 30, paddingVertical:15},
 
   label: {
@@ -143,7 +152,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   textArea: {
-    height: 120,
+    height: 100,
     textAlignVertical: 'top',
     paddingHorizontal:20
   },
@@ -178,7 +187,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: '#8B4513',
-    marginTop: 50,
+    marginTop: '10%',
     padding: 14,
     borderRadius: 30,
     alignItems: 'center',
